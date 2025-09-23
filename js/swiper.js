@@ -29,4 +29,8 @@ const plansSwiper = new Swiper(".plans__swiper", {
       });
     },
   },
+  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+  },
 });

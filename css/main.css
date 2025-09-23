@@ -483,6 +483,7 @@ table {
   padding: 0;
   overflow: hidden;
   border-radius: 35px;
+  border: 1px #afafaf solid;
 }
 
 .card__image {
@@ -597,6 +598,42 @@ table {
   z-index: 1;
 }
 
+.swiper-button-next {
+  color: #393939 !important;
+  right: 100px !important;
+  filter: drop-shadow(0 0 10px #393939);
+  animation: move-next 4s infinite linear;
+}
+
+@keyframes move-next {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.swiper-button-prev {
+  color: #393939 !important;
+  left: 100px !important;
+  filter: drop-shadow(0 0 10px #393939);
+  animation: move-prev 4s infinite linear;
+}
+
+@keyframes move-prev {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 body {
   font-family: "Montserrat", sans-serif;
 }
