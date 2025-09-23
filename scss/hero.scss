@@ -45,31 +45,31 @@
 
 .slide-2 .hero__image {
     img {
-        animation: glow-1 5s infinite linear;
+        animation: glow-2 5s infinite linear;
     }
 }
 
 .slide-3 .hero__image {
     img {
-        animation: glow-1 5s infinite linear;
+        animation: glow-3 5s infinite linear;
     }
 }
 
 @keyframes glow-1 {
   0%   { filter: drop-shadow(0 0 80px #323232); }
-  50%  { filter: drop-shadow(0 0 80px #797979); }
+  50%  { filter: drop-shadow(0 0 100px #797979); }
   100% { filter: drop-shadow(0 0 80px #323232); }
 }
 
 @keyframes glow-2 {
   0%   { filter: drop-shadow(0 0 80px #3B3653); }
-  50%  { filter: drop-shadow(0 0 80px #756aa7); }
+  50%  { filter: drop-shadow(0 0 100px #886aa7); }
   100% { filter: drop-shadow(0 0 80px #3B3653); }
 }
 
 @keyframes glow-3 {
   0%   { filter: drop-shadow(0 0 80px #2E2E2E); }
-  50%  { filter: drop-shadow(0 0 80px #616161); }
+  50%  { filter: drop-shadow(0 0 100px #616161); }
   100% { filter: drop-shadow(0 0 80px #2E2E2E); }
 }
 
