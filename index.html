@@ -7,11 +7,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>Аренда автомобилей Великий Новгород</title>
 </head>
 <body>
   <header class="header">
-    <div class="container header__inner">
+    <div class="header__inner">
       <div class="header__logo">
         <img src="./img/Logo.svg" alt="Логотип">
         <span>Аренда автомобилей<br>в Великом Новгороде</span>
@@ -37,23 +40,63 @@
   </header>
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="hero__wrapper">
-          <div class="hero__info">
-            <h1 class="hero__title">ПРОКАТ<br>КОМФОРТНОГО<br>АВТОМОБИЛЯ</h1>
-            <p class="hero__car-name">OMODA C5</p>
-            <p class="hero__car-price">от 2500 руб./сутки</p>
-            <button class="btn hero__btn">Подать заявку</button>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="container swiper-slide slide-1">
+            <div class="hero__wrapper">
+              <div class="hero__info">
+                <h1 class="hero__title">ПРОКАТ<br>КОМФОРТНОГО<br>АВТОМОБИЛЯ</h1>
+                <p class="hero__car-name">OMODA C5</p>
+                <p class="hero__car-price">от 2500 руб./сутки</p>
+                <button class="btn hero__btn">Подать заявку</button>
+              </div>
+              <div class="hero__image">
+                <img 
+                  src="./img/omoda-1200.webp" 
+                  srcset="./img/omoda-1200.webp 1200w" 
+                  alt="Автомобиль">
+              </div>
+            </div>
           </div>
-          <div class="hero__image">
-            <img 
-              src="./img/omoda-1200.webp" 
-              srcset="./img/omoda-1200.webp 1200w" 
-              alt="Автомобиль">
+          <div class="container swiper-slide slide-2">
+            <div class="hero__wrapper">
+              <div class="hero__info">
+                <h1 class="hero__title">ПРОКАТ<br>КОМФОРТНОГО<br>АВТОМОБИЛЯ</h1>
+                <p class="hero__car-name">EXEED LX</p>
+                <p class="hero__car-price">от 3000 руб./сутки</p>
+                <button class="btn hero__btn">Подать заявку</button>
+              </div>
+              <div class="hero__image"> 
+                <img 
+                  src="./img/exeed-1200.webp" 
+                  srcset="./img/exeed-1200.webp 1200w" 
+                  alt="Автомобиль">
+              </div>
+            </div>
+          </div>
+          <div class="container swiper-slide slide-3">
+            <div class="hero__wrapper">
+              <div class="hero__info">
+                <h1 class="hero__title">ПРОКАТ<br>КОМФОРТНОГО<br>АВТОМОБИЛЯ</h1>
+                <p class="hero__car-name">ORA 03</p>
+                <p class="hero__car-price">от 5000 руб./сутки</p>
+                <button class="btn hero__btn">Подать заявку</button>
+              </div>
+              <div class="hero__image">
+                <img 
+                  src="./img/Ora-1200.webp" 
+                  srcset="./img/Ora-1200.webp 1200w" 
+                  alt="Автомобиль">
+              </div>
+            </div>
           </div>
         </div>
       </div>
+        
     </section>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

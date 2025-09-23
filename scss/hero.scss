@@ -1,6 +1,14 @@
-.hero {
-    height: 100vh;
+
+.slide-1 {
     background: #1F1F1F;
+}
+
+.slide-2 {
+    background: #29253B;
+}
+
+.slide-3 {
+    background: #0C0C0C;
 }
 
 .hero__wrapper {
@@ -25,21 +33,46 @@
     margin-bottom: 10px;
 }
 
-.hero__info {
-}
-
 .hero__image {
     width: 50vw;
+}
 
+.slide-1 .hero__image {
     img {
-        animation: glow 5s infinite linear;
+        animation: glow-1 5s infinite linear;
     }
 }
 
-@keyframes glow {
+.slide-2 .hero__image {
+    img {
+        animation: glow-1 5s infinite linear;
+    }
+}
+
+.slide-3 .hero__image {
+    width: 70vw;
+
+    img {
+        animation: glow-1 5s infinite linear;
+    }
+}
+
+@keyframes glow-1 {
   0%   { filter: drop-shadow(0 0 80px #323232); }
   50%  { filter: drop-shadow(0 0 80px #797979); }
   100% { filter: drop-shadow(0 0 80px #323232); }
+}
+
+@keyframes glow-2 {
+  0%   { filter: drop-shadow(0 0 80px #3B3653); }
+  50%  { filter: drop-shadow(0 0 80px #756aa7); }
+  100% { filter: drop-shadow(0 0 80px #3B3653); }
+}
+
+@keyframes glow-3 {
+  0%   { filter: drop-shadow(0 0 80px #2E2E2E); }
+  50%  { filter: drop-shadow(0 0 80px #616161); }
+  100% { filter: drop-shadow(0 0 80px #2E2E2E); }
 }
 
 .hero__car-price {
@@ -59,4 +92,8 @@
 
 .hero__btn:hover {
     background-color: #CB2915;
+}
+
+.swiper {
+    height: 100vh;
 }
