@@ -1,142 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/main.css">
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <title>Аренда автомобилей Великий Новгород</title>
-</head>
-<body>
-  <header class="header">
-    <div class="header__inner">
-      <div class="header__logo">
-        <img src="./img/Logo.svg" alt="Логотип">
-        <span>Аренда автомобилей<br>в Великом Новгороде</span>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Аренда автомобилей Великий Новгород</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img src="./img/Logo.svg" alt="Логотип" />
+          <span>Аренда автомобилей<br />в Великом Новгороде</span>
+        </div>
 
-      <div class="header__side">
-        <nav class="header__nav">
-          <ul>
-            <li><a href="#" class="header__link">Главная</a></li>
-            <li><a href="#" class="header__link active">О машинах</a></li>
-            <li><a href="#" class="header__link">Аренда</a></li>
-            <li><a href="#" class="header__link">Цены</a></li>
-          </ul>
-        </nav>
-  
-        <span class="header__line"></span>
+        <div class="header__side">
+          <nav class="header__nav">
+            <ul>
+              <li>
+                <a href="#" class="header__link">Главная</a>
+              </li>
+              <li>
+                <a href="#" class="header__link active">О машинах</a>
+              </li>
+              <li><a href="#" class="header__link">Аренда</a></li>
+              <li><a href="#" class="header__link">Цены</a></li>
+            </ul>
+          </nav>
 
-        <a href="tel:+79211234567" class="header__phone">
-          8(921) 123-45-67
-        </a>
+          <span class="header__line"></span>
+
+          <a href="tel:+79211234567" class="header__phone">
+            8(921) 123-45-67
+          </a>
+        </div>
       </div>
-  </div>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="container swiper-slide slide-1">
-            <div class="hero__wrapper">
-              <div class="hero__info">
-                <h1 class="hero__title">ПРОКАТ<br>КОМФОРТНОГО<br>АВТОМОБИЛЯ</h1>
-                <p class="hero__car-name">OMODA C5</p>
-                <p class="hero__car-price">от 2500 руб./сутки</p>
-                <button class="btn hero__btn">Подать заявку</button>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__swiper swiper">
+          <div class="swiper-wrapper">
+            <div class="container swiper-slide slide-1">
+              <div class="hero__wrapper">
+                <div class="hero__info">
+                  <h1 class="hero__title">
+                    ПРОКАТ<br />КОМФОРТНОГО<br />АВТОМОБИЛЯ
+                  </h1>
+                  <p class="hero__car-name">OMODA C5</p>
+                  <p class="hero__car-price">от 2500 руб./сутки</p>
+                  <button class="btn hero__btn">Подать заявку</button>
+                </div>
+                <div class="hero__image">
+                  <img
+                    src="./img/omoda-large.png"
+                    srcset="./img/omoda-large.png 1200w"
+                    alt="Автомобиль"
+                  />
+                </div>
               </div>
-              <div class="hero__image">
-                <img 
-                  src="./img/omoda-large.png" 
-                  srcset="./img/omoda-large.png 1200w" 
-                  alt="Автомобиль">
+            </div>
+            <div class="container swiper-slide slide-2">
+              <div class="hero__wrapper">
+                <div class="hero__info">
+                  <h1 class="hero__title">
+                    ПРОКАТ<br />КОМФОРТНОГО<br />АВТОМОБИЛЯ
+                  </h1>
+                  <p class="hero__car-name">EXEED LX</p>
+                  <p class="hero__car-price">от 3000 руб./сутки</p>
+                  <button class="btn hero__btn">Подать заявку</button>
+                </div>
+                <div class="hero__image">
+                  <img
+                    src="./img/exeed-large.png"
+                    srcset="./img/exeed-large.png 1200w"
+                    alt="Автомобиль"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="container swiper-slide slide-3">
+              <div class="hero__wrapper">
+                <div class="hero__info">
+                  <h1 class="hero__title">
+                    ПРОКАТ<br />КОМФОРТНОГО<br />АВТОМОБИЛЯ
+                  </h1>
+                  <p class="hero__car-name">ORA 03</p>
+                  <p class="hero__car-price">от 5000 руб./сутки</p>
+                  <button class="btn hero__btn">Подать заявку</button>
+                </div>
+                <div class="hero__image">
+                  <img
+                    src="./img/ora-large.png"
+                    srcset="./img/ora-large.png 1200w"
+                    alt="Автомобиль"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <div class="container swiper-slide slide-2">
-            <div class="hero__wrapper">
-              <div class="hero__info">
-                <h1 class="hero__title">ПРОКАТ<br>КОМФОРТНОГО<br>АВТОМОБИЛЯ</h1>
-                <p class="hero__car-name">EXEED LX</p>
-                <p class="hero__car-price">от 3000 руб./сутки</p>
-                <button class="btn hero__btn">Подать заявку</button>
-              </div>
-              <div class="hero__image"> 
-                <img 
-                  src="./img/exeed-large.png" 
-                  srcset="./img/exeed-large.png 1200w" 
-                  alt="Автомобиль">
-              </div>
+        </div>
+      </section>
+      <section class="features">
+        <div class="container">
+          <div class="features__wrapper features__item-1">
+            <div class="features__cover">
+              <img src="img/omoda-large.png" alt="Автомобиль" />
             </div>
-          </div>
-          <div class="container swiper-slide slide-3">
-            <div class="hero__wrapper">
-              <div class="hero__info">
-                <h1 class="hero__title">ПРОКАТ<br>КОМФОРТНОГО<br>АВТОМОБИЛЯ</h1>
-                <p class="hero__car-name">ORA 03</p>
-                <p class="hero__car-price">от 5000 руб./сутки</p>
-                <button class="btn hero__btn">Подать заявку</button>
-              </div>
-              <div class="hero__image">
-                <img 
-                  src="./img/ora-large.png" 
-                  srcset="./img/ora-large.png 1200w" 
-                  alt="Автомобиль">
-              </div>
+            <div class="features__side">
+              <h2 class="features__title">OMODA C5</h2>
+              <p class="features__subtitle">
+                СТИЛЬ И ТЕХНОЛОГИИ<br />В КАЖДОМ КИЛОМЕТРЕ
+              </p>
+              <p class="features__text">
+                Яркий кроссовер OMODA C5 сочетает в себе смелый дизайн,
+                просторный салон и современные технологии. Идеальный выбор для
+                тех, кто ценит внимание к деталям и хочет выделиться на дороге.
+                Откройте новый уровень комфорта и connected-возможностей.
+              </p>
+              <button class="features__btn btn">Узнать подробнее</button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="features">
-      <div class="container">
-        <div class="features__wrapper features__item-1">
-          <div class="features__cover">
-            <img src="img/omoda-large.png" alt="Автомобиль">
-          </div>
-          <div class="features__side">
-            <h2 class="features__title">OMODA C5</h2>
-            <p class="features__subtitle">СТИЛЬ И ТЕХНОЛОГИИ<br>В КАЖДОМ КИЛОМЕТРЕ</p>
-            <p class="features__text">Яркий кроссовер OMODA C5 сочетает в себе смелый дизайн, просторный салон и современные технологии. Идеальный выбор для тех, кто ценит внимание к деталям и хочет выделиться на дороге. Откройте новый уровень комфорта и connected-возможностей.</p>
-            <button class="features__btn btn">Узнать подробнее</button>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="features__wrapper features__item-2">
-          <div class="features__side">
-            <h2 class="features__title">EXEED LX</h2>
-            <p class="features__subtitle">ПРЕМИУМ-КОМФОРТ И УВЕРЕННОСТЬ НА ДОРОГЕ.</p>
-            <p class="features__text">EXEED LX — это бескомпромиссная роскошь и мощь. Просторный интерьер, высочайшее качество материалов и интеллектуальный полный привод обеспечат вам максимальное удовольствие от поездки по городу и за его пределами. Арендуйте статус и превосходство.</p>
-            <button class="features__btn btn">Узнать подробнее</button>
-          </div>
-          <div class="features__cover">
-            <img src="img/exeed-large.png" alt="Автомобиль">
+        <div class="container">
+          <div class="features__wrapper features__item-2">
+            <div class="features__side">
+              <h2 class="features__title">EXEED LX</h2>
+              <p class="features__subtitle">
+                ПРЕМИУМ-КОМФОРТ И УВЕРЕННОСТЬ НА ДОРОГЕ.
+              </p>
+              <p class="features__text">
+                EXEED LX — это бескомпромиссная роскошь и мощь. Просторный
+                интерьер, высочайшее качество материалов и интеллектуальный
+                полный привод обеспечат вам максимальное удовольствие от поездки
+                по городу и за его пределами. Арендуйте статус и превосходство.
+              </p>
+              <button class="features__btn btn">Узнать подробнее</button>
+            </div>
+            <div class="features__cover">
+              <img src="img/exeed-large.png" alt="Автомобиль" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="features__wrapper features__item-3">
-          <div class="features__cover">
-            <img src="img/ora-large.png" alt="Автомобиль">
-          </div>
-          <div class="features__side">
-            <h2 class="features__title">ORA 03</h2>
-            <p class="features__subtitle">ЭКОЛОГИЧНО, СТИЛЬНО И НЕВЕРОЯТНО ЭКОНОМИЧНО</p>
-            <p class="features__text">Будущее городской мобильности уже здесь! Электрокар ORA 03 поражает своим уникальным ретро-футуристичным дизайном, непревзойденной экономичностью и тишиной хода. Совершите тихую и экологичную революцию ваших ежедневных поездок.</p>
-            <button class="features__btn btn">Узнать подробнее</button>
+        <div class="container">
+          <div class="features__wrapper features__item-3">
+            <div class="features__cover">
+              <img src="img/ora-large.png" alt="Автомобиль" />
+            </div>
+            <div class="features__side">
+              <h2 class="features__title">ORA 03</h2>
+              <p class="features__subtitle">
+                ЭКОЛОГИЧНО, СТИЛЬНО И НЕВЕРОЯТНО ЭКОНОМИЧНО
+              </p>
+              <p class="features__text">
+                Будущее городской мобильности уже здесь! Электрокар ORA 03
+                поражает своим уникальным ретро-футуристичным дизайном,
+                непревзойденной экономичностью и тишиной хода. Совершите тихую и
+                экологичную революцию ваших ежедневных поездок.
+              </p>
+              <button class="features__btn btn">Узнать подробнее</button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+      <section class="plans">
+        <div class="container">
+          <div class="plans__wrapper">
+            <h2 class="plans__title">ВЫБЕРИ СВОЮ КОМПЛЕКТАЦИЮ</h2>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script type="module" src="js/main.js"></script>
-</body>
+            <div class="plans__swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="plans__card card swiper-slide">
+                  <div class="card__image">
+                    <img src="img/omoda-large.png" alt="Автомобиль" />
+                  </div>
+                  <div class="card__desc">
+                    <h3 class="card__title">EXEED LX</h3>
+                    <p class="card__subtitle">
+                      Комплектация <span>“Luxe”</span>
+                    </p>
+                    <p class="card__c-text">Характеристики:</p>
+                    <ul class="card__list">
+                      <li class="card__item">Двигатель: 147 л.с. бензин</li>
+                      <li class="card__item">Тип КПП: вариатор</li>
+                      <li class="card__item">Привод: передний</li>
+                      <li class="card__item">Расход топлива на 100 км: 7л</li>
+                      <li class="card__item">Количество мест: 5</li>
+                      <li class="card__item">Цвет кузова: черный</li>
+                      <li class="card__item">
+                        Резина: Nokian Hakkapeliitta R3
+                      </li>
+                    </ul>
+                    <button class="card__btn btn">
+                      Арендовать
+                      <span>от 3’300 ₽ / сут.</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="plans__card card swiper-slide">
+                  <div class="card__image">
+                    <img src="img/exeed-large.png" alt="Автомобиль" />
+                  </div>
+                  <div class="card__desc">
+                    <h3 class="card__title">EXEED LX</h3>
+                    <p class="card__subtitle">
+                      Комплектация <span>“Luxe”</span>
+                    </p>
+                    <p class="card__c-text">Характеристики:</p>
+                    <ul class="card__list">
+                      <li class="card__item">Двигатель: 147 л.с. бензин</li>
+                      <li class="card__item">Тип КПП: вариатор</li>
+                      <li class="card__item">Привод: передний</li>
+                      <li class="card__item">Расход топлива на 100 км: 7л</li>
+                      <li class="card__item">Количество мест: 5</li>
+                      <li class="card__item">Цвет кузова: черный</li>
+                      <li class="card__item">
+                        Резина: Nokian Hakkapeliitta R3
+                      </li>
+                    </ul>
+                    <button class="card__btn btn">
+                      Арендовать
+                      <span>от 3’300 ₽ / сут.</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="plans__card card swiper-slide">
+                  <div class="card__image">
+                    <img src="img/ora-large.png" alt="Автомобиль" />
+                  </div>
+                  <div class="card__desc">
+                    <h3 class="card__title">EXEED LX</h3>
+                    <p class="card__subtitle">
+                      Комплектация <span>“Luxe”</span>
+                    </p>
+                    <p class="card__c-text">Характеристики:</p>
+                    <ul class="card__list">
+                      <li class="card__item">Двигатель: 147 л.с. бензин</li>
+                      <li class="card__item">Тип КПП: вариатор</li>
+                      <li class="card__item">Привод: передний</li>
+                      <li class="card__item">Расход топлива на 100 км: 7л</li>
+                      <li class="card__item">Количество мест: 5</li>
+                      <li class="card__item">Цвет кузова: черный</li>
+                      <li class="card__item">
+                        Резина: Nokian Hakkapeliitta R3
+                      </li>
+                    </ul>
+                    <button class="card__btn btn">
+                      Арендовать
+                      <span>от 3’300 ₽ / сут.</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>

@@ -1,14 +1,13 @@
-
 .slide-1 {
-    background: #1F1F1F;
+    background: #1f1f1f;
 }
 
 .slide-2 {
-    background: #29253B;
+    background: #29253b;
 }
 
 .slide-3 {
-    background: #0C0C0C;
+    background: #0c0c0c;
 }
 
 .hero__wrapper {
@@ -18,7 +17,7 @@
 }
 
 .hero__title {
-    color: #E1E1E1;
+    color: #e1e1e1;
     font-size: clamp(24px, 4vw, 46px);
     font-weight: 400;
     line-height: 1.2;
@@ -56,42 +55,60 @@
 }
 
 @keyframes glow-1 {
-  0%   { filter: drop-shadow(0 0 80px #323232); }
-  50%  { filter: drop-shadow(0 0 100px #797979); }
-  100% { filter: drop-shadow(0 0 80px #323232); }
+    0% {
+        filter: drop-shadow(0 0 80px #323232);
+    }
+    50% {
+        filter: drop-shadow(0 0 100px #797979);
+    }
+    100% {
+        filter: drop-shadow(0 0 80px #323232);
+    }
 }
 
 @keyframes glow-2 {
-  0%   { filter: drop-shadow(0 0 80px #3B3653); }
-  50%  { filter: drop-shadow(0 0 100px #886aa7); }
-  100% { filter: drop-shadow(0 0 80px #3B3653); }
+    0% {
+        filter: drop-shadow(0 0 80px #3b3653);
+    }
+    50% {
+        filter: drop-shadow(0 0 100px #886aa7);
+    }
+    100% {
+        filter: drop-shadow(0 0 80px #3b3653);
+    }
 }
 
 @keyframes glow-3 {
-  0%   { filter: drop-shadow(0 0 80px #2E2E2E); }
-  50%  { filter: drop-shadow(0 0 100px #616161); }
-  100% { filter: drop-shadow(0 0 80px #2E2E2E); }
+    0% {
+        filter: drop-shadow(0 0 80px #2e2e2e);
+    }
+    50% {
+        filter: drop-shadow(0 0 100px #616161);
+    }
+    100% {
+        filter: drop-shadow(0 0 80px #2e2e2e);
+    }
 }
 
 .hero__car-price {
-  font-size: 36px;
-  color: #CB2915;
-  font-weight: 600;
-  margin-bottom: 30px;
+    font-size: 36px;
+    color: #cb2915;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
 .hero__btn {
-  background-color: #737373;
-  padding: 18px 40px;
-  font-size: 22px;
-  font-weight: 400;
-  transition: all 0.3s ease;
+    background-color: #737373;
+    padding: 18px 40px;
+    font-size: 22px;
+    font-weight: 400;
+    transition: all 0.3s ease;
 }
 
 .hero__btn:hover {
-    background-color: #CB2915;
+    background-color: #cb2915;
 }
 
-.swiper {
+.hero__swiper {
     height: 100vh;
 }
