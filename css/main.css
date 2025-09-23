@@ -357,13 +357,12 @@ table {
 }
 
 .features .container {
-  height: 90vh;
+  height: auto;
 }
 
 .features__wrapper {
   display: flex;
-  height: 90vh;
-  padding: 180px 150px 100px 150px;
+  padding: 180px 150px 180px 150px;
   gap: 100px;
 }
 
@@ -603,7 +602,6 @@ body {
 }
 
 .container {
-  max-width: 1920px;
   margin: 0 auto;
   width: 100%;
   height: 100vh;
