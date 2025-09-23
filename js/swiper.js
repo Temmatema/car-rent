@@ -18,9 +18,7 @@ const plansSwiper = new Swiper(".plans__swiper", {
       swiper.slides.forEach((slide) => {
         const slideProgress = slide.progress;
         const scale = 1 - Math.min(Math.abs(slideProgress * 0.2), 0.4);
-        const opacity = 1 - Math.min(Math.abs(slideProgress / 2), 0.5);
         slide.style.transform = `scale(${scale})`;
-        slide.style.opacity = opacity;
       });
     },
     setTransition(swiper, transition) {

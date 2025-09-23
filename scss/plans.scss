@@ -132,12 +132,15 @@
   height: 550px;
   margin: 0;
   transform: scale(1) !important;
+  transition: all 0.4s ease !important;
+  opacity: 0.4;
 }
 
 .plans__swiper .swiper-slide-active {
   transform: scale(1.2) !important;
   box-shadow: 0 0 30px 0 #7979795b;
   z-index: 1;
+  opacity: 1;
 }
 
 .swiper-button-next {
