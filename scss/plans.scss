@@ -1,5 +1,9 @@
+.plans .container {
+    height: inherit;
+}
+
 .plans__wrapper {
-    padding: 80px 100px;
+    padding: 80px 100px 100px;
 }
 
 .plans__title {
@@ -16,7 +20,6 @@
 .card {
     background-color: #e6e6e6;
     border: none;
-    width: 60vw;
     margin: 0 auto;
     padding: 0;
     overflow: hidden;
@@ -32,6 +35,9 @@
 
 .card__desc {
     min-width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #d9d9d9;
     padding: 50px 40px;
     border-radius: 35px 0 0 35px;
@@ -39,7 +45,7 @@
 
 .card__title {
     color: #393939;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     position: relative;
     margin-bottom: 10px;
@@ -57,8 +63,8 @@
 
 .card__subtitle {
     font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .card__subtitle span {
@@ -76,7 +82,11 @@
     flex-direction: column;
     list-style: circle;
     gap: 3px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+}
+
+.card__item {
+    font-size: 12px;
 }
 
 .card__btn {
@@ -87,7 +97,7 @@
     font-weight: 400;
     color: #000;
     border: 1px #878787 solid;
-    font-size: 18px;
+    font-size: 14px;
     position: relative;
     z-index: 0;
     overflow: hidden;
@@ -128,8 +138,8 @@
 }
 
 .plans__swiper .swiper-slide {
-  width: 60vw;
-  height: 550px;
+  width: 50vw;
+  height: 450px;
   margin: 0;
   transform: scale(1) !important;
   transition: all 0.4s ease !important;

@@ -1,0 +1,36 @@
+.desc__wrapper {
+    padding: 120px 140px 120px;
+}
+
+.desc__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 90px;
+}
+
+.desc__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line {
+    height: 1px;
+    background-color: #E0E0E0;
+    display: block;
+    flex: 1;
+    margin-top: 50px;
+}
+
+.desc__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.desc__text {
+    font-size: 14px;
+    text-wrap: nowrap;
+}
