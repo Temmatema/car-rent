@@ -1,9 +1,15 @@
+@use "breakpoints" as *;
+
 .plans .container {
     height: inherit;
 }
 
 .plans__wrapper {
     padding: 80px 100px 100px;
+
+    @include respond(desktop) {
+        padding: 50px 50px 50px;
+    }
 }
 
 .plans__title {
@@ -11,6 +17,11 @@
     font-weight: 400;
     font-size: 38px;
     margin-bottom: 120px;
+
+    @include respond(desktop) {
+        font-size: 32px;
+        margin-bottom: 80px;
+    }
 }
 
 .plans__swiper .swiper-slide {
@@ -39,8 +50,13 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #d9d9d9;
-    padding: 50px 40px;
+    padding: 30px 30px;
     border-radius: 35px 0 0 35px;
+
+    @include respond(desktop) {
+        min-width: 45%;
+        padding: 20px 20px;
+    }
 }
 
 .card__title {
@@ -58,6 +74,10 @@
         height: 1px;
         width: 70%;
         background-color: #bcbcbc;
+    }
+
+    @include respond(desktop) {
+        font-size: 22px;
     }
 }
 
@@ -83,6 +103,11 @@
     list-style: circle;
     gap: 3px;
     margin-bottom: 30px;
+
+    @include respond(desktop) {
+        gap: 2px;
+        margin-bottom: 20px;
+    }
 }
 
 .card__item {
@@ -92,7 +117,7 @@
 .card__btn {
     display: block;
     margin: 0 auto;
-    padding: 10px 30px;
+    padding: 10px 20px;
     background-color: transparent;
     font-weight: 400;
     color: #000;
@@ -106,6 +131,11 @@
     span {
         color: #cb2915;
         transition: color 0.3s ease;
+    }
+
+    @include respond(desktop) {
+        font-size: 12px;
+        padding: 8px 16px;
     }
 }
 
@@ -138,12 +168,17 @@
 }
 
 .plans__swiper .swiper-slide {
-  width: 50vw;
-  height: 450px;
+  width: 40vw;
+  height: 400px;
   margin: 0;
   transform: scale(1) !important;
   transition: all 0.4s ease !important;
   opacity: 0.4;
+
+  @include respond(desktop) {
+    width: 45vw;
+    height: 350px;
+  }
 }
 
 .plans__swiper .swiper-slide-active {
@@ -155,9 +190,13 @@
 
 .swiper-button-next {
     color: #393939 !important;
-    right: 100px !important;
+    right: 250px !important;
     filter: drop-shadow(0 0 10px #393939);
     animation: move-next 4s infinite linear;
+
+    @include respond(desktop) {
+        right: 150px !important;
+    }
 }
 
 @keyframes move-next {
@@ -174,9 +213,13 @@
 
 .swiper-button-prev {
     color: #393939 !important;
-    left: 100px !important;
+    left: 250px !important;
     filter: drop-shadow(0 0 10px #393939);
     animation: move-prev 4s infinite linear;
+
+    @include respond(desktop) {
+        left: 150px !important;
+    }
 }
 
 @keyframes move-prev {

@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 .app {
     position: relative;
 }
@@ -16,6 +18,9 @@
 .app__wrapper {
     padding: 90px 150px;
     
+    @include respond(desktop) {
+        padding: 90px 100px;
+    }
 }
 
 .app__title {
@@ -28,6 +33,7 @@
 .app__content {
     display: flex;
     align-items: center;
+    gap: 100px;
     justify-content: space-between;
 }
 
@@ -41,6 +47,10 @@
 .app__image {
     width: 900px;
     margin-bottom: 50px;
+
+    @include respond(desktop) {
+        width: 700px;
+    }
 }
 
 .app__auto-names {
@@ -112,4 +122,8 @@
     width: 380px;
     font-size: 18px;
     border: none;
+
+    @include respond(desktop) {
+        padding: 12px 18px;
+    }
 }

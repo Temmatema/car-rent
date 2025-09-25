@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 .features .container {
     height: auto;
 }
@@ -7,6 +9,11 @@
     padding: 150px;
     gap: 100px;
     align-items: center;
+
+    @include respond(desktop) {
+        padding: 100px;
+        gap: 50px;
+    }
 }
 
 .features__item-1 {
@@ -44,12 +51,21 @@
     line-height: 1.2;
     font-size: 40px;
     margin-bottom: 20px;
+    
+    @include respond(desktop) {
+        font-size: 32px;
+    }
 }
 
 .features__text {
     color: #4d4d4d;
     font-size: 20px;
     margin-bottom: 80px;
+
+    @include respond(desktop) {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
 }
 
 .features__btn {
@@ -64,6 +80,11 @@
     font-size: 18px;
     z-index: 0;
     transition: color 0.3s ease;
+
+    @include respond(desktop) {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
 }
 
 .features__btn::before {

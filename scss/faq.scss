@@ -1,5 +1,11 @@
+@use "breakpoints" as *;
+
 .faq {
   padding: 60px 150px;
+
+  @include respond(desktop) {
+    padding: 60px 100px;
+  }
 }
 
 .faq__title {
@@ -27,6 +33,7 @@
   width: 100%;
   background: none;
   border: none;
+  text-align: left;
   padding: 20px;
   display: flex;
   align-items: center;

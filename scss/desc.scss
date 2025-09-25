@@ -1,5 +1,11 @@
+@use "breakpoints" as *;
+
 .desc__wrapper {
     padding: 120px 140px 180px;
+
+    @include respond(desktop) {
+        padding: 120px 100px 150px;
+    }
 }
 
 .desc__title {
@@ -7,6 +13,10 @@
     font-weight: 400;
     font-size: 32px;
     margin-bottom: 90px;
+
+    @include respond(desktop) {
+        font-size: 28px;
+    }
 }
 
 .desc__list {

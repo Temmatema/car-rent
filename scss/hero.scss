@@ -1,3 +1,5 @@
+@use "breakpoints" as *;
+
 .slide-1 {
     background: #1f1f1f;
 }
@@ -11,23 +13,27 @@
 }
 
 .hero__wrapper {
-    padding: 50px clamp(100px, 8vw, 140px) 0 clamp(100px, 8vw, 140px);
+    padding: 50px 150px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+
+    @include respond(desktop) {
+        padding: 50px 100px 0;
+    }
 }
 
 .hero__title {
     color: #e1e1e1;
-    font-size: clamp(24px, 4vw, 46px);
+    font-size: 46px;
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 10px;
 }
 
 .hero__car-name {
-    font-size: clamp(24px, 4vw, 78px);
+    font-size: 78px;
     font-weight: 800;
     color: #fff;
     line-height: 1.2;

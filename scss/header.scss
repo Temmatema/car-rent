@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     padding: 40px clamp(100px, 8vw, 140px);
+    align-items: flex-start;
 }
 
 .header__logo {
