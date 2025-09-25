@@ -651,7 +651,7 @@ table {
   }
 }
 .desc__wrapper {
-  padding: 120px 140px 120px;
+  padding: 120px 140px 180px;
 }
 
 .desc__title {
@@ -685,6 +685,103 @@ table {
 .desc__text {
   font-size: 14px;
   text-wrap: nowrap;
+}
+
+.app__wrapper {
+  padding: 90px 150px;
+  background: #282828;
+  background: radial-gradient(circle at 20% 50%, #282828 10%, #3C3C3C 100%);
+}
+
+.app__title {
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 80px;
+}
+
+.app__content {
+  display: flex;
+  gap: 280px;
+}
+
+.app__side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.app__image {
+  width: auto;
+  margin-bottom: 50px;
+}
+
+.app__auto-names {
+  font-style: 28px;
+  margin-bottom: 30px;
+}
+
+.app__auto-names span {
+  font-size: 32px;
+}
+
+.app__an1 {
+  color: #B9B3D2;
+}
+
+.app__an2 {
+  color: #E02727;
+}
+
+.app__help-text {
+  max-width: 500px;
+  font-size: 18px;
+}
+.app__help-text a {
+  color: #E02727;
+  text-wrap: nowrap;
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__btn {
+  margin-top: 30px;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 8px;
+  border: 1px #8D8D8D solid;
+  width: auto;
+  padding: 12px 60px;
+  transition: all 0.2s ease;
+}
+
+.form__btn:hover {
+  background-color: #E02727;
+}
+
+.form__label {
+  color: #fff;
+  font-weight: 400;
+}
+
+.form input {
+  padding: 12px;
+  border-radius: 8px;
+  width: 380px;
+  border: none;
 }
 
 body {

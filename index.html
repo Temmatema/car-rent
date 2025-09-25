@@ -299,6 +299,48 @@
           </ul>
         </div>
       </section>
+      <section class="app">
+        <div class="app__wrapper">
+          <h2 class="app__title">ПОДАТЬ ЗАЯВКУ НА АРЕНДУ АВТО</h2>
+          <div class="app__content">
+            <div class="app__layout">
+              <form action="#" method="post" class="form">
+                <div class="form__field">
+                  <label class="form__label" for="name">ФИО Полностью</label>
+                  <input type="text" id="name" name="name" placeholder="Петров Иван Иванович" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label class="form__label" for="birthday">Дата рождения</label>
+                  <input type="date" id="birthday" name="birthday" placeholder="00-00-0000" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label class="form__label" for="license">Серия и номер В/У</label>
+                  <input type="text" id="license" name="series_license" placeholder="99 АВ 999999" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label class="form__label" for="date_license">Дата выдачи В/У</label>
+                  <input type="date" id="date_license" name="date_license" placeholder="00-00-0000" class="form__input" required>
+                </div>
+                <div class="form__field">
+                  <label class="form__label" for="phone">Номер телефона</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+7(999) 999 99 99" class="form__input" required>
+                </div>
+                <button type="submit" class="form__btn btn">Подать заявку</button>
+              </form>
+            </div>
+            <div class="app__side">
+              <p class="app__auto-names">
+                Автомобили в наличии:<br>
+                <span>OMODA C5;</span> <span class="app__an1">EXEED LX; </span> <span class="app__an2">ORA 03</span></p>
+              <img class="app__image" src="img/omoda-large.png" alt="Автомобиль" width="660" height="335">
+              <p class="app__help-text">
+                Если по каким-то причинам у Вас не получается заполнить заявку, то звоните по номеру
+                <a href="tel:+79211234567">8(921) 123-45-67</a>, и мы решим все вопросы
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
