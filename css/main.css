@@ -764,8 +764,9 @@ table {
   border-radius: 8px;
   border: 1px #8D8D8D solid;
   width: auto;
-  padding: 12px 60px;
+  padding: 13px 60px;
   transition: all 0.2s ease;
+  font-size: 18px;
 }
 
 .form__btn:hover {
@@ -775,12 +776,14 @@ table {
 .form__label {
   color: #fff;
   font-weight: 400;
+  font-size: 18px;
 }
 
 .form input {
-  padding: 12px;
+  padding: 14px 18px;
   border-radius: 8px;
   width: 380px;
+  font-size: 18px;
   border: none;
 }
 
