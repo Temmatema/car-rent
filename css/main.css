@@ -702,7 +702,8 @@ table {
 
 .app__content {
   display: flex;
-  gap: 280px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .app__side {
@@ -713,7 +714,7 @@ table {
 }
 
 .app__image {
-  width: auto;
+  width: 900px;
   margin-bottom: 50px;
 }
 
