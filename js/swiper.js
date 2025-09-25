@@ -37,3 +37,24 @@ const plansSwiper = new Swiper(".plans__swiper", {
       prevEl: ".swiper-button-prev",
   },
 });
+
+const gallerySwiper = new Swiper(".gallery-swiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 4, // важный параметр для coverflow
+  loop: true,
+  coverflowEffect: {
+    rotate: 0,    // угол поворота боковых слайдов
+    stretch: 0,    // расстояние между слайдами
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  speed: 7000,
+});
+

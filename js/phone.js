@@ -51,7 +51,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
-const crosses = Array.from({length: 50}, () => ({
+const crosses = Array.from({length: 60}, () => ({
   x: Math.random()*canvas.width,
   y: Math.random()*canvas.height,
   size: 10 + Math.random()*10,
@@ -61,7 +61,7 @@ const crosses = Array.from({length: 50}, () => ({
 
 function draw() {
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.strokeStyle = "rgba(110, 110, 110, 0.25)";
+  ctx.strokeStyle = "rgba(110, 110, 110, 0.13)";
   ctx.lineWidth = 2;
   crosses.forEach(c => {
     ctx.save();
