@@ -6,9 +6,11 @@
 
 .plans__wrapper {
     padding: 80px 100px 100px;
+    max-width: 1920px;
+    margin: 0 auto;
 
     @include respond(desktop) {
-        padding: 50px 50px 50px;
+        padding: 50px 50px 70px;
     }
 }
 
@@ -25,7 +27,8 @@
 }
 
 .plans__swiper .swiper-slide {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
 }
 
 .card {
@@ -45,7 +48,6 @@
 }
 
 .card__desc {
-    min-width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -164,16 +166,19 @@
 }
 
 .plans__swiper {
-  overflow: visible !important;
+    overflow: visible !important;
 }
 
 .plans__swiper .swiper-slide {
-  width: 40vw;
-  height: 400px;
+  width: 35vw;
   margin: 0;
   transform: scale(1) !important;
   transition: all 0.4s ease !important;
   opacity: 0.4;
+
+  @include media-max(2200px) {
+    width: 40vw;
+  }
 
   @include respond(desktop) {
     width: 45vw;

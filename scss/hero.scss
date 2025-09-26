@@ -13,11 +13,14 @@
 }
 
 .hero__wrapper {
-    padding: 50px 150px 0;
-    display: flex;
+    padding: 50px clamp(40px, 8vw, 150px) 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 
     @include respond(desktop) {
         padding: 50px 100px 0;
@@ -33,15 +36,11 @@
 }
 
 .hero__car-name {
-    font-size: 78px;
+    font-size: clamp(36px, 4.5vw, 78px);
     font-weight: 800;
     color: #fff;
     line-height: 1.2;
     margin-bottom: 10px;
-}
-
-.hero__image {
-    width: 50vw;
 }
 
 .slide-1 .hero__image {

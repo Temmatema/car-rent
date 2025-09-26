@@ -2,6 +2,8 @@
 
 .desc__wrapper {
     padding: 120px 140px 180px;
+    max-width: 1920px;
+    margin: 0 auto;
 
     @include respond(desktop) {
         padding: 120px 100px 150px;

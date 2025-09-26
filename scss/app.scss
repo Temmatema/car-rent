@@ -17,6 +17,8 @@
 
 .app__wrapper {
     padding: 90px 150px;
+    max-width: 1920px;
+    margin: 0 auto;
     
     @include respond(desktop) {
         padding: 90px 100px;
