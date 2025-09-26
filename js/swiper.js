@@ -42,11 +42,11 @@ const gallerySwiper = new Swiper(".gallery-swiper", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
-  slidesPerView: 4, // важный параметр для coverflow
+  slidesPerView: 4,
   loop: true,
   coverflowEffect: {
-    rotate: 0,    // угол поворота боковых слайдов
-    stretch: 0,    // расстояние между слайдами
+    rotate: 0,
+    stretch: 0,
     depth: 100,
     modifier: 1,
     slideShadows: true,
