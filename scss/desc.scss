@@ -12,6 +12,10 @@
     @include respond(laptop) {
         padding: 100px 80px 150px;
     }
+
+    @include respond(mobile) {
+        padding: 40px 20px;
+    }
 }
 
 .desc__title {
@@ -32,6 +36,10 @@
 
     @include respond(laptop) {
         gap: 20px;
+    }
+
+    @include respond(mobile) {
+        flex-direction: column;
     }
 }
 

@@ -20,16 +20,29 @@
     @include respond(laptop) {
         padding: 40px 80px;
     }
+
+    @include respond(mobile) {
+        padding: 30px 20px;
+    }
 }
 
 .header__logo {
     display: flex;
     gap: 20px;
     align-items: center;
+
+    @include respond(mobile) {
+        width: 70px;
+    }
 }
 
 .header__logo span {
     font-size: 16px;
+
+    @include respond(mobile) {
+        font-size: 14px;
+        white-space: nowrap;
+    }
 }
 
 .header__side {
@@ -101,6 +114,11 @@
     cursor: pointer;
     z-index: 1001;
     mix-blend-mode: difference;
+
+    @include respond(mobile) {
+        right: 20px;
+        width: 40px;
+    }
 }
 
 .burger span {

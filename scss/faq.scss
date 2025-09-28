@@ -20,7 +20,12 @@
 .faq__acc {
     display: grid;
     grid-template-columns: 1fr 1fr; /* две колонки одинаковой ширины */
-    gap: 30px; /* расстояние между колонками */
+    gap: 30px;
+
+    @include respond(mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .faq__item {

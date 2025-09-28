@@ -20,6 +20,10 @@
     display: flex;
     justify-content: center;
     gap: 50px;
+
+    @include respond(mobile) {
+        flex-direction: column;
+    }
 }
 
 .contact__block {
@@ -29,11 +33,20 @@
     text-align: center;
     width: 300px;
     gap: 15px;
+
+    @include respond(mobile) {
+        width: 100%;
+    }
 }
 
 .contact__block:not(:last-child) {
     border-right: 1px solid #ddd;
     padding-right: 50px;
+
+    @include respond(mobile) {
+        border-right: none;
+        padding-right: 0;
+    }
 }
 
 .contact__text {

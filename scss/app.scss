@@ -49,6 +49,10 @@
     @include respond(laptop) {
         gap: 70px;
     }
+
+    @include respond(mobile) {
+        flex-direction: column;
+    }
 }
 
 .app__side {

@@ -1,8 +1,13 @@
+@use "breakpoints" as *; 
 .footer {
     padding: 80px 150px 50px;
     color: white;
     background: #2e2e2e;
     background: radial-gradient(circle at 80% 50%, #282828 10%, #3c3c3c 100%);
+
+    @include respond(mobile) {
+        padding: 40px 20px;
+    }
 }
 
 .footer__wrapper {
@@ -11,11 +16,19 @@
     align-items: flex-start;
     max-width: 1920px;
     margin: 0 auto;
+
+    @include respond(mobile) {
+        flex-direction: column;
+    }
 }
 
 .footer__blocks {
     display: flex;
     gap: 100px;
+
+    @include respond(mobile) {
+        flex-direction: column;
+    }
 }
 
 .footer__links {

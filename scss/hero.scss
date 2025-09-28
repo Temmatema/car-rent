@@ -37,6 +37,11 @@
         padding: 180px 80px 150px;
         gap: 50px;
     }
+
+    @include respond(mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .hero__title {

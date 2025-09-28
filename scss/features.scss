@@ -21,6 +21,11 @@
     @include respond(laptop) {
         padding: 60px 80px;
     }
+
+    @include respond(mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .features__item-1 {
