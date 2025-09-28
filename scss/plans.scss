@@ -29,6 +29,10 @@
 .plans__swiper .swiper-slide {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
+
+    @include respond(laptop) {
+        grid-template-columns: 1fr 1.2fr;
+    }
 }
 
 .card {
@@ -39,12 +43,21 @@
     overflow: hidden;
     border-radius: 35px;
     border: 1px #afafaf solid;
-}
 
+}
 
 .card__image {
     padding: 30px;
     margin: auto;
+
+    @include respond(laptop) {
+        position: absolute;
+        height: 100%;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
 }
 
 .card__desc {
@@ -58,6 +71,13 @@
     @include respond(desktop) {
         min-width: 45%;
         padding: 20px 20px;
+    }
+
+    @include respond(laptop) {
+        min-width: auto;
+        grid-column: 2 / 3;
+        box-shadow: 0 0 10px 0 rgba(83, 83, 83, 0.368);
+        z-index: 1;
     }
 }
 
@@ -170,27 +190,32 @@
 }
 
 .plans__swiper .swiper-slide {
-  width: 35vw;
-  margin: 0;
-  transform: scale(1) !important;
-  transition: all 0.4s ease !important;
-  opacity: 0.4;
+    width: 35vw;
+    margin: 0;
+    transform: scale(1) !important;
+    transition: all 0.4s ease !important;
+    opacity: 0.4;
 
-  @include media-max(2200px) {
-    width: 40vw;
-  }
+    @include media-max(2200px) {
+        width: 40vw;
+    }
 
-  @include respond(desktop) {
-    width: 45vw;
-    height: 350px;
-  }
+    @include respond(desktop) {
+        width: 45vw;
+        height: 350px;
+    }
+
+    @include respond(laptop) {
+        width: 50vw;
+        height: 350px;
+    }
 }
 
 .plans__swiper .swiper-slide-active {
-  transform: scale(1.2) !important;
-  box-shadow: 0 0 30px 0 #7979795b;
-  z-index: 1;
-  opacity: 1;
+    transform: scale(1.2) !important;
+    box-shadow: 0 0 30px 0 #7979795b;
+    z-index: 1;
+    opacity: 1;
 }
 
 .swiper-button-next {
@@ -201,6 +226,10 @@
 
     @include respond(desktop) {
         right: 150px !important;
+    }
+
+    @include respond(laptop) {
+        right: 80px !important;
     }
 }
 
@@ -224,6 +253,10 @@
 
     @include respond(desktop) {
         left: 150px !important;
+    }
+
+    @include respond(laptop) {
+        left: 80px !important;
     }
 }
 

@@ -17,6 +17,11 @@
     <title>Аренда автомобилей Великий Новгород</title>
   </head>
   <body>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <header class="header">
       <div class="header__inner">
         <div class="header__logo">
@@ -28,21 +33,26 @@
           <nav class="header__nav">
             <ul>
               <li>
-                <a href="#" class="header__link">Главная</a>
+                <a href="#" class="header__link header__link-main">Главная</a>
               </li>
               <li>
-                <a href="#" class="header__link active">О машинах</a>
+                <a href="#" class="header__link active header__link-car"
+                  >О машинах</a
+                >
               </li>
-              <li><a href="#" class="header__link">Аренда</a></li>
-              <li><a href="#" class="header__link">Цены</a></li>
+              <li>
+                <a href="#" class="header__link header__link-rent">Аренда</a>
+              </li>
+              <li>
+                <a href="#" class="header__link header__link-price">Цены</a>
+              </li>
             </ul>
+            <a href="tel:+79211234567" class="header__phone">
+              8(921) 123-45-67
+            </a>
           </nav>
 
           <span class="header__line"></span>
-
-          <a href="tel:+79211234567" class="header__phone">
-            8(921) 123-45-67
-          </a>
         </div>
       </div>
     </header>
@@ -125,8 +135,9 @@
                 <p class="features__text">
                   Яркий кроссовер OMODA C5 сочетает в себе смелый дизайн,
                   просторный салон и современные технологии. Идеальный выбор для
-                  тех, кто ценит внимание к деталям и хочет выделиться на дороге.
-                  Откройте новый уровень комфорта и connected-возможностей.
+                  тех, кто ценит внимание к деталям и хочет выделиться на
+                  дороге. Откройте новый уровень комфорта и
+                  connected-возможностей.
                 </p>
                 <button class="features__btn btn">Узнать подробнее</button>
               </div>
@@ -144,8 +155,9 @@
                 <p class="features__text">
                   EXEED LX — это бескомпромиссная роскошь и мощь. Просторный
                   интерьер, высочайшее качество материалов и интеллектуальный
-                  полный привод обеспечат вам максимальное удовольствие от поездки
-                  по городу и за его пределами. Арендуйте статус и превосходство.
+                  полный привод обеспечат вам максимальное удовольствие от
+                  поездки по городу и за его пределами. Арендуйте статус и
+                  превосходство.
                 </p>
                 <button class="features__btn btn">Узнать подробнее</button>
               </div>
@@ -169,8 +181,8 @@
                 <p class="features__text">
                   Будущее городской мобильности уже здесь! Электрокар ORA 03
                   поражает своим уникальным ретро-футуристичным дизайном,
-                  непревзойденной экономичностью и тишиной хода. Совершите тихую и
-                  экологичную революцию ваших ежедневных поездок.
+                  непревзойденной экономичностью и тишиной хода. Совершите тихую
+                  и экологичную революцию ваших ежедневных поездок.
                 </p>
                 <button class="features__btn btn">Узнать подробнее</button>
               </div>
@@ -279,27 +291,32 @@
           <h2 class="desc__title">УСЛОВИЯ АРЕНДЫ АВТО</h2>
           <ul class="desc__list">
             <li class="desc__item">
-              <img src="img/age.svg" alt="Возраст" width="100" height="100">
+              <img src="img/age.svg" alt="Возраст" width="100" height="100" />
               <p class="desc__text">Возраст от 25 лет</p>
             </li>
             <span class="line"></span>
             <li class="desc__item">
-              <img src="img/KBM.svg" alt="КБМ" width="100" height="100">
+              <img src="img/KBM.svg" alt="КБМ" width="100" height="100" />
               <p class="desc__text">КБМ ≦0,95</p>
             </li>
             <span class="line"></span>
             <li class="desc__item">
-              <img src="img/registration.svg" alt="Прописка" width="100" height="100">
+              <img
+                src="img/registration.svg"
+                alt="Прописка"
+                width="100"
+                height="100"
+              />
               <p class="desc__text">Постоянная прописка</p>
             </li>
             <span class="line"></span>
             <li class="desc__item">
-              <img src="img/taxi.svg" alt="Такси" width="100" height="100">
+              <img src="img/taxi.svg" alt="Такси" width="100" height="100" />
               <p class="desc__text">НЕ ДЛЯ ТАКСИ</p>
             </li>
             <span class="line"></span>
             <li class="desc__item">
-              <img src="img/deposit.svg" alt="Залог" width="100" height="100">
+              <img src="img/deposit.svg" alt="Залог" width="100" height="100" />
               <p class="desc__text">Залог - 5000 руб.</p>
             </li>
           </ul>
@@ -314,40 +331,95 @@
               <form action="#" method="post" class="form">
                 <div class="form__field">
                   <label class="form__label" for="name">ФИО Полностью</label>
-                  <input type="text" id="name" name="name" placeholder="Петров Иван Иванович" class="form__input" required>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Петров Иван Иванович"
+                    class="form__input"
+                    required
+                  />
                 </div>
                 <div class="form__field">
-                  <label class="form__label" for="birthday">Дата рождения</label>
-                  <input type="date" id="birthday" name="birthday" placeholder="00-00-0000" class="form__input" required>
+                  <label class="form__label" for="birthday"
+                    >Дата рождения</label
+                  >
+                  <input
+                    type="date"
+                    id="birthday"
+                    name="birthday"
+                    placeholder="00-00-0000"
+                    class="form__input"
+                    required
+                  />
                 </div>
                 <div class="form__field">
-                  <label class="form__label" for="license">Серия и номер В/У</label>
-                  <input type="text" id="license" name="series_license" placeholder="99 АВ 999999" class="form__input" required>
+                  <label class="form__label" for="license"
+                    >Серия и номер В/У</label
+                  >
+                  <input
+                    type="text"
+                    id="license"
+                    name="series_license"
+                    placeholder="99 АВ 999999"
+                    class="form__input"
+                    required
+                  />
                 </div>
                 <div class="form__field">
-                  <label class="form__label" for="date_license">Дата выдачи В/У</label>
-                  <input type="date" id="date_license" name="date_license" placeholder="00-00-0000" class="form__input" required>
+                  <label class="form__label" for="date_license"
+                    >Дата выдачи В/У</label
+                  >
+                  <input
+                    type="date"
+                    id="date_license"
+                    name="date_license"
+                    placeholder="00-00-0000"
+                    class="form__input"
+                    required
+                  />
                 </div>
                 <div class="form__field">
                   <label class="form__label" for="phone">Номер телефона</label>
-                  <input type="tel" id="phone" name="phone" placeholder="+7(999) 999 99 99" class="form__input" required>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+7(999) 999 99 99"
+                    class="form__input"
+                    required
+                  />
                 </div>
-                <button type="submit" class="form__btn btn">Подать заявку</button>
+                <button type="submit" class="form__btn btn">
+                  Подать заявку
+                </button>
               </form>
             </div>
             <div class="app__side">
               <div>
                 <p class="app__auto-names">Автомобили в наличии:</p>
-                  <div class="app__btn-wrap">
-                    <button class="app__button-name btn name-omoda">OMODA C5</button>
-                    <button class="app__button-name btn name-exeed">EXEED LX</button>
-                    <button class="app__button-name btn name-ora">ORA 03</button>
-                  </div>
+                <div class="app__btn-wrap">
+                  <button class="app__button-name btn name-omoda">
+                    OMODA C5
+                  </button>
+                  <button class="app__button-name btn name-exeed">
+                    EXEED LX
+                  </button>
+                  <button class="app__button-name btn name-ora">ORA 03</button>
+                </div>
               </div>
-              <img class="app__image" src="img/omoda-large.png" alt="Автомобиль" width="660" height="335">
+              <img
+                class="app__image"
+                src="img/omoda-large.png"
+                alt="Автомобиль"
+                width="660"
+                height="335"
+              />
               <p class="app__help-text">
-                Если по каким-то причинам у Вас не получается заполнить заявку, то звоните по номеру
-                <a href="tel:+79211234567">8(921) 123-45-67</a>, и мы решим все вопросы
+                Если по каким-то причинам у Вас не получается заполнить заявку,
+                то звоните по номеру
+                <a href="tel:+79211234567">8(921) 123-45-67</a>, и мы решим все
+                вопросы
               </p>
             </div>
           </div>
@@ -358,20 +430,48 @@
           <h2 class="gallery__title">ГАЛЕРЕЯ</h2>
           <div class="swiper gallery-swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="img/photos/1.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/2.jpg" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/3.jpg" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/4.jpg" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/5.jpg" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/6.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/7.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/8.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/9.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/10.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/11.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/13.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/14.png" alt="Автомобиль"></div>
-              <div class="swiper-slide"><img src="img/photos/15.png" alt="Автомобиль"></div>
+              <div class="swiper-slide">
+                <img src="img/photos/1.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/2.jpg" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/3.jpg" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/4.jpg" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/5.jpg" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/6.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/7.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/8.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/9.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/10.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/11.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/13.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/14.png" alt="Автомобиль" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/photos/15.png" alt="Автомобиль" />
+              </div>
             </div>
           </div>
         </div>
@@ -384,28 +484,41 @@
               <div class="faq__item">
                 <button class="faq__question">
                   <span class="faq__icon">+</span>
-                  Каковы требования к возрасту для аренды автомобиля без водителя?
+                  Каковы требования к возрасту для аренды автомобиля без
+                  водителя?
                 </button>
                 <div class="faq__answer">
-                  <p>Возрастные требования могут различаться в зависимости от компании. Обычно минимальный возраст составляет 21 год, но некоторые компании могут требовать, чтобы вам было 25 лет или более. Проверьте требования каждой компании перед бронированием.</p>
+                  <p>
+                    Возрастные требования могут различаться в зависимости от
+                    компании. Обычно минимальный возраст составляет 21 год, но
+                    некоторые компании могут требовать, чтобы вам было 25 лет
+                    или более. Проверьте требования каждой компании перед
+                    бронированием.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
                 <button class="faq__question">
                   <span class="faq__icon">+</span>
-                  Могу ли я арендовать автомобиль без водителя за пределами страны?
+                  Могу ли я арендовать автомобиль без водителя за пределами
+                  страны?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
                 <button class="faq__question">
                   <span class="faq__icon">+</span>
-                  Нужно ли мне иметь водительское удостоверение международного образца?
+                  Нужно ли мне иметь водительское удостоверение международного
+                  образца?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -414,7 +527,9 @@
                   Что делать в случае поломки автомобиля во время аренды?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -423,7 +538,9 @@
                   Как происходит оплата аренды автомобиля?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -432,7 +549,9 @@
                   Можно ли изменить или отменить бронирование автомобиля?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -441,7 +560,9 @@
                   Могу ли я арендовать автомобиль на сутки без водителя?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -450,7 +571,9 @@
                   Как найти надежную компанию по аренде автомобилей?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
             </div>
@@ -461,16 +584,21 @@
                   Какую страховку следует оформить при аренде автомобиля?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
                 <button class="faq__question">
                   <span class="faq__icon">+</span>
-                  Могу ли я арендовать автомобиль без водителя для поездки заграницу?
+                  Могу ли я арендовать автомобиль без водителя для поездки
+                  заграницу?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -479,7 +607,9 @@
                   Как происходит возврат автомобиля после аренды?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -488,16 +618,21 @@
                   Каковы преимущества аренды автомобиля на сутки без водителя?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
                 <button class="faq__question">
                   <span class="faq__icon">+</span>
-                  Могу ли я арендовать автомобиль в одном городе и вернуть его в другом месте?
+                  Могу ли я арендовать автомобиль в одном городе и вернуть его в
+                  другом месте?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -506,7 +641,9 @@
                   Как найти недорогую аренду автомобиля на сутки без водителя?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
               <div class="faq__item">
@@ -515,9 +652,33 @@
                   Как выбрать подходящий автомобиль для аренды?
                 </button>
                 <div class="faq__answer">
-                  <p>Минимальный возраст — 25 лет, водительский стаж — от 3 лет.</p>
+                  <p>
+                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                  </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contact">
+        <div class="contact__wrapper">
+          <h1 class="contact__title">КОНТАКТЫ</h1>
+          <div class="contact__info">
+            <div class="contact__block">
+              <img class="contact__image" src="./img/location-icon.svg" alt="Адрес." width="30" height="30" />
+              <h2 class="contact__block-title">Адрес</h2>
+              <p class="contact__text">г. Великий Новгород, ул. Попова, д. 10</p>
+            </div>
+            <div class="contact__block">
+              <img class="contact__image" src="./img/call-icon.svg" alt="Телефон." width="30" height="30" />
+              <h2 class="contact__block-title">Телефон</h2>
+              <a class="contact__text" href="tel:+79211234567">8(921) 123-45-67</a>
+            </div>
+            <div class="contact__block">
+              <img class="contact__image" src="./img/mail-icon.svg" alt="Почта." width="30" height="30" />
+              <h2 class="contact__block-title">E-mail</h2>
+              <a class="contact__text" href="mailto:edusam-vn@mail.ru">edusam-vn@mail.ru</a>
             </div>
           </div>
         </div>
@@ -559,14 +720,14 @@
           <button class="footer__btn btn">Позвонить</button>
           <div class="avito">
             <p class="avito__text">Мы на авито:</p>
-            <img src="./img/avito.svg" alt="Авито.">
+            <img src="./img/avito.svg" alt="Авито." />
           </div>
         </div>
       </div>
     </footer>
     <div class="modal" id="imageModal">
       <span class="modal__close">&times;</span>
-      <img class="modal__img" src="" alt="Увеличенное фото">
+      <img class="modal__img" src="" alt="Увеличенное фото" />
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

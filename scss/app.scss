@@ -12,16 +12,20 @@
     top: 0;
     background: #282828;
     z-index: -1;
-    background: radial-gradient(circle at 20% 50%, #282828 10%, #3C3C3C 100%);
+    background: radial-gradient(circle at 20% 50%, #282828 10%, #3c3c3c 100%);
 }
 
 .app__wrapper {
     padding: 90px 150px;
     max-width: 1920px;
     margin: 0 auto;
-    
+
     @include respond(desktop) {
         padding: 90px 100px;
+    }
+
+    @include respond(laptop) {
+        padding: 60px 80px;
     }
 }
 
@@ -30,6 +34,10 @@
     font-weight: 400;
     color: #fff;
     margin-bottom: 80px;
+
+    @include respond(laptop) {
+        margin-bottom: 50px;
+    }
 }
 
 .app__content {
@@ -37,6 +45,10 @@
     align-items: center;
     gap: 100px;
     justify-content: space-between;
+
+    @include respond(laptop) {
+        gap: 70px;
+    }
 }
 
 .app__side {
@@ -57,9 +69,13 @@
 }
 
 .app__auto-names {
-    font-style: 28px;
     margin-bottom: 20px;
     font-size: 20px;
+
+    @include respond(laptop) {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
 }
 
 .app__auto-names span {
@@ -67,11 +83,11 @@
 }
 
 .app__an1 {
-    color: #B9B3D2;
+    color: #b9b3d2;
 }
 
 .app__an2 {
-    color: #E02727;
+    color: #e02727;
 }
 
 .app__help-text {
@@ -79,16 +95,20 @@
     font-size: 18px;
 
     a {
-        color: #E02727;
+        color: #e02727;
         text-wrap: nowrap;
         font-weight: 700;
+    }
+
+    @include respond(laptop) {
+        font-size: 16px;
     }
 }
 
 .form {
-  display: flex;
+    display: flex;
     flex-direction: column;
-    gap: 30px;  
+    gap: 30px;
     align-items: center;
 }
 
@@ -103,21 +123,30 @@
     background-color: transparent;
     color: #fff;
     border-radius: 8px;
-    border: 1px #8D8D8D solid;
+    border: 1px #8d8d8d solid;
     width: auto;
     padding: 13px 60px;
     transition: all 0.2s ease;
     font-size: 18px;
+
+    @include respond(laptop) {
+        font-size: 16px;
+        padding: 13px 50px;
+    }
 }
 
 .form__btn:hover {
-    background-color: #E02727;
+    background-color: #e02727;
 }
 
 .form__label {
     color: #fff;
     font-weight: 400;
     font-size: 18px;
+
+    @include respond(laptop) {
+        font-size: 16px;
+    }
 }
 
 .form input {
@@ -130,40 +159,54 @@
     @include respond(desktop) {
         padding: 12px 18px;
     }
+
+    @include respond(laptop) {
+        width: 300px;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
 }
 
 .app__btn-wrap {
     display: flex;
     gap: 20px;
+    align-items: flex-start;
     margin-bottom: 30px;
+
+    @include respond(laptop) {
+        margin-bottom: 50px;
+    }
 }
 
 .app__button-name {
     font-size: 20px;
+    padding: 10px 20px;
     font-weight: 400;
     background-color: transparent;
+
+    @include respond(laptop) {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
 }
 
 .name-omoda {
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    padding: 10px 20px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .name-exeed {
-    color: #B9B3D2;
-    border: 1px solid #B9B3D2;
-    padding: 10px 20px;
+    color: #b9b3d2;
+    border: 1px solid #b9b3d2;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .name-ora {
-    color: #E02727;
-    border: 1px solid #E02727;
-    padding: 10px 20px;
+    color: #e02727;
+    border: 1px solid #e02727;
     border-radius: 8px;
     transition: all 0.3s ease;
 }

@@ -1,4 +1,4 @@
-const heroSwiper = new Swiper(".hero__swiper", {
+/*const heroSwiper = new Swiper(".hero__swiper", {
   loop: true,
   slidesPerView: 1,
   effect: "fade",
@@ -9,11 +9,10 @@ const heroSwiper = new Swiper(".hero__swiper", {
   speed: 1000,
   delay: 3000,
   disableOnInteraction: false,
-});
-
+});*/
 
 const plansSwiper = new Swiper(".plans__swiper", {
-  slidesPerView: 'auto',
+  slidesPerView: "auto",
   centeredSlides: true,
   spaceBetween: 0,
   watchSlidesProgress: true,
@@ -33,8 +32,8 @@ const plansSwiper = new Swiper(".plans__swiper", {
     },
   },
   navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
 
@@ -57,4 +56,3 @@ const gallerySwiper = new Swiper(".gallery-swiper", {
   },
   speed: 7000,
 });
-

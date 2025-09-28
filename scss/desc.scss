@@ -8,6 +8,10 @@
     @include respond(desktop) {
         padding: 120px 100px 150px;
     }
+
+    @include respond(laptop) {
+        padding: 100px 80px 150px;
+    }
 }
 
 .desc__title {
@@ -24,14 +28,18 @@
 .desc__list {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    @include respond(laptop) {
+        gap: 20px;
+    }
 }
 
 .line {
     height: 1px;
-    background-color: #E0E0E0;
+    background-color: #e0e0e0;
     display: block;
     flex: 1;
-    margin-top: 50px;
 }
 
 .desc__item {
@@ -39,10 +47,21 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    position: relative;
     flex: 1;
+}
+
+.desc__item img {
+    @include respond(laptop) {
+        width: 80px;
+        max-width: none;
+    }
 }
 
 .desc__text {
     font-size: 14px;
     text-wrap: nowrap;
+
+    position: absolute;
+    bottom: -50px;
 }
