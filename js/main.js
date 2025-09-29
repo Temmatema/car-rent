@@ -47,7 +47,9 @@ document.querySelectorAll(".plans__card").forEach((card) => {
     card.addEventListener("click", (e) => {
         if (e.target.closest(".card__btn")) return;
 
+        const toggle = card.querySelector(".plans__toggle");
         const desc = card.querySelector(".card__desc");
         desc.classList.toggle("active");
+        toggle.classList.toggle("active");
     });
 });
