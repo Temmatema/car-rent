@@ -202,8 +202,9 @@ table {
   gap: 20px;
   align-items: center;
 }
+
 @media (max-width: 480px) {
-  .header__logo {
+  .header__logo img {
     width: 70px;
   }
 }
@@ -214,7 +215,6 @@ table {
 @media (max-width: 480px) {
   .header__logo span {
     font-size: 14px;
-    white-space: nowrap;
   }
 }
 
@@ -1921,6 +1921,8 @@ table {
 @media (max-width: 480px) {
   .footer__wrapper {
     flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
 }
 
@@ -1931,6 +1933,7 @@ table {
 @media (max-width: 480px) {
   .footer__blocks {
     flex-direction: column;
+    gap: 30px;
   }
 }
 
@@ -1939,15 +1942,40 @@ table {
   flex-direction: column;
   gap: 8px;
 }
+@media (max-width: 480px) {
+  .footer__links {
+    align-items: center;
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .footer__block-title {
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 15px;
 }
+@media (max-width: 480px) {
+  .footer__block-title {
+    font-size: 20px;
+  }
+}
 
 .footer__links a {
   font-size: 14px;
+}
+@media (max-width: 480px) {
+  .footer__links a {
+    font-size: 16px;
+    padding: 10px;
+  }
 }
 
 .footer__btn {
@@ -1958,6 +1986,12 @@ table {
   color: #9e9e9e;
   margin-bottom: 100px;
   font-weight: 400;
+}
+@media (max-width: 480px) {
+  .footer__btn {
+    padding: 15px 60px;
+    margin-bottom: 80px;
+  }
 }
 
 .footer__side {

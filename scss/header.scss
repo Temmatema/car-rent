@@ -30,7 +30,9 @@
     display: flex;
     gap: 20px;
     align-items: center;
+}
 
+.header__logo img {
     @include respond(mobile) {
         width: 70px;
     }
@@ -41,7 +43,6 @@
 
     @include respond(mobile) {
         font-size: 14px;
-        white-space: nowrap;
     }
 }
 
