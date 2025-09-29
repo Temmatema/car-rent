@@ -14,7 +14,7 @@
     }
 
     @include respond(mobile) {
-        padding: 40px 20px;
+        padding: 40px 20px 60px;
     }
 }
 
@@ -26,6 +26,11 @@
 
     @include respond(desktop) {
         font-size: 28px;
+    }
+
+    @include respond(mobile) {
+        font-size: 22px;
+        margin-bottom: 60px;
     }
 }
 
@@ -39,7 +44,17 @@
     }
 
     @include respond(mobile) {
-        flex-direction: column;
+        display: grid;
+        justify-content: normal;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+    }
+}
+
+.desc__list li:last-child {
+    @include respond(mobile) {
+        grid-column: 1 / -1;
+        justify-self: center;
     }
 }
 
@@ -48,6 +63,10 @@
     background-color: #e0e0e0;
     display: block;
     flex: 1;
+
+    @include respond(mobile) {
+        display: none;
+    }
 }
 
 .desc__item {
@@ -68,8 +87,15 @@
 
 .desc__text {
     font-size: 14px;
-    text-wrap: nowrap;
+    white-space: nowrap;
 
     position: absolute;
     bottom: -50px;
+
+    @include respond(mobile) {
+        position: initial;
+        font-size: 16px;
+        text-align: center;
+        white-space: wrap;
+    }
 }

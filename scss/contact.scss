@@ -7,6 +7,10 @@
     @include respond(desktop) {
         padding: 60px 100px;
     }
+
+    @include respond(mobile) {
+        padding: 40px 20px 80px;
+    }
 }
 
 .contact__title {
@@ -14,6 +18,11 @@
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 80px;
+
+    @include respond(mobile) {
+        margin-bottom: 40px;
+        font-size: 26px;
+    }
 }
 
 .contact__info {
@@ -36,6 +45,7 @@
 
     @include respond(mobile) {
         width: 100%;
+        padding: 0 60px;
     }
 }
 
@@ -45,7 +55,7 @@
 
     @include respond(mobile) {
         border-right: none;
-        padding-right: 0;
+        padding-right: 60px;
     }
 }
 

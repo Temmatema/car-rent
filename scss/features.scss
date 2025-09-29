@@ -25,6 +25,7 @@
     @include respond(mobile) {
         display: flex;
         flex-direction: column;
+        padding: 60px 20px;
     }
 }
 
@@ -45,6 +46,11 @@
 
 .features__side {
     flex: 1;
+
+    @include respond(mobile) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .features__cover img {
@@ -119,6 +125,10 @@
 
     @include respond(laptop) {
         font-size: 14px;
+    }
+
+    @include respond(mobile) {
+        margin: 0 auto;
     }
 }
 

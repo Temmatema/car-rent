@@ -39,3 +39,14 @@ burger.addEventListener("click", () => {
   nav.classList.toggle("active");
   burger.setAttribute("aria-expanded", expanded);
 });
+
+
+document.querySelectorAll('.plans__card').forEach((card) => {
+  card.addEventListener('click', (e) => {
+    // если кликнули именно по кнопке – выходим
+    if (e.target.closest('.card__btn')) return;
+
+    const desc = card.querySelector('.card__desc');
+    desc.classList.toggle('active');
+  });
+});
