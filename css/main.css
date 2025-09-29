@@ -1322,6 +1322,7 @@ table {
 
 .app {
   position: relative;
+  background: radial-gradient(circle at 20% 50%, #282828 10%, #3c3c3c 100%);
 }
 
 #bg {
@@ -1360,7 +1361,7 @@ table {
   font-size: 30px;
   font-weight: 400;
   color: #fff;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 @media (max-width: 1024px) {
   .app__title {

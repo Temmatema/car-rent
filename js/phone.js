@@ -47,37 +47,3 @@ document.querySelector(".form").addEventListener("submit", (e) => {
         );
     }
 });
-
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-const crosses = Array.from({ length: 60 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    size: 10 + Math.random() * 10,
-    angle: Math.random() * 360,
-    speed: 0.0001 + Math.random() * 0.02,
-}));
-
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = "rgba(110, 110, 110, 0.13)";
-    ctx.lineWidth = 2;
-    crosses.forEach((c) => {
-        ctx.save();
-        ctx.translate(c.x, c.y);
-        ctx.rotate(c.angle);
-        ctx.beginPath();
-        ctx.moveTo(-c.size, 0);
-        ctx.lineTo(c.size, 0);
-        ctx.moveTo(0, -c.size);
-        ctx.lineTo(0, c.size);
-        ctx.stroke();
-        ctx.restore();
-        c.angle += c.speed;
-    });
-    requestAnimationFrame(draw);
-}
-draw();

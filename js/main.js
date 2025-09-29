@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (image && omodaBtn && exeedBtn && oraBtn) {
         omodaBtn.addEventListener("click", () =>
-            changeCarImage("img/omoda-large.png")
+            changeCarImage("img/mobile/omoda-mobile.webp")
         );
         exeedBtn.addEventListener("click", () =>
-            changeCarImage("img/exeed-large.png")
+            changeCarImage("img/mobile/exeed-mobile.webp")
         );
         oraBtn.addEventListener("click", () =>
-            changeCarImage("img/ora-large.png")
+            changeCarImage("img/mobile/ora-mobile.webp")
         );
     }
 });
