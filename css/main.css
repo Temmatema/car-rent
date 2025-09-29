@@ -835,7 +835,7 @@ table {
 }
 @media (max-width: 480px) {
   .plans__wrapper {
-    padding: 60px 50px;
+    padding: 60px 20px;
   }
 }
 
@@ -1023,6 +1023,11 @@ table {
 .card__item {
   font-size: 12px;
 }
+@media (max-width: 480px) {
+  .card__item {
+    font-size: 14px;
+  }
+}
 
 .card__btn {
   display: block;
@@ -1046,6 +1051,12 @@ table {
   .card__btn {
     font-size: 12px;
     padding: 8px 16px;
+  }
+}
+@media (max-width: 480px) {
+  .card__btn {
+    font-size: 14px;
+    padding: 10px 16px;
   }
 }
 
