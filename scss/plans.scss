@@ -124,12 +124,13 @@
 
     @include respond(mobile) {
         max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(20px); /* смещение вниз */
-    transition: max-height 0.4s ease, 
-                opacity 0.3s ease, 
-                transform 0.4s ease;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px); /* смещение вниз */
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease,
+            transform 0.4s ease;
     }
 }
 
@@ -137,7 +138,7 @@
     max-height: 1000px; /* больше, чем контент */
     opacity: 1;
     transform: translateY(0); /* возвращаем на место */
-  }
+}
 
 .card__title {
     color: #393939;

@@ -63,7 +63,7 @@
 
     &::after {
         font-size: 26px !important;
-        color: #C2C2C2;
+        color: #c2c2c2;
     }
 }
 
@@ -73,7 +73,7 @@
 
     &::after {
         font-size: 26px !important;
-        color: #C2C2C2;
+        color: #c2c2c2;
     }
 }
 
@@ -86,9 +86,9 @@
 }
 
 @media (min-width: 480px) {
-  .gallery-button-next,
-  .gallery-button-prev,
-  .swiper-pagination {
-    display: none !important;
-  }
+    .gallery-button-next,
+    .gallery-button-prev,
+    .swiper-pagination {
+        display: none !important;
+    }
 }
