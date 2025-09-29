@@ -52,6 +52,12 @@
     align-items: flex-end;
 }
 
+.header__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .header__nav ul {
     display: flex;
 }
@@ -62,6 +68,8 @@
     width: 210px;
     margin-right: 20px;
     display: block;
+    position: absolute;
+    top: 50%;
 }
 
 .header__link {
@@ -275,6 +283,7 @@
 
     @include respond(mobile) {
         transform: translateY(-120%);
+        align-items: stretch;
         width: 100%;
         border-radius: 0 0 20px 20px;
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
