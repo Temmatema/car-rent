@@ -82,6 +82,10 @@
     height: 1px;
     background: #cb2915;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include respond(mobile) {
+        content: none;
+    }
 }
 
 .header__link:hover::after {
@@ -155,7 +159,7 @@
         right: 0;
         border-radius: 0 0 0 20px;
         width: 350px;
-        height: 50vh;
+        height: auto;
         background: #fff;
         box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
         padding: 100px 40px 50px;
@@ -264,5 +268,15 @@
 
     .header__nav.active {
         transform: translateX(0); /* выезжает */
+    }
+}
+
+.header__nav {
+
+    @include respond(mobile) {
+        transform: translateY(-120%);
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
     }
 }
