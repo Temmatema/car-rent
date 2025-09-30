@@ -16,7 +16,7 @@ let plansSwiper = null;
 function initPlansSwiper() {
     if (window.innerWidth > 480 && !plansSwiper) {
         plansSwiper = new Swiper(".plans__swiper", {
-            slidesPerView: "auto",
+            slidesPerView: 1,
             centeredSlides: true,
             spaceBetween: 0,
             watchSlidesProgress: true,
@@ -39,6 +39,11 @@ function initPlansSwiper() {
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+            768: {
+                    slidesPerView: "auto",
+                },
             },
         });
     } else if (window.innerWidth < 480 && plansSwiper) {

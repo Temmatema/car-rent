@@ -21,6 +21,10 @@
         padding: 40px 80px;
     }
 
+    @include respond(tablet) {
+        padding: 40px 60px;
+    }
+
     @include respond(mobile) {
         padding: 30px 20px;
     }
@@ -92,7 +96,7 @@
     background: #cb2915;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    @include respond(mobile) {
+    @include respond(laptop) {
         content: none;
     }
 }
@@ -164,10 +168,11 @@
 
     .header__nav {
         position: fixed;
+        align-items: stretch;
         top: 0;
         right: 0;
         border-radius: 0 0 0 20px;
-        width: 350px;
+        width: auto;
         height: auto;
         background: #fff;
         box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
@@ -262,7 +267,7 @@
 
     .header__phone {
         display: block;
-        margin-top: 20px;
+        margin-top: 40px;
         font-size: 28px;
         font-weight: bold;
         text-align: center;

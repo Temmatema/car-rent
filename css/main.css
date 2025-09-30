@@ -191,6 +191,11 @@ table {
     padding: 40px 80px;
   }
 }
+@media (max-width: 768px) {
+  .header__inner {
+    padding: 40px 60px;
+  }
+}
 @media (max-width: 480px) {
   .header__inner {
     padding: 30px 20px;
@@ -264,7 +269,7 @@ table {
   background: #cb2915;
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media (max-width: 480px) {
+@media (max-width: 1024px) {
   .header__link::after {
     content: none;
   }
@@ -337,10 +342,11 @@ table {
   }
   .header__nav {
     position: fixed;
+    align-items: stretch;
     top: 0;
     right: 0;
     border-radius: 0 0 0 20px;
-    width: 350px;
+    width: auto;
     height: auto;
     background: #fff;
     box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
@@ -420,7 +426,7 @@ table {
   }
   .header__phone {
     display: block;
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
@@ -485,16 +491,23 @@ table {
     gap: 50px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hero__wrapper {
     display: grid;
     grid-template-columns: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
     align-items: stretch;
-    padding-top: 150px;
+    padding-top: 180px;
     padding-bottom: 180px;
     gap: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .hero__wrapper {
+    padding-left: 20px;
+    padding-bottom: 180px;
+    padding-right: 20px;
   }
 }
 
@@ -507,7 +520,17 @@ table {
 }
 @media (max-width: 1024px) {
   .hero__title {
-    font-size: 32px;
+    font-size: 36px;
+  }
+}
+@media (max-width: 768px) {
+  .hero__title {
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .hero__title br {
+    display: none;
   }
 }
 @media (max-width: 480px) {
@@ -515,6 +538,9 @@ table {
     font-size: 26px;
     line-height: 1.4;
     margin-bottom: 20px;
+  }
+  .hero__title br {
+    display: initial;
   }
 }
 
@@ -528,6 +554,14 @@ table {
 @media (max-width: 1024px) {
   .hero__car-name {
     font-size: 38px;
+  }
+}
+@media (max-width: 768px) {
+  .hero__car-name {
+    font-size: 64px;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 10px;
   }
 }
 @media (max-width: 480px) {
@@ -595,6 +629,13 @@ table {
     font-size: 28px;
   }
 }
+@media (max-width: 768px) {
+  .hero__car-price {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 34px;
+  }
+}
 @media (max-width: 480px) {
   .hero__car-price {
     text-align: center;
@@ -613,6 +654,18 @@ table {
   .hero__btn {
     font-size: 18px;
     padding: 14px 40px;
+  }
+}
+@media (max-width: 768px) {
+  .hero__btn {
+    position: absolute;
+    display: flex;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 250px;
+    padding: 14px 25px;
   }
 }
 @media (max-width: 480px) {
@@ -660,6 +713,13 @@ table {
     padding: 60px 80px;
   }
 }
+@media (max-width: 768px) {
+  .features__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 60px;
+  }
+}
 @media (max-width: 480px) {
   .features__wrapper {
     display: flex;
@@ -686,10 +746,21 @@ table {
 .features__side {
   flex: 1;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .features__side {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .features__cover {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 480px) {
+  .features__cover {
+    padding: 0;
   }
 }
 
@@ -775,9 +846,15 @@ table {
     font-size: 14px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .features__btn {
     margin: 0 auto;
+    padding: 14px 40px;
+  }
+}
+@media (max-width: 480px) {
+  .features__btn {
+    padding: 12px 30px;
   }
 }
 
@@ -1913,10 +1990,13 @@ table {
 
 .footer__wrapper {
   display: flex;
+  position: relative;
   justify-content: space-between;
+  gap: 30px;
   align-items: flex-start;
   max-width: 1920px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 @media (max-width: 480px) {
   .footer__wrapper {
@@ -1984,13 +2064,11 @@ table {
   background-color: transparent;
   padding: 10px 50px;
   color: #9e9e9e;
-  margin-bottom: 100px;
   font-weight: 400;
 }
 @media (max-width: 480px) {
   .footer__btn {
     padding: 15px 60px;
-    margin-bottom: 80px;
   }
 }
 
@@ -2002,9 +2080,12 @@ table {
 }
 
 .avito {
+  position: absolute;
   display: flex;
   gap: 15px;
   align-items: center;
+  bottom: 0;
+  right: 0;
 }
 
 html {

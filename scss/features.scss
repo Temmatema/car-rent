@@ -22,6 +22,12 @@
         padding: 60px 80px;
     }
 
+    @include respond(tablet) {
+        display: flex;
+        flex-direction: column;
+        padding: 60px 60px;
+    }
+
     @include respond(mobile) {
         display: flex;
         flex-direction: column;
@@ -47,9 +53,19 @@
 .features__side {
     flex: 1;
 
-    @include respond(mobile) {
+    @include respond(tablet) {
         display: flex;
         flex-direction: column;
+    }
+}
+
+.features__cover {
+    @include respond(tablet) {
+        padding: 0 40px;
+    }
+
+    @include respond(mobile) {
+        padding: 0;
     }
 }
 
@@ -127,8 +143,13 @@
         font-size: 14px;
     }
 
-    @include respond(mobile) {
+    @include respond(tablet) {
         margin: 0 auto;
+        padding: 14px 40px;
+    }
+
+    @include respond(mobile) {
+        padding: 12px 30px;
     }
 }
 
