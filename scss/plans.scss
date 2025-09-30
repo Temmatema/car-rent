@@ -36,20 +36,6 @@
     }
 }
 
-.plans__swiper .swiper-slide {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-
-    @include respond(laptop) {
-        grid-template-columns: 1fr 1.2fr;
-    }
-
-    @include respond(mobile) {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
 .plans__toggle {
     display: none;
 
@@ -96,13 +82,13 @@
     padding: 30px;
     margin: auto;
 
-    @include respond(laptop) {
+    @include respond(desktop) {
         position: absolute;
         height: 100%;
-        width: 70%;
         display: flex;
         align-items: center;
-        padding: 10px;
+        padding: 10px 120px 10px 10px;
+        z-index: -1;
     }
 
     @include respond(mobile) {
@@ -113,15 +99,19 @@
 }
 
 .card__desc {
+    @include respond(desktop) {
+        grid-column: 2/3;
+    }
+
     @include respond(mobile) {
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         transform: translateY(20px); /* смещение вниз */
         transition:
-            max-height 0.4s ease,
-            opacity 0.3s ease,
-            transform 0.4s ease;
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        transform 0.4s ease;
     }
 }
 
@@ -280,6 +270,8 @@
 }
 
 .plans__swiper .swiper-slide {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
     width: 35vw;
     margin: 0;
     transform: scale(1) !important;
@@ -291,8 +283,9 @@
     }
 
     @include respond(desktop) {
-        width: 45vw;
-        height: 350px;
+        width: auto;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
     }
 
     @include respond(laptop) {
@@ -301,6 +294,8 @@
     }
 
     @include respond(mobile) {
+        display: flex;
+        flex-direction: column;
         opacity: 1;
         width: auto;
         height: auto;

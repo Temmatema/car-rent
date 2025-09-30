@@ -935,22 +935,6 @@ table {
   }
 }
 
-.plans__swiper .swiper-slide {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-}
-@media (max-width: 1024px) {
-  .plans__swiper .swiper-slide {
-    grid-template-columns: 1fr 1.2fr;
-  }
-}
-@media (max-width: 480px) {
-  .plans__swiper .swiper-slide {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .plans__toggle {
   display: none;
 }
@@ -996,14 +980,14 @@ table {
   padding: 30px;
   margin: auto;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
   .card__image {
     position: absolute;
     height: 100%;
-    width: 70%;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px 120px 10px 10px;
+    z-index: -1;
   }
 }
 @media (max-width: 480px) {
@@ -1014,6 +998,11 @@ table {
   }
 }
 
+@media (max-width: 1440px) {
+  .card__desc {
+    grid-column: 2/3;
+  }
+}
 @media (max-width: 480px) {
   .card__desc {
     max-height: 0;
@@ -1179,6 +1168,8 @@ table {
 }
 
 .plans__swiper .swiper-slide {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
   width: 35vw;
   margin: 0;
   transform: scale(1) !important;
@@ -1192,8 +1183,9 @@ table {
 }
 @media (max-width: 1440px) {
   .plans__swiper .swiper-slide {
-    width: 45vw;
-    height: 350px;
+    width: auto;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
   }
 }
 @media (max-width: 1024px) {
@@ -1204,6 +1196,8 @@ table {
 }
 @media (max-width: 480px) {
   .plans__swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
     opacity: 1;
     width: auto;
     height: auto;
@@ -1304,6 +1298,11 @@ table {
     padding: 100px 80px 150px;
   }
 }
+@media (max-width: 768px) {
+  .desc__wrapper {
+    padding: 40px 60px;
+  }
+}
 @media (max-width: 480px) {
   .desc__wrapper {
     padding: 40px 20px 60px;
@@ -1338,7 +1337,7 @@ table {
     gap: 20px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .desc__list {
     display: grid;
     justify-content: normal;
@@ -1347,7 +1346,7 @@ table {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .desc__list li:last-child {
     grid-column: 1/-1;
     justify-self: center;
@@ -1360,7 +1359,7 @@ table {
   display: block;
   flex: 1;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .line {
     display: none;
   }
@@ -1375,10 +1374,15 @@ table {
   flex: 1;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .desc__item img {
+    width: 100px;
+    max-width: none;
+  }
+}
+@media (max-width: 480px) {
   .desc__item img {
     width: 80px;
-    max-width: none;
   }
 }
 
@@ -1388,7 +1392,7 @@ table {
   position: absolute;
   bottom: -50px;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .desc__text {
     position: initial;
     font-size: 16px;
@@ -1465,7 +1469,7 @@ table {
     gap: 70px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .app__content {
     flex-direction: column;
   }
@@ -1915,6 +1919,11 @@ table {
     padding: 60px 100px;
   }
 }
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 20px;
+  }
+}
 @media (max-width: 480px) {
   .contact {
     padding: 40px 20px 80px;
@@ -1939,7 +1948,7 @@ table {
   justify-content: center;
   gap: 50px;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .contact__info {
     flex-direction: column;
   }
@@ -1953,7 +1962,7 @@ table {
   width: 300px;
   gap: 15px;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .contact__block {
     width: 100%;
     padding: 0 60px;
@@ -1964,7 +1973,7 @@ table {
   border-right: 1px solid #ddd;
   padding-right: 50px;
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .contact__block:not(:last-child) {
     border-right: none;
     padding-right: 60px;

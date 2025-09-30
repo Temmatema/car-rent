@@ -8,6 +8,10 @@
         padding: 60px 100px;
     }
 
+    @include respond(tablet) {
+        padding: 60px 20px;
+    }
+
     @include respond(mobile) {
         padding: 40px 20px 80px;
     }
@@ -30,7 +34,7 @@
     justify-content: center;
     gap: 50px;
 
-    @include respond(mobile) {
+    @include respond(tablet) {
         flex-direction: column;
     }
 }
@@ -43,7 +47,7 @@
     width: 300px;
     gap: 15px;
 
-    @include respond(mobile) {
+    @include respond(tablet) {
         width: 100%;
         padding: 0 60px;
     }
@@ -53,7 +57,7 @@
     border-right: 1px solid #ddd;
     padding-right: 50px;
 
-    @include respond(mobile) {
+    @include respond(tablet) {
         border-right: none;
         padding-right: 60px;
     }
