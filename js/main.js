@@ -1,5 +1,5 @@
 import "./swiper.js";
-import "./phone.js";
+import "./form.js";
 import "./modal.js";
 import "./accordeon.js";
 import "./telegram.js";

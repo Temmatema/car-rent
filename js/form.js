@@ -1,4 +1,7 @@
+import { showModalMessage } from "./modal-message.js";
+
 const phoneInput = document.getElementById("phone");
+const licenseInput = document.getElementById("license");
 
 phoneInput.addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, "");
@@ -13,22 +16,11 @@ phoneInput.addEventListener("input", (e) => {
     e.target.value = result;
 });
 
-document.querySelector(".form").addEventListener("submit", (e) => {
-    const digits = phoneInput.value.replace(/\D/g, "");
-    if (digits.length !== 11) {
-        e.preventDefault();
-        alert("Введите корректный номер телефона");
-    }
-});
-
-const licenseInput = document.getElementById("license");
-
 licenseInput.addEventListener("input", (e) => {
     let value = e.target.value.toUpperCase();
     value = value.replace(/[^0-9A-ZА-Я]/g, "");
 
     let result = "";
-
     if (value.length > 0) result += value.substring(0, 2);
     if (value.length >= 3) result += " " + value.substring(2, 4);
     if (value.length >= 5) result += " " + value.substring(4, 10);
@@ -36,23 +28,9 @@ licenseInput.addEventListener("input", (e) => {
     e.target.value = result;
 });
 
-document.querySelector(".form").addEventListener("submit", (e) => {
-    const license = licenseInput.value;
-    const pattern = /^\d{2}\s(\d{2}|[A-ZА-Я]{2})\s\d{6}$/;
-
-    if (!pattern.test(license)) {
-        e.preventDefault();
-        alert(
-            "Введите корректный номер водительского удостоверения (например: 99 99 123456 или 99 AB 123456)"
-        );
-    }
-});
-
-
-// === Маска для дат ===
 function setDateMask(input) {
-    input.addEventListener("input", function(e) {
-        let value = input.value.replace(/\D/g, ""); 
+    input.addEventListener("input", function () {
+        let value = input.value.replace(/\D/g, "");
         if (value.length > 8) value = value.slice(0, 8);
 
         let formatted = "";
@@ -63,12 +41,9 @@ function setDateMask(input) {
         input.value = formatted;
     });
 }
-
 setDateMask(document.getElementById("birthday"));
 setDateMask(document.getElementById("date_license"));
 
-
-// === Проверка даты ===
 function isValidDate(dateStr) {
     const parts = dateStr.split(".");
     if (parts.length !== 3) return false;
@@ -81,21 +56,42 @@ function isValidDate(dateStr) {
     if (year < 1900 || year > 2100) return false;
     if (month < 1 || month > 12) return false;
 
-    const daysInMonth = new Date(year, month, 0).getDate(); // количество дней в месяце
+    const daysInMonth = new Date(year, month, 0).getDate();
     return day >= 1 && day <= daysInMonth;
 }
 
-document.querySelector(".form").addEventListener("submit", (e) => {
+export function validateForm() {
+    let valid = true;
+
+    // телефон
+    const digits = phoneInput.value.replace(/\D/g, "");
+    if (digits.length !== 11) {
+        showModalMessage("error", "Ошибка ввода", "Введите корректный номер телефона");
+        valid = false;
+    }
+
+    // В/У
+    const license = licenseInput.value;
+    const pattern = /^\d{2}\s[A-ZА-Я0-9]{2}\s\d{6}$/; 
+    if (!pattern.test(license)) {
+        showModalMessage("error", "Ошибка ввода", "Введите корректный номер В/У (например: 99 AB 123456 или 99 9A 123456)");
+        valid = false;
+    }
+
+    // даты
     const birthday = document.getElementById("birthday").value;
     const dateLicense = document.getElementById("date_license").value;
 
     if (!isValidDate(birthday)) {
-        e.preventDefault();
-        alert("Введите корректную дату рождения (ДД.ММ.ГГГГ)");
+        showModalMessage("error", "Ошибка даты", "Введите корректную дату рождения (ДД.ММ.ГГГГ)");
+        valid = false;
     }
 
     if (!isValidDate(dateLicense)) {
-        e.preventDefault();
-        alert("Введите корректную дату выдачи В/У (ДД.ММ.ГГГГ)");
+        showModalMessage("error", "Ошибка даты", "Введите корректную дату выдачи В/У (ДД.ММ.ГГГГ)");
+        valid = false;
     }
-});
+
+    return valid;
+}
+

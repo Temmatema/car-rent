@@ -1,5 +1,12 @@
+import { showModalMessage } from "./modal-message.js";
+import { validateForm } from "./form.js";
+
 document.getElementById("rentForm").addEventListener("submit", function (e) {
     e.preventDefault();
+
+    if (!validateForm()) {
+        return;
+    }
 
     let name = document.getElementById("name").value;
     let birthday = document.getElementById("birthday").value;
@@ -18,9 +25,7 @@ document.getElementById("rentForm").addEventListener("submit", function (e) {
     let token = "8261266499:AAEJkXnAW2sVuGK87PY-LtPuSWAgMXFmw1U";
     let chat_id = "429539553";
 
-    let url = `https://api.telegram.org/bot${token}/sendMessage`;
-
-    fetch(url, {
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -31,10 +36,11 @@ document.getElementById("rentForm").addEventListener("submit", function (e) {
     })
         .then((res) => res.json())
         .then((data) => {
-            showModalMessage("Заявка отправлена!", true);
+            showModalMessage("success", "Заявка отправлена!", "Мы скоро с вами свяжемся");
         })
         .catch((err) => {
-            showModalMessage("Ошибка при отправке!", false);
+            showModalMessage("error", "Ошибка при отправке!", "Пожалуйста, попробуйте снова");
             console.error(err);
         });
 });
+
