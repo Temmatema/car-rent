@@ -34,6 +34,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include respond(mobile) {
+    padding: 40px 20px;
+    max-width: 100%;
+  }
 }
 
 .card img {
@@ -71,13 +76,17 @@
   font-weight: 500;
 }
 
-/* Информация */
 .card .info {
   font-size: 18px;
   color: #444;
   margin-bottom: 10px;
   display: flex;
   gap: 17px;
+
+  @include respond(mobile) {
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
 }
 
 .card .info__text {
@@ -86,7 +95,6 @@
     font-weight: 500;
 }
 
-/* Примечание */
 .card .note {
   font-size: 18px;
   margin-top: 10px;
@@ -94,7 +102,6 @@
   font-weight: 500;
 }
 
-/* Цена */
 .card .price {
   font-size: 42px;
   font-weight: 700;
@@ -121,6 +128,11 @@
   text-align: center;
   transition: all 0.2s ease;
   font-size: 14px;
+
+  @include respond(mobile) {
+    font-size: 12px;
+    padding: 14px 15px;
+  }
 }
 
 /* Чёрная кнопка */

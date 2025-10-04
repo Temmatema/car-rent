@@ -639,6 +639,7 @@ table {
 @media (max-width: 480px) {
   .hero__car-price {
     text-align: center;
+    white-space: nowrap;
     margin-bottom: 0;
   }
 }
@@ -833,7 +834,7 @@ table {
   overflow: hidden;
   font-size: 18px;
   z-index: 0;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 @media (max-width: 1440px) {
   .features__btn {
@@ -858,25 +859,14 @@ table {
   }
 }
 
-.features__btn::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0%; /* изначально невидим */
-  background: #4d4d4d;
-  z-index: -1; /* чтобы был под текстом */
-  transition: height 0.3s ease;
-}
-
-/* при наведении фон растет вверх */
-.features__btn:hover::before {
-  height: 100%;
-}
-
 .features__btn:hover {
   color: #fff;
+  background-color: #4d4d4d;
+}
+
+.features__item-2 .features__btn:hover {
+  color: #9995b0;
+  background-color: #fff;
 }
 
 .features__item-2 h2 {
@@ -890,9 +880,6 @@ table {
 .features__item-2 button {
   color: #fff;
   border-color: #fff;
-}
-.features__item-2 button::before {
-  background-color: #827e96;
 }
 
 .plans {
@@ -932,6 +919,12 @@ table {
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 480px) {
+  .card {
+    padding: 40px 20px;
+    max-width: 100%;
+  }
+}
 
 .card img {
   width: 100%;
@@ -967,13 +960,18 @@ table {
   font-weight: 500;
 }
 
-/* Информация */
 .card .info {
   font-size: 18px;
   color: #444;
   margin-bottom: 10px;
   display: flex;
   gap: 17px;
+}
+@media (max-width: 480px) {
+  .card .info {
+    flex-wrap: wrap;
+    font-size: 16px;
+  }
 }
 
 .card .info__text {
@@ -982,7 +980,6 @@ table {
   font-weight: 500;
 }
 
-/* Примечание */
 .card .note {
   font-size: 18px;
   margin-top: 10px;
@@ -990,7 +987,6 @@ table {
   font-weight: 500;
 }
 
-/* Цена */
 .card .price {
   font-size: 42px;
   font-weight: 700;
@@ -1017,6 +1013,12 @@ table {
   text-align: center;
   transition: all 0.2s ease;
   font-size: 14px;
+}
+@media (max-width: 480px) {
+  .card .btn {
+    font-size: 12px;
+    padding: 14px 15px;
+  }
 }
 
 /* Чёрная кнопка */
