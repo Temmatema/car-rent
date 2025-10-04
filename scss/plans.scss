@@ -1,6 +1,10 @@
 @use "breakpoints" as *;
 .plans {
     padding: 100px;
+
+    @include respond(tablet) {
+        padding: 80px 20px;
+    }
 }
 
 .plans__title {

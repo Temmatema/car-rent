@@ -15,7 +15,6 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
     grabCursor: true,
     centeredSlides: true,
     loop: true,
-
     effect: "coverflow",
 
     slidesPerView: 1,
@@ -29,6 +28,23 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
 
     breakpoints: {
         480: {
+            slidesPerView: 2,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+
+            navigation: false,
+            pagination: false,
+        },
+        1200: {
             slidesPerView: 4,
             coverflowEffect: {
                 rotate: 0,
@@ -41,7 +57,6 @@ const gallerySwiper = new Swiper(".gallery__swiper", {
                 delay: 0,
                 disableOnInteraction: false,
             },
-            speed: 7000,
 
             navigation: false,
             pagination: false,

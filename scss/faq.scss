@@ -9,7 +9,7 @@
         padding: 60px 100px;
     }
 
-    @include respond(mobile) {
+    @include respond(tablet) {
         padding: 60px 20px;
     }
 }
