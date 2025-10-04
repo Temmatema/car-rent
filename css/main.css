@@ -1589,6 +1589,11 @@ table {
 }
 @media (max-width: 768px) {
   .faq {
+    padding: 60px 40px;
+  }
+}
+@media (max-width: 480px) {
+  .faq {
     padding: 60px 20px;
   }
 }
