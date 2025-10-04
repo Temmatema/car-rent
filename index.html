@@ -191,122 +191,168 @@
         </div>
       </section>
       <section id="cars" class="plans">
-        <div class="container">
-          <div class="plans__wrapper">
-            <h2 class="plans__title">ВЫБЕРИ СВОЮ КОМПЛЕКТАЦИЮ</h2>
-
-            <div class="plans__swiper swiper">
-              <div class="swiper-wrapper">
-                <div class="plans__card card swiper-slide">
-                  <div class="card__image">
-                    <picture>
-                      <img src="./img/mobile/omoda-mobile.webp" alt="Автомобиль">
-                    </picture>
-                  </div>
-                  <p class="plans__toggle">
-                    Подробнее
-                    <img src="./img/arrow_drop_down.svg" alt="Стрелка.">
-                  </p>
-                  <div class="card__desc">
-                    <div class="card__desc-inner">
-                      <h3 class="card__title">EXEED LX</h3>
-                      <p class="card__subtitle">
-                        Комплектация <span>“Luxe”</span>
-                      </p>
-                      <p class="card__c-text">Характеристики:</p>
-                      <ul class="card__list">
-                        <li class="card__item">Двигатель: 147 л.с. бензин</li>
-                        <li class="card__item">Тип КПП: вариатор</li>
-                        <li class="card__item">Привод: передний</li>
-                        <li class="card__item">Расход топлива на 100 км: 7л</li>
-                        <li class="card__item">Количество мест: 5</li>
-                        <li class="card__item">Цвет кузова: черный</li>
-                        <li class="card__item">
-                          Резина: Nokian Hakkapeliitta R3
-                        </li>
-                      </ul>
-                      <button class="card__btn btn">
-                        Арендовать
-                        <span>от 3’300 ₽ / сут.</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="plans__card card swiper-slide">
-                  <div class="card__image">
-                    <picture>
-                      <img src="./img/mobile/exeed-mobile.webp" alt="Автомобиль">
-                    </picture>
-                  </div>
-                  <p class="plans__toggle">
-                    Подробнее
-                    <img src="./img/arrow_drop_down.svg" alt="Стрелка.">
-                  </p>
-                  <div class="card__desc">
-                    <div class="card__desc-inner">
-                      <h3 class="card__title">EXEED LX</h3>
-                      <p class="card__subtitle">
-                        Комплектация <span>“Luxe”</span>
-                      </p>
-                      <p class="card__c-text">Характеристики:</p>
-                      <ul class="card__list">
-                        <li class="card__item">Двигатель: 147 л.с. бензин</li>
-                        <li class="card__item">Тип КПП: вариатор</li>
-                        <li class="card__item">Привод: передний</li>
-                        <li class="card__item">Расход топлива на 100 км: 7л</li>
-                        <li class="card__item">Количество мест: 5</li>
-                        <li class="card__item">Цвет кузова: черный</li>
-                        <li class="card__item">
-                          Резина: Nokian Hakkapeliitta R3
-                        </li>
-                      </ul>
-                      <button class="card__btn btn">
-                        Арендовать
-                        <span>от 3’300 ₽ / сут.</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="plans__card card swiper-slide">
-                  <div class="card__image">
-                    <picture>
-                      <img src="./img/mobile/ora-mobile.webp" alt="Автомобиль">
-                    </picture>
-                  </div>
-                  <p class="plans__toggle">
-                    Подробнее
-                    <img src="./img/arrow_drop_down.svg" alt="Стрелка.">
-                  </p>
-                  <div class="card__desc">
-                    <div class="card__desc-inner">
-                      <h3 class="card__title">EXEED LX</h3>
-                      <p class="card__subtitle">
-                        Комплектация <span>“Luxe”</span>
-                      </p>
-                      <p class="card__c-text">Характеристики:</p>
-                      <ul class="card__list">
-                        <li class="card__item">Двигатель: 147 л.с. бензин</li>
-                        <li class="card__item">Тип КПП: вариатор</li>
-                        <li class="card__item">Привод: передний</li>
-                        <li class="card__item">Расход топлива на 100 км: 7л</li>
-                        <li class="card__item">Количество мест: 5</li>
-                        <li class="card__item">Цвет кузова: черный</li>
-                        <li class="card__item">
-                          Резина: Nokian Hakkapeliitta R3
-                        </li>
-                      </ul>
-                      <button class="card__btn btn">
-                        Арендовать
-                        <span>от 3’300 ₽ / сут.</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+        <h2 class="plans__title">ВЫБЕРИ СВОЮ КОМПЛЕКТАЦИЮ</h2>
+        <div class="plans__wrapper">
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <figure>
+              <img 
+                src="./img/mobile/omoda-mobile.webp" 
+                alt="OMODA C5 Joy 2022 аренда автомобиля" 
+                itemprop="image" 
+              />
+            </figure>
+  
+            <h2 class="title" itemprop="name">OMODA C5</h2>
+            <div class="info-top">
+              Комплектация <span style="color:#CB2915;" itemprop="model">“Joy”</span>
             </div>
-          </div>
+            <div class="info">
+              <span class="info__text">Год выпуска <time class="info__addition" itemprop="productionDate">2022</time></span>
+              <span class="info__text">КПП <span class="info__addition" itemprop="additionalProperty">А</span></span>
+              <span class="info__text">Мест <span class="info__addition" itemprop="seatingCapacity">5</span></span>
+            </div>
+  
+            <p class="note">От 2 суток</p>
+  
+            <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">3 000</span> ₽
+              <meta itemprop="priceCurrency" content="RUB">
+              <link itemprop="availability" href="https://schema.org/InStock">
+            </p>
+  
+            <div class="buttons">
+              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
+              <a href="#rent" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <figure>
+              <img 
+                src="./img/mobile/exeed-mobile.webp" 
+                alt="OMODA C5 Joy 2022 аренда автомобиля" 
+                itemprop="image" 
+              />
+            </figure>
+  
+            <h2 class="title" itemprop="name">Exeed</h2>
+            <div class="info-top">
+              Комплектация <span style="color:#CB2915;" itemprop="model">“Joy”</span>
+            </div>
+            <div class="info">
+              <span class="info__text">Год выпуска <time class="info__addition" itemprop="productionDate">2022</time></span>
+              <span class="info__text">КПП <span class="info__addition" itemprop="additionalProperty">А</span></span>
+              <span class="info__text">Мест <span class="info__addition" itemprop="seatingCapacity">5</span></span>
+            </div>
+  
+            <p class="note">От 2 суток</p>
+  
+            <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">3 000</span> ₽
+              <meta itemprop="priceCurrency" content="RUB">
+              <link itemprop="availability" href="https://schema.org/InStock">
+            </p>
+  
+            <div class="buttons">
+              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
+              <a href="#rent" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <figure>
+              <img 
+                src="./img/mobile/ora-mobile.webp" 
+                alt="OMODA C5 Joy 2022 аренда автомобиля" 
+                itemprop="image" 
+              />
+            </figure>
+  
+            <h2 class="title" itemprop="name">Ora 03</h2>
+            <div class="info-top">
+              Комплектация <span style="color:#CB2915;" itemprop="model">“Joy”</span>
+            </div>
+            <div class="info">
+              <span class="info__text">Год выпуска <time class="info__addition" itemprop="productionDate">2022</time></span>
+              <span class="info__text">КПП <span class="info__addition" itemprop="additionalProperty">А</span></span>
+              <span class="info__text">Мест <span class="info__addition" itemprop="seatingCapacity">5</span></span>
+            </div>
+  
+            <p class="note">От 2 суток</p>
+  
+            <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">3 000</span> ₽
+              <meta itemprop="priceCurrency" content="RUB">
+              <link itemprop="availability" href="https://schema.org/InStock">
+            </p>
+  
+            <div class="buttons">
+              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
+              <a href="#rent" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <figure>
+              <img 
+                src="./img/mobile/omoda-s5.webp" 
+                alt="OMODA C5 Joy 2022 аренда автомобиля" 
+                itemprop="image" 
+              />
+            </figure>
+  
+            <h2 class="title" itemprop="name">Omoda S5</h2>
+            <div class="info-top">
+              Комплектация <span style="color:#CB2915;" itemprop="model">“Joy”</span>
+            </div>
+            <div class="info">
+              <span class="info__text">Год выпуска <time class="info__addition" itemprop="productionDate">2022</time></span>
+              <span class="info__text">КПП <span class="info__addition" itemprop="additionalProperty">А</span></span>
+              <span class="info__text">Мест <span class="info__addition" itemprop="seatingCapacity">5</span></span>
+            </div>
+  
+            <p class="note">От 2 суток</p>
+  
+            <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">3 000</span> ₽
+              <meta itemprop="priceCurrency" content="RUB">
+              <link itemprop="availability" href="https://schema.org/InStock">
+            </p>
+  
+            <div class="buttons">
+              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
+              <a href="#rent" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <figure>
+              <img 
+                src="./img/mobile/vesta.webp" 
+                alt="OMODA C5 Joy 2022 аренда автомобиля" 
+                itemprop="image" 
+              />
+            </figure>
+  
+            <h2 class="title" itemprop="name">Lada Vesta</h2>
+            <div class="info-top">
+              Комплектация <span style="color:#CB2915;" itemprop="model">“Joy”</span>
+            </div>
+            <div class="info">
+              <span class="info__text">Год выпуска <time class="info__addition" itemprop="productionDate">2022</time></span>
+              <span class="info__text">КПП <span class="info__addition" itemprop="additionalProperty">А</span></span>
+              <span class="info__text">Мест <span class="info__addition" itemprop="seatingCapacity">5</span></span>
+            </div>
+  
+            <p class="note">От 2 суток</p>
+  
+            <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span itemprop="price">3 000</span> ₽
+              <meta itemprop="priceCurrency" content="RUB">
+              <link itemprop="availability" href="https://schema.org/InStock">
+            </p>
+  
+            <div class="buttons">
+              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
+              <a href="#rent" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -531,7 +577,7 @@
                 </button>
                 <div class="faq__answer">
                   <p>
-                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                    Да, некоторые компании предоставляют возможность аренды автомобиля без водителя для путешествий за пределы страны. Однако уточните условия и требования для международной аренды у выбранной компании, так как могут существовать ограничения и дополнительные требования.
                   </p>
                 </div>
               </div>
@@ -611,7 +657,7 @@
                 </button>
                 <div class="faq__answer">
                   <p>
-                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                    При аренде автомобиля рекомендуется оформить полис страхования автомобиля от повреждений и кражи. Это обеспечит вас защитой в случае возникновения непредвиденных ситуаций. При оформлении страховки внимательно ознакомьтесь с условиями и покрытием, чтобы быть уверенным, что ваши потребности защищены.
                   </p>
                 </div>
               </div>
@@ -634,7 +680,7 @@
                 </button>
                 <div class="faq__answer">
                   <p>
-                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                    При возврате автомобиля после аренды вам необходимо заправить его топливом до уровня, указанного в условиях аренды. Также следует проверить автомобиль на наличие повреждений и сообщить об этом сотрудникам компании. Они проведут инспекцию и разблокируют залог на вашей карте.
                   </p>
                 </div>
               </div>
@@ -645,7 +691,7 @@
                 </button>
                 <div class="faq__answer">
                   <p>
-                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                    Аренда автомобиля на сутки без водителя предоставляет вам свободу и гибкость в планировании поездки. Вы можете выбрать удобное время начала и окончания аренды, а также свободно перемещаться по местам, которые вам интересны. Это отличный способ исследовать новые места и получить больше свободы во время путешествия.
                   </p>
                 </div>
               </div>
@@ -668,7 +714,7 @@
                 </button>
                 <div class="faq__answer">
                   <p>
-                    Минимальный возраст — 25 лет, водительский стаж — от 3 лет.
+                    Чтобы найти недорогую аренду автомобиля на сутки без водителя, сравните цены различных компаний и ищите специальные предложения и скидки. Бронируйте автомобиль заранее и уточните условия аренды, чтобы получить наилучшую цену. Также рекомендуется обратить внимание на рейтинги и отзывы клиентов, чтобы выбрать надежную компанию.
                   </p>
                 </div>
               </div>

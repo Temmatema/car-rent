@@ -11,51 +11,6 @@ const heroSwiper = new Swiper(".hero__swiper", {
   disableOnInteraction: false,
 });
 
-let plansSwiper = null;
-
-function initPlansSwiper() {
-    if (window.innerWidth > 480 && !plansSwiper) {
-        plansSwiper = new Swiper(".plans__swiper", {
-            slidesPerView: 1,
-            centeredSlides: true,
-            spaceBetween: 0,
-            watchSlidesProgress: true,
-            initialSlide: 1,
-            on: {
-                progress(swiper) {
-                    swiper.slides.forEach((slide) => {
-                        const slideProgress = slide.progress;
-                        const scale =
-                            1 - Math.min(Math.abs(slideProgress * 0.2), 0.4);
-                        slide.style.transform = `scale(${scale})`;
-                    });
-                },
-                setTransition(swiper, transition) {
-                    swiper.slides.forEach((slide) => {
-                        slide.style.transition = `${transition}ms`;
-                    });
-                },
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            breakpoints: {
-            768: {
-                    slidesPerView: "auto",
-                },
-            },
-        });
-    } else if (window.innerWidth < 480 && plansSwiper) {
-        plansSwiper.destroy(true, true);
-        plansSwiper = null;
-    }
-}
-
-initPlansSwiper();
-
-window.addEventListener("resize", initPlansSwiper);
-
 const gallerySwiper = new Swiper(".gallery__swiper", {
     grabCursor: true,
     centeredSlides: true,

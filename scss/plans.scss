@@ -1,377 +1,145 @@
 @use "breakpoints" as *;
-
-.plans .container {
-    height: inherit;
-}
-
-.plans__wrapper {
-    padding: 80px 100px 100px;
-    max-width: 1920px;
-    position: relative;
-    margin: 0 auto;
-
-    @include respond(desktop) {
-        padding: 50px 50px 70px;
-    }
-
-    @include respond(mobile) {
-        padding: 60px 20px;
-    }
+.plans {
+    padding: 100px;
 }
 
 .plans__title {
-    text-align: center;
-    font-weight: 400;
-    font-size: 38px;
-    margin-bottom: 120px;
-
-    @include respond(desktop) {
-        font-size: 32px;
-        margin-bottom: 80px;
-    }
-
-    @include respond(mobile) {
-        font-size: 22px;
-        margin-bottom: 50px;
-    }
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  text-transform: uppercase;
 }
 
-.plans__toggle {
-    display: none;
-
-    img {
-        transition: all 0.2s ease;
-    }
-
-    @include respond(mobile) {
-        text-align: center;
-        position: absolute;
-        font-size: 17px;
-        top: 210px;
-        left: 0;
-        right: 0;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-.plans__toggle.active {
-    img {
-        transform: rotateZ(-180deg);
-    }
+.plans__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+  max-width: 1350px;
+  margin: 0 auto;
 }
 
 .card {
-    background-color: #e6e6e6;
-    border: none;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    border-radius: 35px;
-    border: 1px #afafaf solid;
-
-    @include respond(mobile) {
-        border: none;
-        box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.3);
-    }
+  background: #D9D9D9;
+  border-radius: 12px;
+  padding: 60px 30px;
+  max-width: 400px;
+  width: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card__image {
-    padding: 30px;
-    margin: auto;
-
-    @include respond(desktop) {
-        position: absolute;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        padding: 10px 120px 10px 10px;
-        z-index: -1;
-    }
-
-    @include respond(mobile) {
-        width: 100%;
-        padding: 20px 20px 60px;
-        position: initial;
-    }
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 25px;
 }
 
-.card__desc {
-    @include respond(desktop) {
-        grid-column: 2/3;
-    }
-
-    @include respond(mobile) {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(20px); /* смещение вниз */
-        transition:
-        max-height 0.4s ease,
-        opacity 0.3s ease,
-        transform 0.4s ease;
-    }
-}
-
-.card__desc-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #d9d9d9;
-    padding: 30px 30px;
-    border-radius: 35px 0 0 35px;
-
-    @include respond(desktop) {
-        min-width: 45%;
-        padding: 20px 20px;
-    }
-
-    @include respond(laptop) {
-        min-width: auto;
-        grid-column: 2 / 3;
-        box-shadow: 0 0 10px 0 rgba(83, 83, 83, 0.368);
-        z-index: 1;
-    }
-}
-
-.card__desc.active {
-    max-height: 1000px; /* больше, чем контент */
-    opacity: 1;
-    transform: translateY(0); /* возвращаем на место */
-}
-
-.card__title {
-    color: #393939;
-    font-size: 28px;
-    font-weight: 700;
+.card .title {
+  font-weight: 700;
+  padding-bottom: 20px;
+  color: #393939;
+  font-size: 38px;
+  text-transform: uppercase;
     position: relative;
-    margin-bottom: 10px;
 
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 1px;
-        width: 70%;
-        background-color: #bcbcbc;
-    }
-
-    @include respond(desktop) {
-        font-size: 22px;
-    }
-}
-
-.card__subtitle {
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.card__subtitle span {
-    color: #cb2915;
-}
-
-.card__c-text {
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.card__list {
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    list-style: circle;
-    gap: 3px;
-    margin-bottom: 30px;
-
-    @include respond(desktop) {
-        gap: 2px;
-        margin-bottom: 20px;
-    }
-}
-
-.card__item {
-    font-size: 12px;
-
-    @include respond(mobile) {
-        font-size: 14px;
-    }
-}
-
-.card__btn {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 20px;
-    background-color: transparent;
-    font-weight: 400;
-    color: #000;
-    border: 1px #878787 solid;
-    font-size: 14px;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    transition: color 0.3s ease;
-
-    span {
-        color: #cb2915;
-        transition: color 0.3s ease;
-    }
-
-    @include respond(desktop) {
-        font-size: 12px;
-        padding: 8px 16px;
-    }
-
-    @include respond(mobile) {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-}
-
-.card__btn::before {
+  &::before {
     content: "";
-    position: absolute;
-    left: 0;
+    display: block;
     bottom: 0;
-    width: 100%;
-    height: 0%;
-    background: #878787;
-    z-index: -1;
-    transition: height 0.3s ease;
+    left: 0;
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: #B6B6B6;
+    margin-bottom: 10px;
+  }
 }
 
-.card__btn:hover::before {
-    height: 100%;
+.card .info-top {
+  font-size: 18px;
+  color: #000;
+  margin: 5px 0;
+  font-weight: 500;
 }
 
-.card__btn:hover {
-    color: #fff;
-
-    span {
-        color: #fff;
-    }
+/* Информация */
+.card .info {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 17px;
 }
 
-.plans__swiper {
-    overflow: visible !important;
-
-    @include respond(mobile) {
-    }
+.card .info__text {
+    display: flex;
+    gap: 8px;
+    font-weight: 500;
 }
 
-.plans__swiper .swiper-wrapper {
-    @include respond(mobile) {
-        flex-direction: column;
-        gap: 30px;
-    }
+/* Примечание */
+.card .note {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #393939;
+  font-weight: 500;
 }
 
-.plans__swiper .swiper-slide {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    width: 35vw;
-    margin: 0;
-    transform: scale(1) !important;
-    transition: all 0.4s ease !important;
-    opacity: 0.4;
-
-    @include media-max(2200px) {
-        width: 40vw;
-    }
-
-    @include respond(desktop) {
-        width: auto;
-        grid-template-columns: 1fr 1fr;
-        height: auto;
-    }
-
-    @include respond(laptop) {
-        width: 50vw;
-        height: 350px;
-    }
-
-    @include respond(mobile) {
-        display: flex;
-        flex-direction: column;
-        opacity: 1;
-        width: auto;
-        height: auto;
-    }
+/* Цена */
+.card .price {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #393939;
+  line-height: 1;
 }
 
-.plans__swiper .swiper-slide-active {
-    transform: scale(1.2) !important;
-    box-shadow: 0 0 30px 0 #7979795b;
-    z-index: 1;
-    opacity: 1;
-
-    @include respond(mobile) {
-        transform: none !important;
-        box-shadow: none;
-    }
+/* Кнопки */
+.card .buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.plans__swiper .swiper-button-next {
-    color: #393939 !important;
-    right: 250px !important;
-    filter: drop-shadow(0 0 10px #393939);
-    animation: move-next 4s infinite linear;
-
-    @include respond(desktop) {
-        right: 150px !important;
-    }
-
-    @include respond(laptop) {
-        right: 80px !important;
-    }
-
-    @include respond(mobile) {
-        display: none !important;
-    }
+.card .btn {
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-size: 14px;
 }
 
-@keyframes move-next {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(20px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+/* Чёрная кнопка */
+.card .btn-black {
+  background: #393939;
+  color: #fff;
 }
 
-.plans__swiper .swiper-button-prev {
-    color: #393939 !important;
-    left: 250px !important;
-    filter: drop-shadow(0 0 10px #393939);
-    animation: move-prev 4s infinite linear;
-
-    @include respond(desktop) {
-        left: 150px !important;
-    }
-
-    @include respond(laptop) {
-        left: 80px !important;
-    }
-
-    @include respond(mobile) {
-        display: none !important;
-    }
+.card .btn-black:hover {
+  background: #000;
 }
 
-@keyframes move-prev {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-20px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+/* Красная кнопка */
+.card .btn-red {
+  background: #CB2915;
+  color: #fff;
+}
+
+.card .btn-red:hover {
+  background: #a81919;
+}
+
+.card .info__addition {
+    font-weight: 500;
+    color: #000;
 }
