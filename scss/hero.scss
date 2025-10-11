@@ -7,7 +7,7 @@
 }
 
 .slide-1 {
-    background: #1f1f1f;
+    background: #0c0c0c;
 }
 
 .slide-2 {
@@ -102,14 +102,12 @@
     @include respond(tablet) {
         font-size: 64px;
         text-align: center;
-        white-space: nowrap;
         margin-bottom: 10px;
     }
 
     @include respond(mobile) {
-        font-size: 58px;
+        font-size: 52px;
         text-align: center;
-        white-space: nowrap;
         margin-bottom: 0;
     }
 }
@@ -186,7 +184,6 @@
 
     @include respond(mobile) {
         text-align: center;
-        white-space: nowrap;
         margin-bottom: 0;
     }
 }

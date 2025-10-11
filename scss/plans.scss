@@ -8,85 +8,85 @@
 }
 
 .plans__title {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 400;
-  margin-bottom: 60px;
-  text-transform: uppercase;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 60px;
+    text-transform: uppercase;
 }
 
 .plans__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-  justify-content: center;
-  max-width: 1350px;
-  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    max-width: 1350px;
+    margin: 0 auto;
 }
 
 .card {
-  background: #D9D9D9;
-  border-radius: 12px;
-  padding: 60px 30px;
-  max-width: 400px;
-  width: auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background: #d9d9d9;
+    border-radius: 12px;
+    padding: 60px 30px;
+    max-width: 400px;
+    width: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-  @include respond(mobile) {
-    padding: 40px 20px;
-    max-width: 100%;
-  }
+    @include respond(mobile) {
+        padding: 40px 20px;
+        max-width: 100%;
+    }
 }
 
 .card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 25px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
 }
 
 .card .title {
-  font-weight: 700;
-  padding-bottom: 20px;
-  color: #393939;
-  font-size: 38px;
-  text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: 20px;
+    color: #393939;
+    font-size: 38px;
+    text-transform: uppercase;
     position: relative;
 
-  &::before {
-    content: "";
-    display: block;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 60%;
-    height: 2px;
-    background: #B6B6B6;
-    margin-bottom: 10px;
-  }
+    &::before {
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 60%;
+        height: 2px;
+        background: #b6b6b6;
+        margin-bottom: 10px;
+    }
 }
 
 .card .info-top {
-  font-size: 18px;
-  color: #000;
-  margin: 5px 0;
-  font-weight: 500;
+    font-size: 18px;
+    color: #000;
+    margin: 5px 0;
+    font-weight: 500;
 }
 
 .card .info {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 10px;
-  display: flex;
-  gap: 17px;
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 17px;
 
-  @include respond(mobile) {
-    flex-wrap: wrap;
-    font-size: 16px;
-  }
+    @include respond(mobile) {
+        flex-wrap: wrap;
+        font-size: 16px;
+    }
 }
 
 .card .info__text {
@@ -96,63 +96,63 @@
 }
 
 .card .note {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #393939;
-  font-weight: 500;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #393939;
+    font-weight: 500;
 }
 
 .card .price {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: #393939;
-  line-height: 1;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #393939;
+    line-height: 1;
 }
 
 /* Кнопки */
 .card .buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .card .btn {
-  padding: 12px 15px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-align: center;
-  transition: all 0.2s ease;
-  font-size: 14px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-size: 14px;
 
-  @include respond(mobile) {
-    font-size: 12px;
-    padding: 14px 15px;
-  }
+    @include respond(mobile) {
+        font-size: 12px;
+        padding: 14px 15px;
+    }
 }
 
 /* Чёрная кнопка */
 .card .btn-black {
-  background: #393939;
-  color: #fff;
+    background: #393939;
+    color: #fff;
 }
 
 .card .btn-black:hover {
-  background: #000;
+    background: #000;
 }
 
 /* Красная кнопка */
 .card .btn-red {
-  background: #CB2915;
-  color: #fff;
+    background: #cb2915;
+    color: #fff;
 }
 
 .card .btn-red:hover {
-  background: #a81919;
+    background: #a81919;
 }
 
 .card .info__addition {

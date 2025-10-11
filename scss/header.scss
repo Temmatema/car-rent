@@ -43,7 +43,11 @@
 }
 
 .header__logo span {
-    font-size: 16px;
+    font-size: 28px;
+
+    @include respond(tablet) {
+        font-size: 22px;
+    }
 
     @include respond(mobile) {
         font-size: 14px;
@@ -79,9 +83,11 @@
 
 .header__link {
     padding: 20px;
+    color: #fff;
     position: relative;
+    font-weight: 500;
     display: block;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .header__link::after {
@@ -109,6 +115,7 @@
     display: inline-block;
     font-size: 36px;
     font-weight: 700;
+    color: #cb2915;
     margin-top: 10px;
     padding-right: 20px;
     padding-left: 20px;
@@ -286,7 +293,6 @@
 }
 
 .header__nav {
-
     @include respond(mobile) {
         transform: translateY(-120%);
         align-items: stretch;

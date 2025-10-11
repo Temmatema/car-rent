@@ -66,15 +66,23 @@ export function validateForm() {
     // телефон
     const digits = phoneInput.value.replace(/\D/g, "");
     if (digits.length !== 11) {
-        showModalMessage("error", "Ошибка ввода", "Введите корректный номер телефона");
+        showModalMessage(
+            "error",
+            "Ошибка ввода",
+            "Введите корректный номер телефона"
+        );
         valid = false;
     }
 
     // В/У
     const license = licenseInput.value;
-    const pattern = /^\d{2}\s[A-ZА-Я0-9]{2}\s\d{6}$/; 
+    const pattern = /^\d{2}\s[A-ZА-Я0-9]{2}\s\d{6}$/;
     if (!pattern.test(license)) {
-        showModalMessage("error", "Ошибка ввода", "Введите корректный номер В/У (например: 99 AB 123456 или 99 9A 123456)");
+        showModalMessage(
+            "error",
+            "Ошибка ввода",
+            "Введите корректный номер В/У (например: 99 AB 123456 или 99 9A 123456)"
+        );
         valid = false;
     }
 
@@ -83,15 +91,22 @@ export function validateForm() {
     const dateLicense = document.getElementById("date_license").value;
 
     if (!isValidDate(birthday)) {
-        showModalMessage("error", "Ошибка даты", "Введите корректную дату рождения (ДД.ММ.ГГГГ)");
+        showModalMessage(
+            "error",
+            "Ошибка даты",
+            "Введите корректную дату рождения (ДД.ММ.ГГГГ)"
+        );
         valid = false;
     }
 
     if (!isValidDate(dateLicense)) {
-        showModalMessage("error", "Ошибка даты", "Введите корректную дату выдачи В/У (ДД.ММ.ГГГГ)");
+        showModalMessage(
+            "error",
+            "Ошибка даты",
+            "Введите корректную дату выдачи В/У (ДД.ММ.ГГГГ)"
+        );
         valid = false;
     }
 
     return valid;
 }
-

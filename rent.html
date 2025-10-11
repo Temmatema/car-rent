@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>
+      Аренда автомобилей в Великом Новгороде | Прокат авто без водителя
+    </title>
+    <meta
+      name="description"
+      content="Аренда автомобилей в Великом Новгороде — новые OMODA, Exeed, Ora, Lada Vesta. От 2500 руб/сутки. Онлайн-заявка или звонок 8(921)842-55-55."
+    />
+    <meta
+      name="keywords"
+      content="аренда авто Великий Новгород, прокат машин без водителя, аренда автомобилей посуточно, OMODA C5, Exeed LX, Ora 03, Lada Vesta"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Аренда автомобилей Великий Новгород" />
+    <meta
+      property="og:description"
+      content="OMODA, Exeed, Ora, Lada Vesta. От 2500 руб./сутки. Онлайн-заявка или звонок."
+    />
+    <meta property="og:image" content="https://твойдомен/img/preview.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://твойдомен" />
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <a href="index.html" class="back-btn" aria-label="Назад">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        viewBox="0 0 24 24"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+      <section id="rent" class="app-rent">
+        <div class="app-rent__wrapper">
+          <div class="app-rent__image">
+            <img src="./img/photos/2.webp" alt="" />
+          </div>
+          <div class="app-rent__container">
+            <h2 class="app-rent__title">Заявка на аренду авто</h2>
+            <div class="app-rent__content">
+              <button class="telegram-btn">
+                <svg
+                  viewBox="0 0 100 100"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g />
+                  <path
+                    class="st117"
+                    d="M88.723 12.142C76.419 17.238 23.661 39.091 9.084 45.047c-9.776 3.815-4.053 7.392-4.053 7.392s8.345 2.861 15.499 5.007c7.153 2.146 10.968-.238 10.968-.238l33.62-22.652c11.922-8.107 9.061-1.431 6.199 1.431-6.199 6.2-16.452 15.975-25.036 23.844-3.815 3.338-1.908 6.199-.238 7.63 6.199 5.246 23.129 15.976 24.082 16.691 5.037 3.566 14.945 8.699 16.452-2.146l5.961-37.435c1.908-12.637 3.815-24.321 4.053-27.659.716-8.108-7.868-4.77-7.868-4.77"
+                  />
+                </svg>
+                Написать в телеграм
+              </button>
+
+              <form
+                id="rentForm"
+                class="app__form"
+                action="#"
+                method="POST"
+                autocomplete="off"
+              >
+                <div class="app__group">
+                  <label class="app__label" for="name"
+                    >Имя
+                    <input
+                      class="app__input"
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Иван"
+                      required
+                    />
+                  </label>
+                  <label class="app__label" for="surname"
+                    >Фамилия
+                    <input
+                      class="app__input"
+                      type="text"
+                      id="surname"
+                      name="surname"
+                      placeholder="Петров"
+                      required
+                    />
+                  </label>
+                </div>
+
+                <div class="app__checkbox-group">
+                  <p style="margin-bottom: 15px" class="app__label">
+                    Выберите автомобиль:
+                  </p>
+                  <div class="weight-options">
+                    <label>
+                      <input type="radio" name="car" value="omoda" checked />
+                      <span>Omoda C5</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="car" value="exeed" />
+                      <span>Exeed</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="car" value="ora" />
+                      <span>Ora 03</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="car" value="s5" />
+                      <span>Omoda S5</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="car" value="vesta" />
+                      <span>Lada Vesta</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Блок выбора класса (изначально скрыт) -->
+                <div
+                  id="carClassGroup"
+                  class="app__checkbox-group"
+                  style="display: none; margin-bottom: 20px"
+                >
+                  <p style="margin-bottom: 15px" class="app__label">
+                    Выберите комплектацию:
+                  </p>
+                  <div id="carClassOptions" class="weight-options">
+                    <!-- Опции вставляются динамически -->
+                  </div>
+                </div>
+
+                <div class="app__group">
+                  <label
+                    class="app__label"
+                    for="distance"
+                    style="margin-bottom: 20px; gap: 30px"
+                  >
+                    Планируемое количество километров в сутки:
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                      "
+                    >
+                      <input
+                        type="range"
+                        id="distance"
+                        name="distance"
+                        min="0"
+                        max="1000"
+                        step="50"
+                        value="0"
+                        style="width: 300px"
+                      />
+                      <span id="distanceValue">0 км</span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="app__group">
+                  <label class="app__label" for="license"
+                    >Серия и номер В/У
+                    <input
+                      class="app__input"
+                      type="text"
+                      id="license"
+                      name="license"
+                      placeholder="99 АВ 999999"
+                      required
+                    />
+                  </label>
+                  <label class="app__label" for="date_license"
+                    >Дата выдачи В/У
+                    <input
+                      class="app__input"
+                      type="text"
+                      id="date_license"
+                      name="date_license"
+                      placeholder="дд.мм.гггг"
+                      required
+                    />
+                  </label>
+                </div>
+
+                <div class="app__group">
+                  <label class="app__label" for="birthday"
+                    >Дата рождения
+                    <input
+                      class="app__input"
+                      type="text"
+                      id="birthday"
+                      name="birthday"
+                      placeholder="дд.мм.гггг"
+                      required
+                    />
+                  </label>
+                  <label class="app__label" for="phone"
+                    >Телефон
+                    <input
+                      class="app__input"
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+7(999) 999 99 99"
+                      required
+                    />
+                  </label>
+                </div>
+
+                <button type="submit" class="form__btn btn">
+                  Подать заявку
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="header__logo">
+          <svg
+            width="88"
+            height="92"
+            viewBox="0 0 88 92"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#a)">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M88 2.157S66.05 0 44.1 0C22.147 0 0 2.157 0 2.157v63.539S24.917 87.07 43.901 91.582C63.083 87.072 88 65.696 88 65.696z"
+                fill="#AF2F27"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M44.1 84.522C60.71 80.6 82.66 61.773 82.66 61.773V6.276s-19.181-1.96-38.363-1.96c-19.38 0-38.562 1.96-38.562 1.96V61.97S27.488 80.6 44.099 84.522"
+                fill="url(#b)"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M78.706 10.002S61.304 8.236 44.099 8.236c-17.402 0-34.805 1.765-34.805 1.765v50.204S29.07 77.07 44.1 80.6c15.03-3.53 34.607-20.395 34.607-20.395z"
+                fill="url(#c)"
+              />
+              <path
+                opacity=".5"
+                d="M9.294 60.205V10.002S26.697 8.236 44.1 8.236s34.607 1.765 34.607 1.765v50.204S58.93 77.07 43.9 80.6C29.07 77.07 9.294 60.205 9.294 60.205m68.423-49.223c-3.757-.392-18.786-1.569-33.618-1.569-15.03 0-30.059 1.373-33.816 1.569v48.83C13.052 61.97 30.454 76.286 44.1 79.62c13.447-3.334 31.047-17.65 33.816-19.806V10.982z"
+                fill="#934137"
+              />
+              <path
+                d="M44.296 6.668C26.103 6.668 7.91 8.433 7.91 8.433v52.556l-5.142 3.473V4.511c.046-.005 20.59-1.962 41.33-1.962 20.567 0 41.133 1.962 41.133 1.962l-4.746 3.922S62.292 6.668 44.296 6.668"
+                fill="url(#d)"
+              />
+              <path
+                d="M85.232 4.51v59.42S63.047 83.8 43.889 88.506v-6.272c14.978-3.136 36.65-21.21 36.597-21.244V8.433z"
+                fill="url(#e)"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.91 60.99s20.158 17.517 35.979 21.243v6.272C26.09 84.387 2.786 64.462 2.786 64.462z"
+                fill="url(#f)"
+              />
+              <g filter="url(#g)" fill-rule="evenodd" clip-rule="evenodd">
+                <path
+                  d="M25.576 55.75c3.294-3.579 5.523-4.374 9.204-4.374s5.91.795 9.205 4.374c2.518 1.79 2.906 2.188 2.81 8.351v2.287c0 .298-.292.596-.582.596h-3.1c-.291 0-.582-.298-.582-.596v-.498c-.969-.397-3.972-.894-7.75-.894s-6.783.497-7.751.895v.496c0 .3-.291.597-.582.597h-3.1c-.29 0-.581-.298-.581-.596V64.1c-.097-6.163.29-6.561 2.81-8.35m5.426-2.684c1.162-.497 2.519-.795 3.778-.795 1.26 0 2.616.298 3.78.795 1.743.895 3.487 2.784 3.487 2.784s-.581.895-7.267.895c-6.685 0-7.266-.895-7.266-.895s1.744-1.889 3.488-2.784m3.488 10.439c0 .397-1.066.1-1.357-.398-.194-.298-.29-2.485-.097-2.883.291-.298 1.454-.596 1.454-.199zm-4.166-2.585c-.388-.298-2.907-1.988-5.813-.298-.194.099-.388-1.591.775-2.187 2.093-1.164 4.814 1.217 5.62 1.922q.133.118.193.166c.193.198-.485.695-.775.397m4.747 2.585c0 .397 1.066.1 1.357-.398.193-.298.29-2.485.096-2.883-.29-.298-1.453-.596-1.453-.199zm4.166-2.585c.387-.298 2.907-1.988 5.813-.298.194.099.388-1.591-.775-2.187-2.325-1.293-5.426 1.789-5.813 2.087-.194.199.485.696.775.398"
+                  fill="url(#h)"
+                />
+                <path
+                  d="M34.76 52.302a6.197 6.197 0 0 0 6.196-6.198 6.197 6.197 0 1 0-12.392 0 6.197 6.197 0 0 0 6.196 6.198m0-.975a5.22 5.22 0 0 0 5.221-5.223 5.222 5.222 0 1 0-10.442 0 5.22 5.22 0 0 0 5.221 5.223"
+                  fill="#FDFDFD"
+                />
+                <path
+                  d="M66.934 14.751a1.26 1.26 0 0 1 1.773.199l1.56 1.954c.23.287.322.659.255 1.02l-.695 3.731-.288 1.715a1.26 1.26 0 0 1-.457.777l-.539.431a1.26 1.26 0 0 1-.859.274l-.607-.034a1.26 1.26 0 0 0-1.315 1.051l-.101.6a1.26 1.26 0 0 1-.457.778l-.355.284a1.26 1.26 0 0 1-1.233.195l-1.686-.636a1.26 1.26 0 0 0-1.233.195l-.17.136a1.26 1.26 0 0 0-.463 1.16l.248 1.786c.06.44-.115.881-.463 1.16l-.28.223a1.26 1.26 0 0 1-1.02.255l-1.352-.252a1.26 1.26 0 0 0-1.019.255l-2.607 2.083a1.263 1.263 0 0 0-.198 1.774l.926 1.16a3.156 3.156 0 0 1-.496 4.434L43.6 49.614a3.153 3.153 0 0 1-4.433-.495l-7.93-9.93a3.156 3.156 0 0 1 .495-4.435l10.204-8.155a3.153 3.153 0 0 1 4.433.496l1.207 1.511a1.26 1.26 0 0 0 1.774.199l8.229-6.577 5.17-4.132 2.586-2.066zm-26.68 23.906a2.003 2.003 0 1 0-3.129 2.501l2.233 2.796a2.003 2.003 0 1 0 3.13-2.5z"
+                  fill="url(#i)"
+                />
+              </g>
+            </g>
+            <defs>
+              <linearGradient
+                id="b"
+                x1="44.17"
+                y1="84.574"
+                x2="44.17"
+                y2="4.278"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset=".002" stop-color="#F0F0F0" />
+                <stop offset="1" stop-color="#CACACA" />
+              </linearGradient>
+              <linearGradient
+                id="c"
+                x1="78.79"
+                y1="44.42"
+                x2="9.252"
+                y2="44.42"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#DA2A13" />
+                <stop offset=".497" stop-color="#A92518" />
+                <stop offset=".499" stop-color="#FF4F39" />
+                <stop offset=".826" stop-color="#FF9483" />
+                <stop offset=".833" stop-color="#FF6A4E" />
+                <stop offset="1" stop-color="#F3372B" />
+              </linearGradient>
+              <linearGradient
+                id="d"
+                x1="18.631"
+                y1="51.958"
+                x2="-11.223"
+                y2="16.08"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset=".005" stop-color="#D6E1E1" />
+                <stop offset=".649" stop-color="#fff" />
+              </linearGradient>
+              <linearGradient
+                id="e"
+                x1="85.294"
+                y1="74.564"
+                x2="44.022"
+                y2="74.564"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset=".002" stop-color="#A3AAAA" />
+                <stop offset="1" stop-color="#C3D0D1" />
+              </linearGradient>
+              <linearGradient
+                id="f"
+                x1="44.174"
+                y1="74.564"
+                x2="2.748"
+                y2="74.564"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset=".002" stop-color="#fff" />
+                <stop offset="1" stop-color="#E1EEEF" />
+              </linearGradient>
+              <linearGradient
+                id="h"
+                x1="40.231"
+                y1="70.722"
+                x2="36.223"
+                y2="51.035"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#E8F3F9" />
+                <stop offset=".302" stop-color="#A3B7BF" />
+                <stop offset=".365" stop-color="#A7BDC9" />
+                <stop offset=".58" stop-color="#E9F4FE" />
+                <stop offset="1" stop-color="#fff" />
+              </linearGradient>
+              <linearGradient
+                id="i"
+                x1="56.215"
+                y1="42.967"
+                x2="42.091"
+                y2="26.881"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#E8F3F9" />
+                <stop offset=".302" stop-color="#A3B7BF" />
+                <stop offset=".365" stop-color="#A7BDC9" />
+                <stop offset=".58" stop-color="#E9F4FE" />
+                <stop offset="1" stop-color="#fff" />
+              </linearGradient>
+              <filter
+                id="a"
+                x="0"
+                y="0"
+                width="88"
+                height="154.838"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="63.257" />
+                <feGaussianBlur stdDeviation="31.628" />
+                <feComposite
+                  in2="hardAlpha"
+                  operator="arithmetic"
+                  k2="-1"
+                  k3="1"
+                />
+                <feColorMatrix
+                  values="0 0 0 0 0.954167 0 0 0 0 0.21421 0 0 0 0 0.166979 0 0 0 0.16 0"
+                />
+                <feBlend in2="shape" result="effect1_innerShadow_2071_1268" />
+              </filter>
+              <filter
+                id="g"
+                x="22.753"
+                y="14.475"
+                width="47.791"
+                height="54.503"
+                filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB"
+              >
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="1.994" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_2071_1268"
+                />
+                <feBlend
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_2071_1268"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+          <span>Аренда автомобилей<br />в Великом Новгороде</span>
+        </div>
+        <div class="footer__blocks">
+          <div class="footer__list">
+            <p class="footer__block-title">Главная</p>
+            <div class="footer__links">
+              <a href="#">Инфо</a>
+              <a href="#">Автомобили</a>
+            </div>
+          </div>
+          <div class="footer__list">
+            <p class="footer__block-title">Аренда</p>
+            <div class="footer__links">
+              <a href="#">Преимущества</a>
+              <a href="#">Комплектации</a>
+              <a href="#">Подать заявку</a>
+              <a href="#">Условия аренды</a>
+            </div>
+          </div>
+          <div class="footer__list">
+            <p class="footer__block-title">Помощь</p>
+            <div class="footer__links">
+              <a href="#">Галерея</a>
+              <a href="#">Частые вопросы (FAQs)</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__side">
+          <a href="tel:+79218425555" class="footer__btn btn">Позвонить</a>
+          <div class="avito">
+            <p class="avito__text">Мы на авито:</p>
+            <a
+              target="_blank"
+              href="https://www.avito.ru/velikiy_novgorod/predlozheniya_uslug/prokat_arenda_avtomobilya_bez_voditelya_2772124068?context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiIwNnFmcDJWQXFRQ1NWY3h3Ijt9u1zcfj8AAAA"
+              ><img src="./img/avito.svg" alt="Авито."
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal" id="imageModal">
+      <span class="modal__close">&times;</span>
+      <img class="modal__img" src="" alt="Увеличенное фото" />
+    </div>
+
+    <div class="modal-message" id="modalMessage">
+      <div class="modal-message__content">
+        <div class="modal-message__icon" id="modalMessageIcon"></div>
+        <h2 class="modal-message__title" id="modalMessageTitle"></h2>
+        <p class="modal-message__text" id="modalMessageText"></p>
+        <button class="modal-message__btn" id="modalMessageBtn"></button>
+      </div>
+    </div>
+    <script>
+      const carRadios = document.querySelectorAll('input[name="car"]');
+      const carClassGroup = document.getElementById("carClassGroup");
+      const carClassOptions = document.getElementById("carClassOptions");
+
+      function updateCarClassOptions(selectedCar) {
+        carClassOptions.innerHTML = ""; // очищаем старые опции
+        carClassGroup.style.display = "flex";
+
+        let classes = [];
+
+        switch (selectedCar) {
+          case "omoda":
+            classes = ["Joy", "Lifestyle", "Ultimate"];
+            break;
+          case "exeed":
+            classes = ["Luxury"];
+            break;
+          case "ora":
+            classes = ["Premium"];
+            break;
+          case "s5":
+            classes = ["Classic"];
+            break;
+          case "vesta":
+            classes = ["Techno"];
+            break;
+        }
+
+        classes.forEach((cls, index) => {
+          const label = document.createElement("label");
+          label.innerHTML = `
+        <input type="radio" name="carClass" value="${cls.toLowerCase()}" ${index === 0 ? "checked" : ""} required>
+        <span>${cls}</span>
+      `;
+          carClassOptions.appendChild(label);
+        });
+      }
+
+      // При загрузке страницы — отрисовать для выбранной по умолчанию машины
+      const defaultCar = document.querySelector(
+        'input[name="car"]:checked'
+      ).value;
+      updateCarClassOptions(defaultCar);
+
+      // Отслеживаем переключения
+      carRadios.forEach((radio) => {
+        radio.addEventListener("change", (e) => {
+          updateCarClassOptions(e.target.value);
+        });
+      });
+
+      // --- Блок выбора километров ---
+      const distanceInput = document.getElementById("distance");
+      const distanceValue = document.getElementById("distanceValue");
+
+      function updateRangeBackground() {
+        const value = distanceInput.value;
+        const min = distanceInput.min;
+        const max = distanceInput.max;
+        const percent = ((value - min) / (max - min)) * 100;
+
+        // Обновляем заливку дорожки
+        distanceInput.style.background = `linear-gradient(to right, #CB2915 ${percent}%, #ddd ${percent}%)`;
+
+        // Обновляем подпись
+        distanceValue.textContent = `${value} км`;
+      }
+
+      // При загрузке страницы и при движении ползунка
+      updateRangeBackground();
+      distanceInput.addEventListener("input", updateRangeBackground);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

@@ -33,7 +33,7 @@
     }
 
     @include respond(laptop) {
-        justify-content: center
+        justify-content: center;
     }
 
     @include respond(tablet) {

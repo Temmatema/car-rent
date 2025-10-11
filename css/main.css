@@ -215,7 +215,12 @@ table {
 }
 
 .header__logo span {
-  font-size: 16px;
+  font-size: 28px;
+}
+@media (max-width: 768px) {
+  .header__logo span {
+    font-size: 22px;
+  }
 }
 @media (max-width: 480px) {
   .header__logo span {
@@ -252,9 +257,11 @@ table {
 
 .header__link {
   padding: 20px;
+  color: #fff;
   position: relative;
+  font-weight: 500;
   display: block;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .header__link::after {
@@ -283,6 +290,7 @@ table {
   display: inline-block;
   font-size: 36px;
   font-weight: 700;
+  color: #cb2915;
   margin-top: 10px;
   padding-right: 20px;
   padding-left: 20px;
@@ -458,7 +466,7 @@ table {
 }
 
 .slide-1 {
-  background: #1f1f1f;
+  background: #0c0c0c;
 }
 
 .slide-2 {
@@ -560,15 +568,13 @@ table {
   .hero__car-name {
     font-size: 64px;
     text-align: center;
-    white-space: nowrap;
     margin-bottom: 10px;
   }
 }
 @media (max-width: 480px) {
   .hero__car-name {
-    font-size: 58px;
+    font-size: 52px;
     text-align: center;
-    white-space: nowrap;
     margin-bottom: 0;
   }
 }
@@ -639,7 +645,6 @@ table {
 @media (max-width: 480px) {
   .hero__car-price {
     text-align: center;
-    white-space: nowrap;
     margin-bottom: 0;
   }
 }
@@ -910,7 +915,7 @@ table {
 }
 
 .card {
-  background: #D9D9D9;
+  background: #d9d9d9;
   border-radius: 12px;
   padding: 60px 30px;
   max-width: 400px;
@@ -950,7 +955,7 @@ table {
   position: absolute;
   width: 60%;
   height: 2px;
-  background: #B6B6B6;
+  background: #b6b6b6;
   margin-bottom: 10px;
 }
 
@@ -1034,7 +1039,7 @@ table {
 
 /* Красная кнопка */
 .card .btn-red {
-  background: #CB2915;
+  background: #cb2915;
   color: #fff;
 }
 
@@ -1048,7 +1053,7 @@ table {
 }
 
 .desc__wrapper {
-  padding: 120px 140px 180px;
+  padding: 60px 140px 100px;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -1908,6 +1913,280 @@ table {
     left: 0;
     justify-content: center;
   }
+}
+
+.back-btn {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 70px;
+  height: 70px;
+  background-color: #cb2915;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background-color: #a32211;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.back-btn svg {
+  width: 40px;
+  height: 40px;
+}
+
+.app-rent {
+  position: relative;
+  background-color: rgba(238, 238, 238, 0.6823529412);
+}
+
+.app-rent__wrapper {
+  padding: 60px 150px 90px 150px;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+}
+
+.app-rent__image {
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.app-rent__image img {
+  object-fit: cover;
+  height: 100%;
+  object-position: right;
+  filter: grayscale(30%);
+}
+
+.app-rent__container {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 30px 30px 0;
+}
+
+.app-rent__title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.app__form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+}
+
+.app__checkbox-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-rent .telegram-btn {
+  display: flex;
+  cursor: pointer;
+  width: auto;
+  border: 1px solid #393939;
+  border-radius: 25px;
+  padding: 10px 30px 10px 70px;
+  height: 50px;
+  justify-content: center;
+  font-weight: 500;
+  background-color: rgba(238, 238, 238, 0.6823529412);
+  color: #393939;
+  position: relative;
+  align-items: center;
+  font-size: 18px;
+  box-shadow: 0 3px 10px rgba(57, 57, 57, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.app-rent .telegram-btn:hover {
+  background-color: #393939;
+  color: #fff;
+}
+.app-rent .telegram-btn:hover svg {
+  fill: #fff;
+}
+
+.telegram-btn svg {
+  position: absolute;
+  fill: #393939;
+  left: 15px;
+  top: 0;
+  margin: auto 0;
+  bottom: 0;
+  height: 30px;
+}
+
+.app-rent__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app__group {
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  justify-content: center;
+}
+
+.app__group:last-of-type {
+  margin-bottom: 30px;
+}
+
+.app-rent .app__label {
+  font-size: 18px;
+  color: #6c6c6c;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.app__input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: #393939;
+  background-color: transparent;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 0;
+  font-size: 20px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.app__input:focus {
+  border-color: #393939;
+}
+.app__input::placeholder {
+  color: #c5c5c5;
+}
+
+.app__label:has(.app__input:focus),
+.app__label:has(.app__input:focus-visible) {
+  color: #393939;
+}
+
+.form__btn {
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 100px;
+  font-size: 18px;
+  font-weight: 400;
+  box-shadow: 0 1px 15px 5px rgba(57, 57, 57, 0.3);
+  background: linear-gradient(90deg, #535353 0%, #393939 100%);
+  transition: all 0.3s ease;
+}
+
+.form__btn:hover {
+  box-shadow: none;
+  scale: 1.02;
+}
+
+.form__btn:active {
+  transform: scale(0.98);
+}
+
+.weight-options {
+  display: flex;
+  border: 1px solid #cb2915;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0);
+}
+
+.weight-options label {
+  cursor: pointer;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #444;
+}
+
+.weight-options input {
+  display: none; /* прячем стандартный radio */
+}
+
+.weight-options input:checked + span {
+  background: #cb2915; /* выделение выбранного */
+  color: #fff;
+}
+
+.weight-options span {
+  padding: 8px 20px;
+  flex: 1;
+  display: block;
+  border-right: 1px solid #cb2915;
+  transition: all 0.3s ease;
+}
+
+.weight-options label:last-child span {
+  border-right: none; /* убираем границу у последнего */
+}
+
+/* Общий стиль для range */
+#distance {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #cb2915 0%, #cb2915 0%, #ddd 0%, #ddd 100%);
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+/* Ползунок (thumb) */
+#distance::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #cb2915;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#distance::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #a71f10;
+}
+
+/* Для Firefox */
+#distance::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #cb2915;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#distance::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: #a71f10;
 }
 
 html {
