@@ -16,6 +16,13 @@
   transition: all 0.3s ease;
   z-index: 1000;
   text-decoration: none;
+
+  @include respond(mobile) {
+        top: 30px;
+        left: 30px;
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .back-btn:hover {
@@ -27,6 +34,11 @@
 .back-btn svg {
   width: 40px;
   height: 40px;
+
+  @include respond(mobile) {
+       width: 30px;
+  height: 30px;
+    }
 }
 
 
@@ -40,11 +52,34 @@
     max-width: 1920px;
     margin: 0 auto;
     display: grid;
+    align-items: center;
     grid-template-columns: 1fr 1.4fr;
+    gap: 50px;
+
+    @include respond(desktop) {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    @include respond(laptop) {
+        padding-left: 40px;
+        padding-right: 40px;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 60px;
+    }
+
+    @media (max-width: 830px) {
+        display: flex;
+        display: flex;
+        padding: 60px 20px;
+        flex-direction: column;
+    }
 }
 
 .app-rent__image {
-    height: 100%;
+    height: 80%;
     border-radius: 30px;
     overflow: hidden;
 
@@ -54,7 +89,24 @@
         object-position: right;
         filter: grayscale(30%);
     }
+
+    @include respond(mobile) {
+        display: none;
+    }
+
+    @include respond(laptop) {
+        img {
+            object-position: center;
+        }
+    }
 }
+
+@media (max-width: 830px) {
+    .app-rent__image {
+        display: none;
+    }
+}
+
 
 .app-rent__container {
     padding: 40px 0;
@@ -69,6 +121,10 @@
     font-weight: 400;
     margin-bottom: 60px;
     text-align: center;
+
+    @include respond(mobile) {
+        font-size: 20px;
+    }
 }
 
 .app__form {
@@ -77,12 +133,20 @@
     gap: 40px;
     width: 100%;
     align-items: center;
+
+    @include respond(mobile) {
+      align-items: stretch;
+    }
 }
 
 .app__checkbox-group {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include respond(mobile) {
+      align-items: stretch;
+    }
 }
 
 .app-rent .telegram-btn {
@@ -135,6 +199,10 @@
     width: 100%;
     gap: 50px;
     justify-content: center;
+
+    @include respond(mobile) {
+      flex-direction: column;
+    }
 }
 
 .app__group:last-of-type {
@@ -176,7 +244,7 @@
     color: #393939;
 }
 
-.form__btn {
+.app-rent .form__btn {
     color: #fff;
     border-radius: 30px;
     padding: 12px 100px;
@@ -202,6 +270,10 @@
     border-radius: 6px;
     overflow: hidden;
     background: #ffffff00;
+
+    @include respond(mobile) {
+      flex-direction: column;
+    }
 }
 
 .weight-options label {
@@ -212,6 +284,10 @@
     font-weight: 600;
     letter-spacing: 0.3px;
     color: #444;
+
+    @include respond(mobile) {
+      font-size: 22px;
+    }
 }
 
 .weight-options input {
@@ -226,9 +302,15 @@
 .weight-options span {
     padding: 8px 20px;
     flex: 1;
-    display: block;
+    display: flex;
+    align-items: center;
+    height: 100%;
     border-right: 1px solid #cb2915;
     transition: all 0.3s ease;
+
+    @include respond(desktop) {
+        padding: 8px 16px;
+    }
 }
 
 .weight-options label:last-child span {
