@@ -69,6 +69,7 @@
 
 .header__nav ul {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .header__line {
@@ -113,17 +114,60 @@
 
 .header__phone {
     display: inline-block;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
     color: #cb2915;
-    margin-top: 10px;
     padding-right: 20px;
     padding-left: 20px;
     transition: all 0.15s ease;
 }
 
+.call-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include respond(laptop) {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header__line {
+        display: none;
+    }
+
+    .call-content {
+        flex-direction: column;
+        align-items: end;
+    }
+}
+
+@media (max-width: 1024px) {
+    .call-content {
+        align-items: center;
+    }
+}
+
+.header__phone-btn {
+    background-color: #cb2915;
+    font-size: 24px;
+    padding: 7px 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    @include respond(laptop) {
+        font-size: 22px;
+        padding: 7px 30px;
+    }
+}
+
+.header__phone-btn:hover {
+    background-color: #737373;
+}
+
 .header__phone:hover {
-    color: #cb2915;
+    color: #737373;
 }
 
 .burger {
