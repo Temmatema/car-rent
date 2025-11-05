@@ -9,6 +9,13 @@ document.querySelectorAll(".gallery__swiper img").forEach((img) => {
     });
 });
 
+document.querySelectorAll(".gallery__slide img").forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.classList.add("active");
+    modalImg.src = img.src;
+  });
+});
+
 closeBtn.addEventListener("click", () => {
     modal.classList.remove("active");
 });

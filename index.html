@@ -96,7 +96,6 @@
                   <h1 class="hero__title">
                     ПРОКАТ <br />КОМФОРТНОГО <br />АВТОМОБИЛЯ
                   </h1>
-                  <p class="hero__car-name">OMODA C5</p>
                   <p class="hero__car-price">от 2500 руб./сутки</p>
                   <a href="rent.html" class="btn hero__btn">Подать заявку</a>
                 </div>
@@ -119,272 +118,140 @@
         <h2 class="plans__title">ВЫБЕРИ СВОЮ КОМПЛЕКТАЦИЮ</h2>
         <div class="plans__wrapper">
           <article class="card" itemscope itemtype="https://schema.org/Product">
-            <figure>
-              <img
-                src="./img/mobile/omoda-mobile.webp"
-                alt="OMODA C5 Joy 2022 аренда автомобиля"
-                itemprop="image"
-              />
-            </figure>
+            <!-- FRONT -->
+            <div class="card__front">
+              <figure>
+                <img
+                  src="./img/mobile/exeed-mobile.webp"
+                  alt="OMODA C5 Joy 2022 аренда автомобиля"
+                  itemprop="image"
+                />
+              </figure>
 
-            <h2 class="title" itemprop="name">OMODA C5</h2>
-            <div class="info-top">
-              Комплектация
-              <p style="color: #cb2915" itemprop="model">
-                <span>Joy -</span>
-                <span>Lifestyle -</span>
-                <span>Ultimate</span>
+              <h2 class="title" itemprop="name">Exeed</h2>
+
+              <div class="info">
+                <span class="info__text">
+                  Год выпуска
+                  <time class="info__addition" itemprop="productionDate"
+                    >2024</time
+                  >
+                </span>
+                <span class="info__text">
+                  КПП
+                  <span class="info__addition" itemprop="additionalProperty"
+                    >А</span
+                  >
+                </span>
+                <span class="info__text">
+                  Мест
+                  <span class="info__addition" itemprop="seatingCapacity"
+                    >5</span
+                  >
+                </span>
+              </div>
+
+              <p class="note">От 2 суток</p>
+
+              <p
+                class="price"
+                itemprop="offers"
+                itemscope
+                itemtype="https://schema.org/Offer"
+              >
+                <span itemprop="price">от 4 000</span> ₽
+                <meta itemprop="priceCurrency" content="RUB" />
+                <link
+                  itemprop="availability"
+                  href="https://schema.org/InStock"
+                />
               </p>
-            </div>
-            <div class="info">
-              <span class="info__text"
-                >Год выпуска
-                <time class="info__addition" itemprop="productionDate"
-                  >2022</time
-                ></span
-              >
-              <span class="info__text"
-                >КПП
-                <span class="info__addition" itemprop="additionalProperty"
-                  >А</span
-                ></span
-              >
-              <span class="info__text"
-                >Мест
-                <span class="info__addition" itemprop="seatingCapacity"
-                  >5</span
-                ></span
-              >
+
+              <div class="buttons">
+                <button class="btn btn-black btn-more" type="button">
+                  ПОДРОБНЕЕ
+                </button>
+                <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+              </div>
             </div>
 
-            <p class="note">От 2 суток</p>
+            <!-- BACK -->
+            <div class="card__back">
+              <!-- Галерея -->
+              <div class="card__gallery" aria-label="Фотогалерея автомобиля">
+                <div class="gallery__viewport">
+                  <div class="gallery__track">
+                    <div class="gallery__slide">
+                      <img src="./img/cards/exeed/exeed-1.jpg" alt="Exeed вид спереди" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/exeed/exeed-2.jpg" alt="Exeed вид сбоку" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/exeed/exeed-3.jpg" alt="Exeed салон" />
+                    </div>
+                  </div>
+                </div>
 
-            <p
-              class="price"
-              itemprop="offers"
-              itemscope
-              itemtype="https://schema.org/Offer"
-            >
-              <span itemprop="price">от 3 300</span> ₽
-              <meta itemprop="priceCurrency" content="RUB" />
-              <link itemprop="availability" href="https://schema.org/InStock" />
-            </p>
+                <button
+                  class="gallery__nav gallery__nav--prev"
+                  type="button"
+                  aria-label="Предыдущее фото"
+                >
+                  ❮
+                </button>
+                <button
+                  class="gallery__nav gallery__nav--next"
+                  type="button"
+                  aria-label="Следующее фото"
+                >
+                  ❯
+                </button>
 
-            <div class="buttons">
-              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
-              <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
-            </div>
-          </article>
-          <article class="card" itemscope itemtype="https://schema.org/Product">
-            <figure>
-              <img
-                src="./img/mobile/exeed-mobile.webp"
-                alt="OMODA C5 Joy 2022 аренда автомобиля"
-                itemprop="image"
-              />
-            </figure>
+                <div
+                  class="gallery__dots"
+                  role="tablist"
+                  aria-label="Индикаторы слайдов"
+                >
+                  <button
+                    class="gallery__dot is-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-label="Слайд 1"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 2"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 3"
+                  ></button>
+                </div>
+              </div>
 
-            <h2 class="title" itemprop="name">Exeed</h2>
-            <div class="info-top">
-              Комплектация
-              <span style="color: #cb2915" itemprop="model">Luxury</span>
-            </div>
-            <div class="info">
-              <span class="info__text"
-                >Год выпуска
-                <time class="info__addition" itemprop="productionDate"
-                  >2024</time
-                ></span
-              >
-              <span class="info__text"
-                >КПП
-                <span class="info__addition" itemprop="additionalProperty"
-                  >А</span
-                ></span
-              >
-              <span class="info__text"
-                >Мест
-                <span class="info__addition" itemprop="seatingCapacity"
-                  >5</span
-                ></span
-              >
-            </div>
-
-            <p class="note">От 2 суток</p>
-
-            <p
-              class="price"
-              itemprop="offers"
-              itemscope
-              itemtype="https://schema.org/Offer"
-            >
-              <span itemprop="price">от 4 000</span> ₽
-              <meta itemprop="priceCurrency" content="RUB" />
-              <link itemprop="availability" href="https://schema.org/InStock" />
-            </p>
-
-            <div class="buttons">
-              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
-              <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
-            </div>
-          </article>
-          <article class="card" itemscope itemtype="https://schema.org/Product">
-            <figure>
-              <img
-                src="./img/mobile/ora-mobile.webp"
-                alt="OMODA C5 Joy 2022 аренда автомобиля"
-                itemprop="image"
-              />
-            </figure>
-
-            <h2 class="title" itemprop="name">Ora 03</h2>
-            <div class="info-top">
-              Комплектация
-              <span style="color: #cb2915" itemprop="model">Premium</span>
-            </div>
-            <div class="info">
-              <span class="info__text"
-                >Год выпуска
-                <time class="info__addition" itemprop="productionDate"
-                  >2022</time
-                ></span
-              >
-              <span class="info__text"
-                >КПП
-                <span class="info__addition" itemprop="additionalProperty"
-                  >А</span
-                ></span
-              >
-              <span class="info__text"
-                >Мест
-                <span class="info__addition" itemprop="seatingCapacity"
-                  >5</span
-                ></span
-              >
-            </div>
-
-            <p class="note">От 2 суток</p>
-
-            <p
-              class="price"
-              itemprop="offers"
-              itemscope
-              itemtype="https://schema.org/Offer"
-            >
-              <span itemprop="price">от 5 000</span> ₽
-              <meta itemprop="priceCurrency" content="RUB" />
-              <link itemprop="availability" href="https://schema.org/InStock" />
-            </p>
-
-            <div class="buttons">
-              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
-              <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
-            </div>
-          </article>
-          <article class="card" itemscope itemtype="https://schema.org/Product">
-            <figure>
-              <img
-                src="./img/mobile/omoda-s5.webp"
-                alt="OMODA C5 Joy 2022 аренда автомобиля"
-                itemprop="image"
-              />
-            </figure>
-
-            <h2 class="title" itemprop="name">Omoda S5</h2>
-            <div class="info-top">
-              Комплектация
-              <span style="color: #cb2915" itemprop="model">Classic</span>
-            </div>
-            <div class="info">
-              <span class="info__text"
-                >Год выпуска
-                <time class="info__addition" itemprop="productionDate"
-                  >2022</time
-                ></span
-              >
-              <span class="info__text"
-                >КПП
-                <span class="info__addition" itemprop="additionalProperty"
-                  >А</span
-                ></span
-              >
-              <span class="info__text"
-                >Мест
-                <span class="info__addition" itemprop="seatingCapacity"
-                  >5</span
-                ></span
-              >
-            </div>
-
-            <p class="note">От 2 суток</p>
-
-            <p
-              class="price"
-              itemprop="offers"
-              itemscope
-              itemtype="https://schema.org/Offer"
-            >
-              <span itemprop="price">3 000</span> ₽
-              <meta itemprop="priceCurrency" content="RUB" />
-              <link itemprop="availability" href="https://schema.org/InStock" />
-            </p>
-
-            <div class="buttons">
-              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
-              <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
-            </div>
-          </article>
-          <article class="card" itemscope itemtype="https://schema.org/Product">
-            <figure>
-              <img
-                src="./img/mobile/vesta.webp"
-                alt="OMODA C5 Joy 2022 аренда автомобиля"
-                itemprop="image"
-              />
-            </figure>
-
-            <h2 class="title" itemprop="name">Lada Vesta</h2>
-            <div class="info-top">
-              Комплектация
-              <span style="color: #cb2915" itemprop="model">Techno</span>
-            </div>
-            <div class="info">
-              <span class="info__text"
-                >Год выпуска
-                <time class="info__addition" itemprop="productionDate"
-                  >2022</time
-                ></span
-              >
-              <span class="info__text"
-                >КПП
-                <span class="info__addition" itemprop="additionalProperty"
-                  >А</span
-                ></span
-              >
-              <span class="info__text"
-                >Мест
-                <span class="info__addition" itemprop="seatingCapacity"
-                  >5</span
-                ></span
-              >
-            </div>
-
-            <p class="note">От 2 суток</p>
-
-            <p
-              class="price"
-              itemprop="offers"
-              itemscope
-              itemtype="https://schema.org/Offer"
-            >
-              <span itemprop="price">3 000</span> ₽
-              <meta itemprop="priceCurrency" content="RUB" />
-              <link itemprop="availability" href="https://schema.org/InStock" />
-            </p>
-
-            <div class="buttons">
-              <a href="tel:+79218425555" class="btn btn-black">ПОЗВОНИТЬ</a>
-              <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+              <div style="padding: 0 30px 40px;">
+                <h3 class="info-top">Характеристики</h3>
+                <ul class="info-list">
+                  <li>Двигатель: 147 л.с. бензин</li>
+                  <li>Тип КПП: робот</li>
+                  <li>Привод: передний</li>
+                  <li>Расход топлива на 100 км: 7 л</li>
+                  <li>Количество мест: 5</li>
+                  <li>Цвет кузова: черный</li>
+                </ul>
+                <div class="buttons">
+                  <button class="btn btn-black btn-back" type="button">
+                    НАЗАД
+                  </button>
+                  <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+                </div>
+              </div>
+              <!-- Контент характеристик -->
             </div>
           </article>
         </div>
@@ -588,7 +455,7 @@
         </div>
       </section>
 
-     <!--- <section class="faq">
+      <!--- <section class="faq">
         <div class="wrapper">
           <h2 class="faq__title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (FAQs)</h2>
           <div class="faq__acc">
@@ -894,7 +761,7 @@
       });
 
       // При клике на любую ссылку в меню — закрываем бургер
-      menuLinks.forEach(link => {
+      menuLinks.forEach((link) => {
         link.addEventListener("click", () => {
           burger.classList.remove("active");
           nav.classList.remove("active");
@@ -904,7 +771,8 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module" src="js/modal.js"></script>
+    <script type="module" src="js/card.js"></script>
     <script type="module" src="js/swiper.js"></script>
+    <script type="module" src="js/modal.js"></script>
   </body>
 </html>
