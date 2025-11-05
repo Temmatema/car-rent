@@ -954,6 +954,8 @@ table {
   justify-content: center;
   max-width: 1350px;
   margin: 0 auto;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .card {
@@ -1019,6 +1021,13 @@ table {
     flex-wrap: wrap;
     font-size: 16px;
   }
+}
+
+.card .info-list {
+  margin-bottom: 30px;
+}
+.card .info-list li {
+  margin-bottom: 5px;
 }
 
 .card .info__text {
@@ -1094,80 +1103,95 @@ table {
 }
 
 /* === Flip-card надстройка поверх твоих стилей === */
+/* === Slide-анимация задней стороны карточки === */
 .card {
   position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-}
-@media (prefers-reduced-motion: reduce) {
-  .card {
-    transition: none;
-  }
-}
-.card {
-  perspective: 1000px; /* 3D-перспектива для переворота */
-}
-
-/* Класс, который включаем по клику */
-.card.is-flipped {
-  transform: rotateY(180deg);
-}
-
-/* Стороны карточки */
-.card__front,
-.card__back {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden; /* для iOS */
-  /* Наследуем визуальные параметры от .card, чтобы обе стороны выглядели одинаково */
-  background: inherit;
-  border-radius: inherit;
-  color: inherit;
-}
-
-/* FRONT — остаётся в потоке, чтобы высота карточки бралась от фронта */
-.card__front {
-  padding: 60px 30px;
-  position: relative;
-  z-index: 2;
-}
-
-/* BACK — кладём поверх фронта, растягиваем по карточке, копируем паддинги */
-.card__back {
-  position: absolute;
-  inset: 0;
-  padding: inherit; /* возьмёт те же паддинги, что и у .card */
+  overflow: hidden; /* ничего не вылезает при анимации */
+  background: #d9d9d9;
+  border-radius: 12px;
+  max-width: 400px;
+  width: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: rotateY(180deg);
+  padding: 60px 30px;
 }
-
-/* Мелкие допы для списка характеристик */
-.info-list {
-  margin-bottom: 30px;
-}
-.info-list li {
-  font-size: 18px;
-  margin-bottom: 6px;
-}
-
-/* На мобильных — тот же комфорт, что и у фронта */
 @media (max-width: 480px) {
-  .card__back {
-    padding: inherit; /* сохранит твои мобильные отступы из .card */
+  .card {
+    max-width: 100%;
+    padding: 40px 20px;
   }
 }
-/* ===== Галерея на обороте карточки ===== */
+
+/* Стороны */
+.card__front,
+.card__back {
+  border-radius: inherit;
+  background: inherit;
+  color: inherit;
+}
+
+/* Фронт — в нормальном потоке, чтобы задавать высоту карточке контентом */
+.card__front {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
+/* Бэк — поверх, изначально за пределами справа */
+.card__back {
+  position: absolute;
+  inset: 0;
+  padding: 0; /* паддинги дадим внутренним блокам */
+  transform: translateX(100%); /* прячем справа */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Состояние открыто: задняя сторона заезжает слева направо */
+.card.is-open .card__back {
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Фронт при открытии слегка уезжает влево и «тускнеет» (опционально) */
+.card.is-open .card__front {
+  transform: translateX(-8%);
+  opacity: 0.9;
+  filter: saturate(0.9);
+}
+
+/* Внутренние отступы для контентной части бэка */
+.back-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 30px;
+}
+@media (max-width: 480px) {
+  .back-body {
+    padding: 40px 20px;
+  }
+}
+
+/* ===== Галерея на обороте (в край, без отступов) ===== */
 .card__gallery {
   position: relative;
   user-select: none;
+  margin: 0;
 }
 
 .gallery__viewport {
   overflow: hidden;
-  border-radius: 10px;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .gallery__track {
@@ -1180,19 +1204,21 @@ table {
   min-width: 100%;
   aspect-ratio: 16/9;
 }
+
 .gallery__slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  cursor: zoom-in;
 }
 
-/* Кнопки навигации */
+/* Навигация/точки */
 .gallery__nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  border: none;
+  border: 0;
   background: rgba(0, 0, 0, 0.45);
   color: #fff;
   width: 36px;
@@ -1201,9 +1227,10 @@ table {
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: background 0.2s ease;
   z-index: 3;
+  transition: background 0.2s ease;
 }
+
 .gallery__nav:hover {
   background: rgba(0, 0, 0, 0.6);
 }
@@ -1216,7 +1243,6 @@ table {
   right: 8px;
 }
 
-/* Точки */
 .gallery__dots {
   position: absolute;
   left: 0;
@@ -1237,12 +1263,12 @@ table {
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
 }
+
 .gallery__dot.is-active {
   background: rgba(255, 255, 255, 0.95);
   transform: scale(1.15);
 }
 
-/* Адаптив под твои брейкпоинты */
 @media (max-width: 480px) {
   .gallery__nav {
     width: 32px;
@@ -1252,7 +1278,12 @@ table {
     bottom: 6px;
   }
 }
-/* Вписывается в твою flip-логику: ничего не конфликтует */
+/* уважение к настройкам пользователей */
+@media (prefers-reduced-motion: reduce) {
+  .card__front, .card__back, .gallery__track {
+    transition: none !important;
+  }
+}
 .desc__wrapper {
   padding: 60px 140px 100px;
   max-width: 1920px;

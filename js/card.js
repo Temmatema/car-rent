@@ -3,14 +3,17 @@ document.addEventListener("click", (e) => {
     const backBtn = e.target.closest(".btn-back");
 
     if (moreBtn) {
-        e.preventDefault();
-        moreBtn.closest(".card").classList.add("is-flipped");
+      e.preventDefault();
+      const card = moreBtn.closest(".card");
+      card.classList.add("is-open");
     }
+
     if (backBtn) {
-        e.preventDefault();
-        backBtn.closest(".card").classList.remove("is-flipped");
+      e.preventDefault();
+      const card = backBtn.closest(".card");
+      card.classList.remove("is-open");
     }
-});
+  });
 
 // Инициализация галерей в каждой карточке отдельно
 document.querySelectorAll(".card .card__gallery").forEach(initGallery);
@@ -47,41 +50,6 @@ function initGallery(gallery) {
 
     // Точки
     dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
-
-    // Свайп (тач + мышь)
-    const viewport = gallery.querySelector(".gallery__viewport");
-
-    viewport.addEventListener("pointerdown", (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        currentX = startX;
-        track.style.transition = "none";
-        viewport.setPointerCapture(e.pointerId);
-    });
-
-    viewport.addEventListener("pointermove", (e) => {
-        if (!isDragging) return;
-        currentX = e.clientX;
-        const dx = currentX - startX;
-        const percent = (dx / viewport.clientWidth) * 100;
-        track.style.transform = `translateX(${-(index * 100) + percent}%)`;
-    });
-
-    viewport.addEventListener("pointerup", (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-        const dx = currentX - startX;
-        const threshold = viewport.clientWidth * 0.15; // 15% ширины
-        if (dx > threshold) goTo(index - 1);
-        else if (dx < -threshold) goTo(index + 1);
-        else goTo(index); // откатить
-    });
-
-    viewport.addEventListener("pointercancel", () => {
-        if (!isDragging) return;
-        isDragging = false;
-        goTo(index);
-    });
 
     // Обновление позиции при ресайзе (на всякий)
     window.addEventListener("resize", () => goTo(index, false));

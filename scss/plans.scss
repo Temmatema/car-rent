@@ -22,6 +22,8 @@
     justify-content: center;
     max-width: 1350px;
     margin: 0 auto;
+    perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .card {
@@ -85,6 +87,14 @@
     @include respond(mobile) {
         flex-wrap: wrap;
         font-size: 16px;
+    }
+}
+
+.card .info-list {
+    margin-bottom: 30px;
+
+    li {
+        margin-bottom: 5px;
     }
 }
 
@@ -160,146 +170,116 @@
 }
 
 /* === Flip-card надстройка поверх твоих стилей === */
+/* === Slide-анимация задней стороны карточки === */
 .card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
-
-    @media (prefers-reduced-motion: reduce) {
-        transition: none;
-    }
-    perspective: 1000px; /* 3D-перспектива для переворота */
-}
-
-/* Класс, который включаем по клику */
-.card.is-flipped {
-    transform: rotateY(180deg);
-}
-
-/* Стороны карточки */
-.card__front,
-.card__back {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden; /* для iOS */
-    /* Наследуем визуальные параметры от .card, чтобы обе стороны выглядели одинаково */
-    background: inherit;
-    border-radius: inherit;
-     color: inherit;
-}
-
-/* FRONT — остаётся в потоке, чтобы высота карточки бралась от фронта */
-.card__front {
-    padding: 60px 30px;
-    position: relative;
-    z-index: 2;
-}
-
-/* BACK — кладём поверх фронта, растягиваем по карточке, копируем паддинги */
-.card__back {
-    position: absolute;
-    inset: 0;
-    padding: inherit; /* возьмёт те же паддинги, что и у .card */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transform: rotateY(180deg);
-}
-
-/* Мелкие допы для списка характеристик */
-.info-list {
-    margin-bottom: 30px;
-    li {
-        font-size: 18px;
-        margin-bottom: 6px;
-    }
-}
-
-/* На мобильных — тот же комфорт, что и у фронта */
-@include respond(mobile) {
-    .card__back {
-        padding: inherit; /* сохранит твои мобильные отступы из .card */
-    }
-}
-
-/* ===== Галерея на обороте карточки ===== */
-.card__gallery {
   position: relative;
-  user-select: none;
-}
-
-.gallery__viewport {
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.gallery__track {
+  overflow: hidden;                /* ничего не вылезает при анимации */
+  background: #d9d9d9;
+  border-radius: 12px;
+  max-width: 400px;
+  width: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
   display: flex;
-  transition: transform 0.4s ease;
-  will-change: transform;
-}
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 30px;
 
-.gallery__slide {
-  min-width: 100%;
-  aspect-ratio: 16 / 9;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  @include respond(mobile) {
+    max-width: 100%;
+    padding: 40px 20px;
   }
 }
 
-/* Кнопки навигации */
-.gallery__nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: rgba(0,0,0,0.45);
-  color: #fff;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  z-index: 3;
-
-  &:hover { background: rgba(0,0,0,0.6); }
+/* Стороны */
+.card__front,
+.card__back {
+  border-radius: inherit;
+  background: inherit;
+  color: inherit;
 }
 
-.gallery__nav--prev { left: 8px; }
-.gallery__nav--next { right: 8px; }
+/* Фронт — в нормальном потоке, чтобы задавать высоту карточке контентом */
+.card__front {
+  position: relative;
+  z-index: 1;
+  transition: transform .5s ease, opacity .5s ease, filter .5s ease;
+}
 
-/* Точки */
-.gallery__dots {
+/* Бэк — поверх, изначально за пределами справа */
+.card__back {
   position: absolute;
-  left: 0; right: 0; bottom: 8px;
+  inset: 0;
+  padding: 0;                      /* паддинги дадим внутренним блокам */
+  transform: translateX(100%);     /* прячем справа */
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: transform .5s ease, opacity .5s ease;
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  z-index: 3;
+  flex-direction: column;
 }
 
-.gallery__dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  border: 0;
-  background: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-
-  &.is-active { background: rgba(255,255,255,0.95); transform: scale(1.15); }
+/* Состояние открыто: задняя сторона заезжает слева направо */
+.card.is-open .card__back {
+  transform: translateX(0%);
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Адаптив под твои брейкпоинты */
+/* Фронт при открытии слегка уезжает влево и «тускнеет» (опционально) */
+.card.is-open .card__front {
+  transform: translateX(-8%);
+  opacity: .9;
+  filter: saturate(.9);
+}
+
+/* Внутренние отступы для контентной части бэка */
+.back-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 30px;
+
+  @include respond(mobile) { padding: 40px 20px; }
+}
+
+/* ===== Галерея на обороте (в край, без отступов) ===== */
+.card__gallery { position: relative; user-select: none; margin: 0; }
+.gallery__viewport {
+  overflow: hidden;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.gallery__track { display: flex; transition: transform .4s ease; will-change: transform; }
+.gallery__slide { min-width: 100%; aspect-ratio: 16 / 9; }
+.gallery__slide img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; }
+
+/* Навигация/точки */
+.gallery__nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  border: 0; background: rgba(0,0,0,.45); color: #fff;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center; cursor: pointer; z-index: 3;
+  transition: background .2s ease;
+}
+.gallery__nav:hover { background: rgba(0,0,0,.6); }
+.gallery__nav--prev { left: 8px; } .gallery__nav--next { right: 8px; }
+
+.gallery__dots {
+  position: absolute; left: 0; right: 0; bottom: 8px;
+  display: flex; justify-content: center; gap: 8px; z-index: 3;
+}
+.gallery__dot { width: 8px; height: 8px; border-radius: 50%; border: 0; background: rgba(255,255,255,.5); cursor: pointer; transition: transform .2s ease, background .2s ease; }
+.gallery__dot.is-active { background: rgba(255,255,255,.95); transform: scale(1.15); }
+
 @include respond(mobile) {
   .gallery__nav { width: 32px; height: 32px; }
   .gallery__dots { bottom: 6px; }
 }
 
-/* Вписывается в твою flip-логику: ничего не конфликтует */
+/* уважение к настройкам пользователей */
+@media (prefers-reduced-motion: reduce) {
+  .card__front, .card__back, .gallery__track { transition: none !important; }
+}
+
