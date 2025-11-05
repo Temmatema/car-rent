@@ -253,7 +253,7 @@
 }
 .gallery__track { display: flex; transition: transform .4s ease; will-change: transform; }
 .gallery__slide { min-width: 100%; aspect-ratio: 16 / 9; }
-.gallery__slide img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; }
+.gallery__slide img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; filter: grayscale(40%);}
 
 /* Навигация/точки */
 .gallery__nav {

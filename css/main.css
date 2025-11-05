@@ -1211,6 +1211,7 @@ table {
   object-fit: cover;
   display: block;
   cursor: zoom-in;
+  filter: grayscale(40%);
 }
 
 /* Навигация/точки */
