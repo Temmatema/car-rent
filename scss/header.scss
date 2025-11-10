@@ -72,12 +72,18 @@
     background: #fff;
     box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
     padding: 100px 40px 50px;
-    transform: translateX(120%);
+    transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+@media (min-width: 1921px) {
+    .header__nav {
+        right: calc(50% - 960px); 
+    }
 }
 
 .header__nav ul {
@@ -181,6 +187,12 @@
     @include respond(mobile) {
         right: 20px;
         width: 40px;
+    }
+}
+
+@media (min-width: 1921px) {
+    .burger {
+        right: calc(50% - 960px + 150px);
     }
 }
 
