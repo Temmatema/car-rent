@@ -81,8 +81,6 @@
               </a>
             </div>
           </nav>
-
-          <span class="header__line"></span>
         </div>
       </div>
     </header>
@@ -123,34 +121,12 @@
               <figure>
                 <img
                   src="./img/mobile/exeed-mobile.webp"
-                  alt="OMODA C5 Joy 2022 аренда автомобиля"
+                  alt="exeed аренда автомобиля"
                   itemprop="image"
                 />
               </figure>
 
               <h2 class="title" itemprop="name">Exeed</h2>
-
-              <div class="info">
-                <span class="info__text">
-                  Год выпуска
-                  <time class="info__addition" itemprop="productionDate"
-                    >2024</time
-                  >
-                </span>
-                <span class="info__text">
-                  КПП
-                  <span class="info__addition" itemprop="additionalProperty"
-                    >А</span
-                  >
-                </span>
-                <span class="info__text">
-                  Мест
-                  <span class="info__addition" itemprop="seatingCapacity"
-                    >5</span
-                  >
-                </span>
-              </div>
-
               <p class="note">От 2 суток</p>
 
               <p
@@ -159,7 +135,7 @@
                 itemscope
                 itemtype="https://schema.org/Offer"
               >
-                <span itemprop="price">от 4 000</span> ₽
+                <span itemprop="price">от 3 500</span> ₽
                 <meta itemprop="priceCurrency" content="RUB" />
                 <link
                   itemprop="availability"
@@ -232,15 +208,465 @@
                 </div>
               </div>
 
-              <div style="padding: 0 30px 40px;">
+              <div style="padding: 10px 40px 30px;">
                 <h3 class="info-top">Характеристики</h3>
                 <ul class="info-list">
+                  <li>Год выпуска: 2023</li>
                   <li>Двигатель: 147 л.с. бензин</li>
                   <li>Тип КПП: робот</li>
                   <li>Привод: передний</li>
                   <li>Расход топлива на 100 км: 7 л</li>
                   <li>Количество мест: 5</li>
                   <li>Цвет кузова: черный</li>
+                </ul>
+                <div class="buttons">
+                  <button class="btn btn-black btn-back" type="button">
+                    НАЗАД
+                  </button>
+                  <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+                </div>
+              </div>
+              <!-- Контент характеристик -->
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <!-- FRONT -->
+            <div class="card__front">
+              <figure>
+                <img
+                  src="./img/mobile/omoda-s5.webp"
+                  alt="omoda аренда автомобиля"
+                  itemprop="image"
+                />
+              </figure>
+
+              <h2 class="title" itemprop="name">Omoda S5</h2>
+              <p class="note">От 2 суток</p>
+
+              <p
+                class="price"
+                itemprop="offers"
+                itemscope
+                itemtype="https://schema.org/Offer"
+              >
+                <span itemprop="price">от 2 200</span> ₽
+                <meta itemprop="priceCurrency" content="RUB" />
+                <link
+                  itemprop="availability"
+                  href="https://schema.org/InStock"
+                />
+              </p>
+
+              <div class="buttons">
+                <button class="btn btn-black btn-more" type="button">
+                  ПОДРОБНЕЕ
+                </button>
+                <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="card__back">
+              <!-- Галерея -->
+              <div class="card__gallery" aria-label="Фотогалерея автомобиля">
+                  <div class="gallery__track">
+                    <div class="gallery__slide">
+                      <img src="./img/cards/omoda-c5/omoda-1.jpg" alt="Exeed вид спереди" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/omoda-c5/omoda-2.jpg" alt="Exeed вид сбоку" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/omoda-c5/omoda-3.jpg" alt="Exeed салон" />
+                    </div>
+                </div>
+
+                <button
+                  class="gallery__nav gallery__nav--prev"
+                  type="button"
+                  aria-label="Предыдущее фото"
+                >
+                  ❮
+                </button>
+                <button
+                  class="gallery__nav gallery__nav--next"
+                  type="button"
+                  aria-label="Следующее фото"
+                >
+                  ❯
+                </button>
+
+                <div
+                  class="gallery__dots"
+                  role="tablist"
+                  aria-label="Индикаторы слайдов"
+                >
+                  <button
+                    class="gallery__dot is-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-label="Слайд 1"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 2"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 3"
+                  ></button>
+                </div>
+              </div>
+
+              <div style="padding: 10px 40px 30px;">
+                <h3 class="info-top">Характеристики</h3>
+                <ul class="info-list">
+                  <li>Год выпуска: 2024</li>
+                  <li>Двигатель: 147 л.с. бензин</li>
+                  <li>Тип КПП: робот</li>
+                  <li>Привод: передний</li>
+                  <li>Расход топлива на 100 км: 7 л</li>
+                  <li>Количество мест: 5</li>
+                  <li>Цвет кузова: черный</li>
+                </ul>
+                <div class="buttons">
+                  <button class="btn btn-black btn-back" type="button">
+                    НАЗАД
+                  </button>
+                  <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+                </div>
+              </div>
+              <!-- Контент характеристик -->
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <!-- FRONT -->
+            <div class="card__front">
+              <figure>
+                <img
+                  src="./img/mobile/omoda-mobile.webp"
+                  alt="omoda аренда автомобиля"
+                  itemprop="image"
+                />
+              </figure>
+
+              <h2 class="title" itemprop="name">Omoda C5</h2>
+              <p class="note">От 2 суток</p>
+
+              <p
+                class="price"
+                itemprop="offers"
+                itemscope
+                itemtype="https://schema.org/Offer"
+              >
+                <span itemprop="price">от 2 500</span> ₽
+                <meta itemprop="priceCurrency" content="RUB" />
+                <link
+                  itemprop="availability"
+                  href="https://schema.org/InStock"
+                />
+              </p>
+
+              <div class="buttons">
+                <button class="btn btn-black btn-more" type="button">
+                  ПОДРОБНЕЕ
+                </button>
+                <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="card__back">
+              <!-- Галерея -->
+              <div class="card__gallery" aria-label="Фотогалерея автомобиля">
+                  <div class="gallery__track">
+                    <div class="gallery__slide">
+                      <img src="./img/cards/exeed/exeed-3.webp" alt="Exeed вид спереди" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/exeed/exeed-2.webp" alt="Exeed вид сбоку" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/exeed/exeed-1.webp" alt="Exeed салон" />
+                    </div>
+                </div>
+
+                <button
+                  class="gallery__nav gallery__nav--prev"
+                  type="button"
+                  aria-label="Предыдущее фото"
+                >
+                  ❮
+                </button>
+                <button
+                  class="gallery__nav gallery__nav--next"
+                  type="button"
+                  aria-label="Следующее фото"
+                >
+                  ❯
+                </button>
+
+                <div
+                  class="gallery__dots"
+                  role="tablist"
+                  aria-label="Индикаторы слайдов"
+                >
+                  <button
+                    class="gallery__dot is-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-label="Слайд 1"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 2"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 3"
+                  ></button>
+                </div>
+              </div>
+
+              <div style="padding: 10px 40px 30px;">
+                <h3 class="info-top">Характеристики</h3>
+                <ul class="info-list">
+                  <li>Год выпуска: 2023</li>
+                  <li>Двигатель: 147 л.с. бензин</li>
+                  <li>Тип КПП: робот</li>
+                  <li>Привод: передний</li>
+                  <li>Расход топлива на 100 км: 7 л</li>
+                  <li>Количество мест: 5</li>
+                  <li>Цвет кузова: черный</li>
+                </ul>
+                <div class="buttons">
+                  <button class="btn btn-black btn-back" type="button">
+                    НАЗАД
+                  </button>
+                  <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+                </div>
+              </div>
+              <!-- Контент характеристик -->
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <!-- FRONT -->
+            <div class="card__front">
+              <figure>
+                <img
+                  src="./img/mobile/ora-mobile.webp"
+                  alt="ora аренда автомобиля"
+                  itemprop="image"
+                />
+              </figure>
+
+              <h2 class="title" itemprop="name">Ora 03</h2>
+              <p class="note">От 2 суток</p>
+
+              <p
+                class="price"
+                itemprop="offers"
+                itemscope
+                itemtype="https://schema.org/Offer"
+              >
+                <span itemprop="price">от 3 800</span> ₽
+                <meta itemprop="priceCurrency" content="RUB" />
+                <link
+                  itemprop="availability"
+                  href="https://schema.org/InStock"
+                />
+              </p>
+
+              <div class="buttons">
+                <button class="btn btn-black btn-more" type="button">
+                  ПОДРОБНЕЕ
+                </button>
+                <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="card__back">
+              <!-- Галерея -->
+              <div class="card__gallery" aria-label="Фотогалерея автомобиля">
+                  <div class="gallery__track">
+                    <div class="gallery__slide">
+                      <img src="./img/cards/ora/ora-1.webp" alt="ora вид спереди" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/ora/ora-2.webp" alt="ora вид сбоку" />
+                    </div>
+                    <div class="gallery__slide">
+                      <img src="./img/cards/ora/ora-3.webp" alt="ora салон" />
+                    </div>
+                </div>
+
+                <button
+                  class="gallery__nav gallery__nav--prev"
+                  type="button"
+                  aria-label="Предыдущее фото"
+                >
+                  ❮
+                </button>
+                <button
+                  class="gallery__nav gallery__nav--next"
+                  type="button"
+                  aria-label="Следующее фото"
+                >
+                  ❯
+                </button>
+
+                <div
+                  class="gallery__dots"
+                  role="tablist"
+                  aria-label="Индикаторы слайдов"
+                >
+                  <button
+                    class="gallery__dot is-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-label="Слайд 1"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 2"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 3"
+                  ></button>
+                </div>
+              </div>
+
+              <div style="padding: 10px 40px 30px;">
+                <h3 class="info-top">Характеристики</h3>
+                <ul class="info-list">
+                  <li>Год выпуска: 2023</li>
+                  <li>Двигатель: 171 л.с. электро</li>
+                  <li>Тип КПП: автомат</li>
+                  <li>Привод: передний</li>
+                  <li>Количество мест: 4</li>
+                  <li>Запас хода на электричестве: 500 км</li>
+                </ul>
+                <div class="buttons">
+                  <button class="btn btn-black btn-back" type="button">
+                    НАЗАД
+                  </button>
+                  <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+                </div>
+              </div>
+              <!-- Контент характеристик -->
+            </div>
+          </article>
+          <article class="card" itemscope itemtype="https://schema.org/Product">
+            <!-- FRONT -->
+            <div class="card__front">
+              <figure>
+                <img
+                  src="./img/mobile/vesta.webp"
+                  alt="lada vesta аренда автомобиля"
+                  itemprop="image"
+                />
+              </figure>
+
+              <h2 class="title" itemprop="name">Lada Vesta</h2>
+              <p class="note">От 2 суток</p>
+
+              <p
+                class="price"
+                itemprop="offers"
+                itemscope
+                itemtype="https://schema.org/Offer"
+              >
+                <span itemprop="price">от 2 200</span> ₽
+                <meta itemprop="priceCurrency" content="RUB" />
+                <link
+                  itemprop="availability"
+                  href="https://schema.org/InStock"
+                />
+              </p>
+
+              <div class="buttons">
+                <button class="btn btn-black btn-more" type="button">
+                  ПОДРОБНЕЕ
+                </button>
+                <a href="rent.html" class="btn btn-red">ЗАБРОНИРОВАТЬ</a>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="card__back">
+              <!-- Галерея -->
+              <div class="card__gallery" aria-label="Фотогалерея автомобиля">
+                  <div class="gallery__track">
+                    <div class="gallery__slide">
+                      <img src="./img/cards/lada/lada-1.jpg" alt="Exeed вид спереди" />
+                    </div>
+                </div>
+
+                <button
+                  class="gallery__nav gallery__nav--prev"
+                  type="button"
+                  aria-label="Предыдущее фото"
+                >
+                  ❮
+                </button>
+                <button
+                  class="gallery__nav gallery__nav--next"
+                  type="button"
+                  aria-label="Следующее фото"
+                >
+                  ❯
+                </button>
+
+                <div
+                  class="gallery__dots"
+                  role="tablist"
+                  aria-label="Индикаторы слайдов"
+                >
+                  <button
+                    class="gallery__dot is-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-label="Слайд 1"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 2"
+                  ></button>
+                  <button
+                    class="gallery__dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 3"
+                  ></button>
+                </div>
+              </div>
+
+              <div style="padding: 10px 40px 30px;">
+                <h3 class="info-top">Характеристики</h3>
+                <ul class="info-list">
+                  <li>Год выпуска: 2025</li>
+                  <li>Двигатель: 122 л.с. бензин</li>
+                  <li>Тип КПП: механика</li>
+                  <li>Привод: передний</li>
+                  <li>Расход топлива на 100 км: 7.7 л</li>
+                  <li>Количество мест: 5</li>
+                  <li>Цвет кузова: белый</li>
                 </ul>
                 <div class="buttons">
                   <button class="btn btn-black btn-back" type="button">

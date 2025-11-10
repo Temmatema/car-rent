@@ -235,9 +235,22 @@ table {
 }
 
 .header__nav {
+  position: fixed;
+  align-items: stretch;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 20px;
+  width: auto;
+  height: auto;
+  background: #fff;
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
+  padding: 100px 40px 50px;
+  transform: translateX(120%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-around;
 }
 
 .header__nav ul {
@@ -264,28 +277,6 @@ table {
   font-size: 24px;
 }
 
-.header__link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: 15px;
-  width: 0;
-  height: 1px;
-  background: #cb2915;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media (max-width: 1024px) {
-  .header__link::after {
-    content: none;
-  }
-}
-
-.header__link:hover::after {
-  width: calc(100% - 20px);
-}
-
 .header__phone {
   display: inline-block;
   font-size: 32px;
@@ -300,11 +291,7 @@ table {
   display: flex;
   align-items: center;
   gap: 15px;
-}
-@media (max-width: 1024px) {
-  .call-content {
-    flex-direction: column;
-  }
+  flex-direction: column;
 }
 
 @media (max-width: 1200px) {
@@ -316,11 +303,10 @@ table {
     align-items: end;
   }
 }
-@media (max-width: 1024px) {
-  .call-content {
-    align-items: center;
-  }
+.call-content {
+  align-items: center;
 }
+
 .header__phone-btn {
   background-color: #cb2915;
   font-size: 24px;
@@ -344,10 +330,12 @@ table {
 }
 
 .burger {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   top: 50px;
-  right: 50px;
+  right: 150px;
   width: 50px;
   height: 30px;
   background: none;
@@ -355,6 +343,11 @@ table {
   cursor: pointer;
   z-index: 1001;
   mix-blend-mode: difference;
+}
+@media (max-width: 1024px) {
+  .burger {
+    right: 50px;
+  }
 }
 @media (max-width: 480px) {
   .burger {
@@ -384,113 +377,97 @@ table {
   transform: translateY(-15px) rotate(-45deg);
 }
 
-@media (max-width: 1024px) {
-  .burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .header__nav {
-    position: fixed;
-    align-items: stretch;
-    top: 0;
-    right: 0;
-    border-radius: 0 0 0 20px;
-    width: auto;
-    height: auto;
-    background: #fff;
-    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
-    padding: 100px 40px 50px;
-    transform: translateX(120%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .header__link-main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background-image: url(../img/home-icon.svg);
-    opacity: 0.3;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: auto 0;
-    bottom: 0;
-  }
-  .header__link-car::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    opacity: 0.3;
-    height: 30px;
-    background-image: url(../img/car-icon.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: auto 0;
-    bottom: 0;
-  }
-  .header__link-rent::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    opacity: 0.3;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background-image: url(../img/rental-icon.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: auto 0;
-    bottom: 0;
-  }
-  .header__link-price::before {
-    content: "";
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background-image: url(../img/ruble-icon.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: auto 0;
-    bottom: 0;
-  }
-  .header__link {
-    color: #000;
-    font-size: 24px;
-    font-weight: 500;
-    padding: 20px 0;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  .header__line {
-    display: none;
-  }
-  .header__phone {
-    display: block;
-    margin-top: 40px;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    color: #000;
-  }
-  .header__nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  .header__nav.active {
-    transform: translateX(0); /* выезжает */
-  }
+.header__link-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/home-icon.svg);
+  opacity: 0.3;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto 0;
+  bottom: 0;
 }
+
+.header__link-car::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  opacity: 0.3;
+  height: 30px;
+  background-image: url(../img/car-icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto 0;
+  bottom: 0;
+}
+
+.header__link-rent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  opacity: 0.3;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/rental-icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto 0;
+  bottom: 0;
+}
+
+.header__link-price::before {
+  content: "";
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../img/ruble-icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto 0;
+  bottom: 0;
+}
+
+.header__link {
+  color: #000;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header__line {
+  display: none;
+}
+
+.header__phone {
+  display: block;
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+}
+
+.header__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.header__nav.active {
+  transform: translateX(0); /* выезжает */
+}
+
 @media (max-width: 480px) {
   .header__nav {
     transform: translateY(-120%);
@@ -961,6 +938,7 @@ table {
 .card {
   background: #d9d9d9;
   border-radius: 12px;
+  height: 620px;
   max-width: 400px;
   width: auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1137,6 +1115,10 @@ table {
   position: relative;
   z-index: 1;
   transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+  display: flex;
+  height: inherit;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 /* Бэк — поверх, изначально за пределами справа */

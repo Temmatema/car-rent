@@ -29,6 +29,7 @@
 .card {
     background: #d9d9d9;
     border-radius: 12px;
+    height: 620px;
     max-width: 400px;
     width: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -203,6 +204,10 @@
   position: relative;
   z-index: 1;
   transition: transform .5s ease, opacity .5s ease, filter .5s ease;
+  display: flex;
+    height: inherit;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 /* Бэк — поверх, изначально за пределами справа */
