@@ -1925,8 +1925,8 @@ table {
   padding: 60px 150px 90px 150px;
   max-width: 1920px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  display: flex;
+  justify-content: center;
   gap: 50px;
 }
 @media (max-width: 1440px) {
@@ -1948,7 +1948,6 @@ table {
 @media (max-width: 830px) {
   .app-rent__wrapper {
     display: flex;
-    display: flex;
     padding: 60px 20px;
     flex-direction: column;
   }
@@ -1956,36 +1955,32 @@ table {
 
 .app-rent__image {
   height: auto;
+  max-width: 500px;
   overflow: hidden;
 }
 .app-rent__image img {
   object-fit: cover;
-  height: 900px;
-  object-position: right;
   filter: grayscale(30%);
   border-radius: 30px;
-}
-@media (max-width: 480px) {
-  .app-rent__image {
-    display: none;
-  }
 }
 @media (max-width: 1024px) {
   .app-rent__image img {
     object-position: center;
   }
 }
-
-@media (max-width: 830px) {
+@media (max-width: 480px) {
   .app-rent__image {
-    display: none;
+    width: auto;
   }
 }
+
 .app-rent__container {
-  padding: 40px;
+  padding: 60px 40px;
   display: flex;
+  width: 100%;
   flex-direction: column;
-  border: 1px #cbcbcb solid;
+  max-width: 1000px;
+  box-shadow: 0 0 8px 1px #d1d1d1;
   align-items: center;
   border-radius: 30px;
 }
@@ -2005,6 +2000,18 @@ table {
 @media (max-width: 480px) {
   .app-rent__title {
     font-size: 20px;
+  }
+}
+
+.inner-form-wrap {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 480px) {
+  .inner-form-wrap {
+    flex-direction: column;
   }
 }
 

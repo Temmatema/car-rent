@@ -59,9 +59,7 @@
 
       <section id="rent" class="app-rent">
         <div class="app-rent__wrapper">
-          <div class="app-rent__image">
-            <img src="./img/photos/2.webp" alt="" />
-          </div>
+
           <div class="app-rent__container">
             <h2 class="app-rent__title">Заявка на аренду авто</h2>
             <div class="app-rent__content">
@@ -98,49 +96,54 @@
                   </label>
                 </div>
 
-                <div class="app__checkbox-group">
-                  <p style="margin-bottom: 15px" class="app__label">Выберите автомобиль:</p>
-                  <div class="weight-options" id="carBrandOptions">
-                    <label>
-                      <input type="radio" name="car" value="omoda" checked />
-                      <span>OMODA</span>
-                    </label>
-                    <label>
-                      <input type="radio" name="car" value="exeed" />
-                      <span>Exeed LX</span>
-                    </label>
-                    <label>
-                      <input type="radio" name="car" value="ora" />
-                      <span>Ora 03</span>
-                    </label>
-                    <label>
-                      <input type="radio" name="car" value="vesta" />
-                      <span>Lada Vesta</span>
-                    </label>
+                
+                  <div class="app__checkbox-group">
+                    <p style="margin-bottom: 15px" class="app__label">Выберите автомобиль:</p>
+                    <div class="weight-options" id="carBrandOptions">
+                      <label>
+                        <input type="radio" name="car" value="omoda" checked />
+                        <span>OMODA</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="car" value="exeed" />
+                        <span>Exeed LX</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="car" value="ora" />
+                        <span>Ora 03</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="car" value="vesta" />
+                        <span>Lada Vesta</span>
+                      </label>
+                    </div>
+                  </div>
+  <div class="inner-form-wrap">
+                  <!-- Ветка-модели (показывается только для OMODA) -->
+                  <div id="omodaModelGroup" class="app__checkbox-group" style="display:none; margin-bottom:20px">
+                    <p style="margin-bottom: 15px" class="app__label">Выберите модель OMODA:</p>
+                    <div id="omodaModelOptions" class="weight-options">
+                      <label>
+                        <input type="radio" name="omodaModel" value="c5" checked />
+                        <span>OMODA C5</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="omodaModel" value="s5" />
+                        <span>OMODA S5</span>
+                      </label>
+                    </div>
+                  </div>
+  
+                  <!-- Комплектации -->
+                  <div id="carClassGroup" class="app__checkbox-group" style="display:none; margin-bottom:20px">
+                    <p style="margin-bottom: 15px" class="app__label">Выберите комплектацию:</p>
+                    <div id="carClassOptions" class="weight-options"></div>
                   </div>
                 </div>
 
-                <!-- Ветка-модели (показывается только для OMODA) -->
-                <div id="omodaModelGroup" class="app__checkbox-group" style="display:none; margin-bottom:20px">
-                  <p style="margin-bottom: 15px" class="app__label">Выберите модель OMODA:</p>
-                  <div id="omodaModelOptions" class="weight-options">
-                    <label>
-                      <input type="radio" name="omodaModel" value="c5" checked />
-                      <span>OMODA C5</span>
-                    </label>
-                    <label>
-                      <input type="radio" name="omodaModel" value="s5" />
-                      <span>OMODA S5</span>
-                    </label>
-                  </div>
-                </div>
-
-                <!-- Комплектации -->
-                <div id="carClassGroup" class="app__checkbox-group" style="display:none; margin-bottom:20px">
-                  <p style="margin-bottom: 15px" class="app__label">Выберите комплектацию:</p>
-                  <div id="carClassOptions" class="weight-options"></div>
-                </div>
-
+                <div class="app-rent__image">
+            <img id="carImage" src="./img/cards/omoda-s5/omoda-3.png" alt="Выбранный автомобиль" />
+          </div>
                 <div class="app__group">
                   <label
                     class="app__label"
@@ -526,17 +529,42 @@
     });
   }
 
-  // Переключение бренда
+  const CAR_IMAGES = {
+    omoda: {
+        c5: "./img/cards/omoda-s5/omoda-3.png",
+        s5: "./img/cards/omoda-c5/omoda-1.jpg"
+    },
+    exeed: "./img/cards/exeed/exeed-3.webp",
+    ora: "./img/cards/ora/ora-1.webp",
+    vesta: "./img/cards/lada/lada-1.jpg"
+};
+
+const carImageElement = document.getElementById("carImage");
+
+function updateCarImage(brand, model = null) {
+    let imagePath = null;
+
+    if (brand === "omoda") {
+        imagePath = model ? CAR_IMAGES.omoda[model] : CAR_IMAGES.omoda.c5; // По умолчанию C5, если модель не выбрана
+    } else {
+        imagePath = CAR_IMAGES[brand];
+    }
+    
+    if (imagePath && carImageElement) {
+        carImageElement.src = imagePath;
+    }
+}
+
   function onBrandChange(value) {
     if (value === "omoda") {
-      // Показываем узел выбора модели, и сразу рендерим под выбранную модель
       omodaModelGroup.style.display = "flex";
       const currentModel = document.querySelector('input[name="omodaModel"]:checked')?.value || "c5";
       renderTrimsFor("omoda", currentModel);
+      updateCarImage("omoda", currentModel);
     } else {
-      // Скрываем модель OMODA и рендерим комплектации выбранного бренда
       omodaModelGroup.style.display = "none";
       renderTrimsFor(value);
+      updateCarImage(value);
     }
   }
 
@@ -549,6 +577,7 @@
   document.getElementById("omodaModelOptions").addEventListener("change", (e) => {
     if (e.target.name === "omodaModel") {
       renderTrimsFor("omoda", e.target.value);
+      updateCarImage("omoda", e.target.value);
     }
   });
 
@@ -575,7 +604,6 @@
 </script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/form.js"></script>
   </body>
 </html>
