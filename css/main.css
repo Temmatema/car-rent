@@ -1988,6 +1988,7 @@ table {
   .app-rent__container {
     border: none;
     padding: 40px 0;
+    box-shadow: none;
   }
 }
 
