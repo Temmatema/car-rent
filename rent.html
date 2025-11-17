@@ -71,31 +71,6 @@
                 method="POST"
                 autocomplete="off"
               >
-                <div class="app__group">
-                  <label class="app__label" for="name"
-                    >Имя
-                    <input
-                      class="app__input"
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Иван"
-                      required
-                    />
-                  </label>
-                  <label class="app__label" for="surname"
-                    >Фамилия
-                    <input
-                      class="app__input"
-                      type="text"
-                      id="surname"
-                      name="surname"
-                      placeholder="Петров"
-                      required
-                    />
-                  </label>
-                </div>
-
                 
                   <div class="app__checkbox-group">
                     <p style="margin-bottom: 15px" class="app__label">Выберите автомобиль:</p>
@@ -171,6 +146,31 @@
                       />
                       <span id="distanceValue">0 км</span>
                     </div>
+                  </label>
+                </div>
+
+                <div class="app__group">
+                  <label class="app__label" for="name"
+                    >Имя
+                    <input
+                      class="app__input"
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Иван"
+                      required
+                    />
+                  </label>
+                  <label class="app__label" for="surname"
+                    >Фамилия
+                    <input
+                      class="app__input"
+                      type="text"
+                      id="surname"
+                      name="surname"
+                      placeholder="Петров"
+                      required
+                    />
                   </label>
                 </div>
 
@@ -480,11 +480,10 @@
     </div>
     <script>
   // --- СЛОВАРЬ ВЕТОК/КОМПЛЕКТАЦИЙ ---
-  // Для OMODA есть промежуточный уровень (модель).
   const TRIMS = {
     omoda: {
       c5: ["Joy", "Lifestyle", "Ultimate"],
-      s5: ["Classic"] // добавь варианты, если нужны ещё
+      s5: ["Classic"]
     },
     exeed: ["Luxury"],
     ora: ["Premium"],
@@ -506,13 +505,12 @@
     let list = [];
 
     if (car === "omoda") {
-      if (!model) return; // ждём выбор модели
+      if (!model) return;
       list = TRIMS.omoda[model] || [];
     } else {
       list = TRIMS[car] || [];
     }
 
-    // Если нет комплектаций — скрываем блок, иначе показываем
     if (!list.length) {
       carClassGroup.style.display = "none";
       return;
@@ -531,34 +529,36 @@
 
   const CAR_IMAGES = {
     omoda: {
-        c5: "./img/cards/omoda-s5/omoda-3.png",
-        s5: "./img/cards/omoda-c5/omoda-1.jpg"
+      c5: "./img/cards/omoda-s5/omoda-3.png",
+      s5: "./img/cards/omoda-c5/omoda-1.jpg"
     },
     exeed: "./img/cards/exeed/exeed-3.webp",
     ora: "./img/cards/ora/ora-1.webp",
     vesta: "./img/cards/lada/lada-1.jpg"
-};
+  };
 
-const carImageElement = document.getElementById("carImage");
+  const carImageElement = document.getElementById("carImage");
 
-function updateCarImage(brand, model = null) {
+  function updateCarImage(brand, model = null) {
     let imagePath = null;
 
     if (brand === "omoda") {
-        imagePath = model ? CAR_IMAGES.omoda[model] : CAR_IMAGES.omoda.c5; // По умолчанию C5, если модель не выбрана
+      imagePath = model ? CAR_IMAGES.omoda[model] : CAR_IMAGES.omoda.c5;
     } else {
-        imagePath = CAR_IMAGES[brand];
+      imagePath = CAR_IMAGES[brand];
     }
-    
+
     if (imagePath && carImageElement) {
-        carImageElement.src = imagePath;
+      carImageElement.src = imagePath;
     }
-}
+  }
 
   function onBrandChange(value) {
     if (value === "omoda") {
       omodaModelGroup.style.display = "flex";
-      const currentModel = document.querySelector('input[name="omodaModel"]:checked')?.value || "c5";
+      const currentModel =
+        document.querySelector('input[name="omodaModel"]:checked')?.value ||
+        "c5";
       renderTrimsFor("omoda", currentModel);
       updateCarImage("omoda", currentModel);
     } else {
@@ -568,24 +568,64 @@ function updateCarImage(brand, model = null) {
     }
   }
 
+  // --- ЧТЕНИЕ ПАРАМЕТРА ?car=... И ПРЕДНАСТРОЙКА ---
+  const params = new URLSearchParams(window.location.search);
+  const carParam = params.get("car"); // варианты: "omoda-c5", "omoda-s5", "exeed", "ora", "vesta"
+
+  let initialBrand = document.querySelector('input[name="car"]:checked')?.value || "omoda";
+  let initialModel = null;
+
+  if (carParam) {
+    const parts = carParam.split("-");
+    const brandFromUrl = parts[0];
+    const modelFromUrl = parts[1] || null;
+
+    if (brandFromUrl === "omoda") {
+      if (["c5", "s5"].includes(modelFromUrl)) {
+        initialBrand = "omoda";
+        initialModel = modelFromUrl;
+      }
+    } else if (["exeed", "ora", "vesta"].includes(brandFromUrl)) {
+      initialBrand = brandFromUrl;
+    }
+  }
+
+  // Выставляем радиокнопку бренда
+  const brandRadioToCheck = Array.from(carRadios).find(
+    (r) => r.value === initialBrand
+  );
+  if (brandRadioToCheck) {
+    brandRadioToCheck.checked = true;
+  }
+
+  // Если OMODA и есть модель в параметре — отметим нужную модель
+  if (initialBrand === "omoda" && initialModel) {
+    const omodaModelRadio = document.querySelector(
+      `input[name="omodaModel"][value="${initialModel}"]`
+    );
+    if (omodaModelRadio) {
+      omodaModelRadio.checked = true;
+    }
+  }
+
   // Подписки
   carRadios.forEach((r) =>
     r.addEventListener("change", (e) => onBrandChange(e.target.value))
   );
 
-  // Слушаем выбор модели OMODA
-  document.getElementById("omodaModelOptions").addEventListener("change", (e) => {
-    if (e.target.name === "omodaModel") {
-      renderTrimsFor("omoda", e.target.value);
-      updateCarImage("omoda", e.target.value);
-    }
-  });
+  document
+    .getElementById("omodaModelOptions")
+    .addEventListener("change", (e) => {
+      if (e.target.name === "omodaModel") {
+        renderTrimsFor("omoda", e.target.value);
+        updateCarImage("omoda", e.target.value);
+      }
+    });
 
-  // Инициализация при загрузке
-  const defaultCar = document.querySelector('input[name="car"]:checked')?.value || "omoda";
-  onBrandChange(defaultCar);
+  // Инициализация при загрузке с учётом URL
+  onBrandChange(initialBrand);
 
-  // --- Блок выбора километров (оставил как было) ---
+  // --- Блок выбора километров ---
   const distanceInput = document.getElementById("distance");
   const distanceValue = document.getElementById("distanceValue");
 
@@ -602,6 +642,7 @@ function updateCarImage(brand, model = null) {
   updateRangeBackground();
   distanceInput.addEventListener("input", updateRangeBackground);
 </script>
+
 
 
     <script type="module" src="js/form.js"></script>

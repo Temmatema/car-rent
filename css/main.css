@@ -1034,7 +1034,7 @@ table {
 .card .price {
   font-size: 42px;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   color: #393939;
   line-height: 1;
 }
@@ -1044,6 +1044,7 @@ table {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 .card .btn {
@@ -1103,7 +1104,7 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 60px 30px;
+  padding: 40px 30px;
 }
 @media (max-width: 480px) {
   .card {
@@ -1277,6 +1278,17 @@ table {
     transition: none !important;
   }
 }
+.bottom-text {
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 13px;
+}
+@media (max-width: 480px) {
+  .bottom-text {
+    font-size: 12px;
+  }
+}
+
 .desc__wrapper {
   padding: 60px 140px 100px;
   max-width: 1920px;
