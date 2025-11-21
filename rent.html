@@ -139,7 +139,7 @@
                         id="distance"
                         name="distance"
                         min="0"
-                        max="1000"
+                        max="600"
                         step="50"
                         value="0"
                         style="width: 300px"
@@ -629,6 +629,18 @@
   const distanceInput = document.getElementById("distance");
   const distanceValue = document.getElementById("distanceValue");
 
+  function updateDynamicStep() {
+  const value = +distanceInput.value;
+
+  if (value < 200) {
+    distanceInput.step = 10; // мелкие шаги в начале
+  } else if (value < 400) {
+    distanceInput.step = 25; // средние шаги
+  } else {
+    distanceInput.step = 50; // крупные шаги
+  }
+}
+
   function updateRangeBackground() {
     const value = distanceInput.value;
     const min = distanceInput.min;
@@ -640,7 +652,10 @@
   }
 
   updateRangeBackground();
-  distanceInput.addEventListener("input", updateRangeBackground);
+    distanceInput.addEventListener("input", () => {
+    updateDynamicStep();
+    updateRangeBackground();
+  });
 </script>
 
 
